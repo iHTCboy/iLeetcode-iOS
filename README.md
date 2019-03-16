@@ -1,2 +1,2 @@
 # iLeetcode
-my leetcode solution example
+iLeetcode example app
