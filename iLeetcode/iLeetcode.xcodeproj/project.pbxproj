@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231F53AD372D96E7B96E6040 /* Pods_iLeetcodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */; };
 		6D5000052245303900E114EE /* iLeetcodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5000042245303900E114EE /* iLeetcodeUITests.swift */; };
 		6D50FFE52245303800E114EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D50FFE42245303800E114EE /* AppDelegate.swift */; };
 		6D50FFE72245303800E114EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D50FFE62245303800E114EE /* ViewController.swift */; };
@@ -14,6 +15,8 @@
 		6D50FFEC2245303900E114EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D50FFEB2245303900E114EE /* Assets.xcassets */; };
 		6D50FFEF2245303900E114EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D50FFED2245303900E114EE /* LaunchScreen.storyboard */; };
 		6D50FFFA2245303900E114EE /* iLeetcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D50FFF92245303900E114EE /* iLeetcodeTests.swift */; };
+		B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */; };
+		C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14438D3425260594D5AA4917 /* Pods-iLeetcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.debug.xcconfig"; sourceTree = "<group>"; };
+		3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F0E8FAA20CC83DABEFB0E5 /* Pods-iLeetcodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2C32754F8905ECDFAFD8B9 /* Pods-iLeetcodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcodeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5000002245303900E114EE /* iLeetcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLeetcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5000042245303900E114EE /* iLeetcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iLeetcodeUITests.swift; sourceTree = "<group>"; };
 		6D5000062245303900E114EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D500012224530D300E114EE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D500013224530D400E114EE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6D500014224530DC00E114EE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D500015224530DC00E114EE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6D500016224530E000E114EE /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D500017224530E000E114EE /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6D50FFE12245303800E114EE /* iLeetcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLeetcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D50FFE42245303800E114EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D50FFE62245303800E114EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +62,9 @@
 		6D50FFF52245303900E114EE /* iLeetcodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLeetcodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D50FFF92245303900E114EE /* iLeetcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iLeetcodeTests.swift; sourceTree = "<group>"; };
 		6D50FFFB2245303900E114EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
+		843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231F53AD372D96E7B96E6040 /* Pods_iLeetcodeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34F841CE65B541AA011D07B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14438D3425260594D5AA4917 /* Pods-iLeetcode.debug.xcconfig */,
+				72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */,
+				E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */,
+				5A2C32754F8905ECDFAFD8B9 /* Pods-iLeetcodeTests.release.xcconfig */,
+				843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */,
+				41F0E8FAA20CC83DABEFB0E5 /* Pods-iLeetcodeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		40FB813A3668FD1405E47F63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */,
+				5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */,
+				51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6D5000032245303900E114EE /* iLeetcodeUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +134,8 @@
 				6D50FFF82245303900E114EE /* iLeetcodeTests */,
 				6D5000032245303900E114EE /* iLeetcodeUITests */,
 				6D50FFE22245303800E114EE /* Products */,
+				34F841CE65B541AA011D07B4 /* Pods */,
+				40FB813A3668FD1405E47F63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D5000092245303900E114EE /* Build configuration list for PBXNativeTarget "iLeetcode" */;
 			buildPhases = (
+				FFA17A1D5454B91BDFE9442C /* [CP] Check Pods Manifest.lock */,
 				6D50FFDD2245303800E114EE /* Sources */,
 				6D50FFDE2245303800E114EE /* Frameworks */,
 				6D50FFDF2245303800E114EE /* Resources */,
@@ -149,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D50000C2245303900E114EE /* Build configuration list for PBXNativeTarget "iLeetcodeTests" */;
 			buildPhases = (
+				6301EEA409FDDF62534B1FAD /* [CP] Check Pods Manifest.lock */,
 				6D50FFF12245303900E114EE /* Sources */,
 				6D50FFF22245303900E114EE /* Frameworks */,
 				6D50FFF32245303900E114EE /* Resources */,
@@ -167,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D50000F2245303900E114EE /* Build configuration list for PBXNativeTarget "iLeetcodeUITests" */;
 			buildPhases = (
+				E43D63C14FD5656C3D955F0B /* [CP] Check Pods Manifest.lock */,
 				6D50FFFC2245303900E114EE /* Sources */,
 				6D50FFFD2245303900E114EE /* Frameworks */,
 				6D50FFFE2245303900E114EE /* Resources */,
@@ -211,6 +260,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
+				"zh-HK",
 			);
 			mainGroup = 6D50FFD82245303800E114EE;
 			productRefGroup = 6D50FFE22245303800E114EE /* Products */;
@@ -250,6 +302,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6301EEA409FDDF62534B1FAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iLeetcodeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E43D63C14FD5656C3D955F0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iLeetcodeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFA17A1D5454B91BDFE9442C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iLeetcode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D50FFDD2245303800E114EE /* Sources */ = {
@@ -297,6 +418,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D50FFE92245303800E114EE /* Base */,
+				6D500012224530D300E114EE /* zh-Hans */,
+				6D500014224530DC00E114EE /* zh-Hant */,
+				6D500016224530E000E114EE /* zh-HK */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -305,6 +429,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D50FFEE2245303900E114EE /* Base */,
+				6D500013224530D400E114EE /* zh-Hans */,
+				6D500015224530DC00E114EE /* zh-Hant */,
+				6D500017224530E000E114EE /* zh-HK */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -363,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -377,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -418,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -430,11 +559,13 @@
 		};
 		6D50000A2245303900E114EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14438D3425260594D5AA4917 /* Pods-iLeetcode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +579,13 @@
 		};
 		6D50000B2245303900E114EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +599,7 @@
 		};
 		6D50000D2245303900E114EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +621,7 @@
 		};
 		6D50000E2245303900E114EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A2C32754F8905ECDFAFD8B9 /* Pods-iLeetcodeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +643,7 @@
 		};
 		6D5000102245303900E114EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +664,7 @@
 		};
 		6D5000112245303900E114EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41F0E8FAA20CC83DABEFB0E5 /* Pods-iLeetcodeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
