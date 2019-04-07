@@ -6,6 +6,7 @@ target 'iLeetcode' do
   use_frameworks!
 
   # Pods for iLeetcode
+  pod 'SwiftyMarkdown'
 
   target 'iLeetcodeTests' do
     inherit! :search_paths
