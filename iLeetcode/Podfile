@@ -6,7 +6,7 @@ target 'iLeetcode' do
   use_frameworks!
 
   # Pods for iLeetcode
-  pod 'SwiftyMarkdown'
+  pod 'BaiduMobStatCodeless' #无埋点SDK
 
   target 'iLeetcodeTests' do
     inherit! :search_paths

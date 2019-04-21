@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-import SwiftyMarkdown
+//import SwiftyMarkdown
 
 
 class ITQuestionDetailViewController: ITBasePopTransitionVC {
@@ -16,7 +16,6 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpUI()
     }
     
@@ -32,36 +31,77 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
     
     var selectedCell: ITQuestionListViewCell!
     
+    var webView: UIWebView!
     var questionModle : ITQuestionModel?
     var isShowZH : Bool = false
     
     lazy var tableView: UITableView = {
-        var tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH), style: .plain)
+        var tableView = UITableView.init(frame: CGRect.zero, style: .plain)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.estimatedRowHeight = 80
         tableView.estimatedSectionHeaderHeight = 80
+        tableView.delegate = self;
+        tableView.dataSource = self;
         tableView.register(UINib.init(nibName: "ITQuestionListViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ITQuestionListViewCell")
         tableView.register(UINib.init(nibName: "ITQuestionDetailViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ITQuestionDetailViewCell")
-        // 调试
-        //        tableView.fd_debugLogEnabled = true
         return tableView
+    }()
+    
+    lazy var infoItem :UIBarButtonItem = {
+        let infoBtn = UIButton.init(type: UIButton.ButtonType.detailDisclosure)
+        infoBtn.addTarget(self, action: #selector(showAnswer), for: .touchUpInside)
+        let item = UIBarButtonItem.init(customView: infoBtn)
+        return item
     }()
 }
 
 
 extension ITQuestionDetailViewController {
     fileprivate func setUpUI() {
+        //tableView
         view.addSubview(tableView)
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        let constraintViews = [
+            "tableView": tableView
+        ]
+        let vFormat = "V:|-0-[tableView]-0-|"
+        let hFormat = "H:|-0-[tableView]-0-|"
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: vFormat, options: [], metrics: [:], views: constraintViews)
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: hFormat, options: [], metrics: [:], views: constraintViews)
+        view.addConstraints(vConstraints)
+        view.addConstraints(hConstraints)
+        view.layoutIfNeeded()
         
-        let add = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(addTapped))
-        let play = UIBarButtonItem(title: "中", style: .plain, target: self, action: #selector(playTapped))
-        navigationItem.rightBarButtonItems = [add, play]
+        // webview
+        tableView.reloadData()
+        let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + kStatusBarH
+        let webView = UIWebView.init(frame: CGRect.zero)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        self.webView = webView
+        view.addSubview(webView)
+        let webViewConstraintViews = [
+            "webView": webView
+        ]
+        let vFormatWeb = "V:|-\(webHeight)-[webView]-0-|"
+        let hFormatWeb = "H:|-0-[webView]-0-|"
+        let vConstraintsWeb = NSLayoutConstraint.constraints(withVisualFormat: vFormatWeb, options: [], metrics: [:], views: webViewConstraintViews)
+        let hConstraintsWeb = NSLayoutConstraint.constraints(withVisualFormat: hFormatWeb, options: [], metrics: [:], views: webViewConstraintViews)
+        view.addConstraints(vConstraintsWeb)
+        view.addConstraints(hConstraintsWeb)
+        view.layoutIfNeeded()
+        reloadWebView()
+        
+        // UIBarButtonItem
+        let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedPageView))
+        let language = UIBarButtonItem(title: "中", style: .plain, target: self, action: #selector(switchLanguage))
+        let font = UIBarButtonItem(title: "a", style: .plain, target: self, action: #selector(fontSize))
+        let fixedSpace = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        fixedSpace.width = 15
+        navigationItem.rightBarButtonItems = [shareItem, infoItem, fixedSpace, language, fixedSpace, font]
+
     }
     
-    @objc func addTapped(item: UIBarButtonItem) {
-        
+    @objc func showAnswer(item: UIBarButtonItem) {
         let alert = UIAlertController(title: "提示",
                                       message: "请选择要显示的解答的答案的语言\nSelect the language of the answer for the solution",
                                       preferredStyle: UIAlertController.Style.alert)
@@ -87,8 +127,7 @@ extension ITQuestionDetailViewController {
         })
     }
     
-    @objc func playTapped(item: UIBarButtonItem) {
-        
+    @objc func switchLanguage(item: UIBarButtonItem) {
         if item.title == "中" {
             isShowZH = true
             item.title = "En"
@@ -97,8 +136,36 @@ extension ITQuestionDetailViewController {
             isShowZH = false
             item.title = "中"
         }
-        
         self.tableView.reloadData()
+        reloadWebView()
+    }
+    
+    @objc func fontSize(item: UIBarButtonItem) {
+        // var str = "document.body.style.fontSize= 33;"
+        var size = ""
+        if item.title == "a" {
+            item.title = "A"
+            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '120%'"
+        }
+        else if item.title == "A"  {
+            item.title = "aA"
+            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '150%'"
+        } else if item.title == "aA"  {
+            item.title = "AA"
+            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '200%'"
+        } else if item.title == "AA"  {
+            item.title = "a"
+            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '100%'"
+        }
+        webView?.stringByEvaluatingJavaScript(from: size)
+    }
+    
+    @objc func sharedPageView(item: Any) {
+        let headerImage = selectedCell.screenshot ?? UIImage.init(named: "App-share-Icon")
+        let masterImage = webView.scrollView.screenshotImage ?? UIImage.init(named: "App-share-Icon")!
+        let footerImage = IHTCShareFooterView.footerView(image: UIImage.init(named: "iLeetCoder-qrcode")!, title: kShareTitle, subTitle: kShareSubTitle).screenshot
+        let image = ImageHandle.slaveImageWithMaster(masterImage: masterImage, headerImage: headerImage!, footerImage: footerImage!)
+        IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!)
     }
     
     func showWebView(url: String) {
@@ -114,28 +181,7 @@ extension ITQuestionDetailViewController {
         present(vc, animated: true)
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
-}
-
-
-extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    fileprivate func headerView() -> UIView {
         let cell = UINib(nibName: "ITQuestionListViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ITQuestionListViewCell
         cell.backgroundColor = UIColor.white
         cell.accessoryType = .none
@@ -190,25 +236,55 @@ extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataS
             cell.questionLbl.text = question.title
         }
         
+        return cell
+    }
+    
+    fileprivate func reloadWebView() {
+        var contents = ""
+        if isShowZH {
+            contents = questionModle!.questionDescriptionZh.count > 0 ? questionModle!.questionDescriptionZh : questionModle!.questionDescription;
+        }
+        else {
+            contents =  questionModle!.questionDescription
+        }
         
-//        if questionModle!.hasOptionQuestion {
-//            cell.questionLbl.text = questionModle!.question + "\n  A: " + questionModle!.optionA + "\n  B: " + questionModle!.optionB + "\n  C: " + questionModle!.optionC + "\n  D: " + questionModle!.optionD
-//        }else{
-//
-//            cell.questionLbl.text = questionModle!.question
-//        }
-//
-//        if self.title == questionModle?.lauguage {
-//            // 判断当前是语言tabbar 也可以用 self.tabBarController?.selectedIndex 判断，但兼容性不好
-//            cell.tagLbl.backgroundColor = kColorAppBlue
-//            cell.langugeLbl.isHidden = true
-//        }else{
-//
-//            cell.tagLbl.backgroundColor = kColorAppOrange
-//            cell.langugeLbl.isHidden = false
-//            cell.langugeLbl.text =   " " + questionModle!.lauguage + "   "
-//        }
-        self.selectedCell = cell;
+        let path = Bundle.main.path(forResource: "iLeetCoder", ofType: "html")!
+        //reading
+        var text = try! String.init(contentsOfFile: path, encoding: String.Encoding.utf8)
+        text = text.replacingOccurrences(of: "${contents}", with: contents)
+        // load string
+        let bundleURL = URL.init(string: path)
+        webView.loadHTMLString(text, baseURL: bundleURL)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+}
+
+
+extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.size.height - tableView.sectionHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = headerView()
+        self.selectedCell = (cell as! ITQuestionListViewCell)
         return cell
     }
     
@@ -217,16 +293,7 @@ extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataS
         let cell: ITQuestionDetailViewCell = tableView.dequeueReusableCell(withIdentifier: "ITQuestionDetailViewCell") as! ITQuestionDetailViewCell
         cell.accessoryType = .none
         cell.selectionStyle = .none
-        cell.answerLbl.textAlignment = .left
-        if isShowZH {
-            let str = questionModle!.questionDescriptionZh.count > 0 ? questionModle!.questionDescriptionZh : questionModle!.questionDescription;
-            cell.answerLbl.attributedText =  SwiftyMarkdown(string: str).attributedString()
-        }
-        else {
-            cell.answerLbl.attributedText =  SwiftyMarkdown(string: questionModle!.questionDescription).attributedString()
-        }
-        
-
+        cell.textLabel!.text = "iLeetCoder"
         return cell
     }
     

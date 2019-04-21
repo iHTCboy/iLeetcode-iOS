@@ -48,7 +48,6 @@
 		6D4ABE03225088FE0022AAFC /* iTalkerman_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD86225088FD0022AAFC /* iTalkerman_blue@2x.png */; };
 		6D4ABE04225088FE0022AAFC /* company_tabbar_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD87225088FD0022AAFC /* company_tabbar_normal@3x.png */; };
 		6D4ABE05225088FE0022AAFC /* language_tabbar_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD88225088FD0022AAFC /* language_tabbar_normal@3x.png */; };
-		6D4ABE5E225088FE0022AAFC /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABDE6225088FE0022AAFC /* libBaiduMobStat.a */; };
 		6D4ABE75225093BE0022AAFC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE74225093BE0022AAFC /* CFNetwork.framework */; };
 		6D4ABE77225093C80022AAFC /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE76225093C80022AAFC /* SafariServices.framework */; };
 		6D4ABE79225093D40022AAFC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE78225093D40022AAFC /* StoreKit.framework */; };
@@ -72,6 +71,16 @@
 		6D50FFEC2245303900E114EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D50FFEB2245303900E114EE /* Assets.xcassets */; };
 		6D50FFEF2245303900E114EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D50FFED2245303900E114EE /* LaunchScreen.storyboard */; };
 		6D50FFFA2245303900E114EE /* iLeetcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D50FFF92245303900E114EE /* iLeetcodeTests.swift */; };
+		6DC7CFD1226C01D900F2CC10 /* iLeetCoder.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFCF226C01D800F2CC10 /* iLeetCoder.css */; };
+		6DC7CFD2226C01D900F2CC10 /* iLeetCoder.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD0226C01D800F2CC10 /* iLeetCoder.html */; };
+		6DC7CFD5226C1BB600F2CC10 /* IAppleServiceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD4226C1BB600F2CC10 /* IAppleServiceUtil.swift */; };
+		6DC7CFDB226C1E3200F2CC10 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD7226C1E3200F2CC10 /* UIImage+Additions.swift */; };
+		6DC7CFDC226C1E3200F2CC10 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD8226C1E3200F2CC10 /* UIView+Additions.swift */; };
+		6DC7CFDD226C1E3200F2CC10 /* UIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD9226C1E3200F2CC10 /* UIScrollView+Additions.swift */; };
+		6DC7CFDE226C1E3200F2CC10 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFDA226C1E3200F2CC10 /* UITableView+Additions.swift */; };
+		6DC7CFE1226C1E4500F2CC10 /* IHTCShareFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFDF226C1E4500F2CC10 /* IHTCShareFooterView.swift */; };
+		6DC7CFE2226C1E4500F2CC10 /* IHTCShareFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE0226C1E4500F2CC10 /* IHTCShareFooterView.xib */; };
+		6DC7CFE4226C255400F2CC10 /* iLeetCoder-qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE3226C255400F2CC10 /* iLeetCoder-qrcode.png */; };
 		B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */; };
 		C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */; };
 /* End PBXBuildFile section */
@@ -144,10 +153,8 @@
 		6D4ABD86225088FD0022AAFC /* iTalkerman_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTalkerman_blue@2x.png"; sourceTree = "<group>"; };
 		6D4ABD87225088FD0022AAFC /* company_tabbar_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "company_tabbar_normal@3x.png"; sourceTree = "<group>"; };
 		6D4ABD88225088FD0022AAFC /* language_tabbar_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "language_tabbar_normal@3x.png"; sourceTree = "<group>"; };
-		6D4ABDE6225088FE0022AAFC /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
 		6D4ABE69225089270022AAFC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		6D4ABE6A225089270022AAFC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
-		6D4ABE6F2250936B0022AAFC /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 		6D4ABE702250937C0022AAFC /* iLeetcode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iLeetcode-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D4ABE74225093BE0022AAFC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6D4ABE76225093C80022AAFC /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -181,6 +188,17 @@
 		6D50FFF52245303900E114EE /* iLeetcodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLeetcodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D50FFF92245303900E114EE /* iLeetcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iLeetcodeTests.swift; sourceTree = "<group>"; };
 		6D50FFFB2245303900E114EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DC7CFCF226C01D800F2CC10 /* iLeetCoder.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iLeetCoder.css; sourceTree = "<group>"; };
+		6DC7CFD0226C01D800F2CC10 /* iLeetCoder.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iLeetCoder.html; sourceTree = "<group>"; };
+		6DC7CFD3226C04E000F2CC10 /* iLeetcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iLeetcode.entitlements; sourceTree = "<group>"; };
+		6DC7CFD4226C1BB600F2CC10 /* IAppleServiceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppleServiceUtil.swift; sourceTree = "<group>"; };
+		6DC7CFD7226C1E3200F2CC10 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
+		6DC7CFD8226C1E3200F2CC10 /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		6DC7CFD9226C1E3200F2CC10 /* UIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		6DC7CFDA226C1E3200F2CC10 /* UITableView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Additions.swift"; sourceTree = "<group>"; };
+		6DC7CFDF226C1E4500F2CC10 /* IHTCShareFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCShareFooterView.swift; sourceTree = "<group>"; };
+		6DC7CFE0226C1E4500F2CC10 /* IHTCShareFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHTCShareFooterView.xib; sourceTree = "<group>"; };
+		6DC7CFE3226C255400F2CC10 /* iLeetCoder-qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iLeetCoder-qrcode.png"; sourceTree = "<group>"; };
 		72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
 		843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,7 +220,6 @@
 				6D4ABE79225093D40022AAFC /* StoreKit.framework in Frameworks */,
 				6D4ABE77225093C80022AAFC /* SafariServices.framework in Frameworks */,
 				6D4ABE75225093BE0022AAFC /* CFNetwork.framework in Frameworks */,
-				6D4ABE5E225088FE0022AAFC /* libBaiduMobStat.a in Frameworks */,
 				B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +311,8 @@
 				6D4ABD53225088D00022AAFC /* ITQuestionDetailViewCell.swift */,
 				6D4ABD52225088D00022AAFC /* ITQuestionDetailViewCell.xib */,
 				6D4ABD55225088D00022AAFC /* ITCopyLabel.swift */,
+				6DC7CFDF226C1E4500F2CC10 /* IHTCShareFooterView.swift */,
+				6DC7CFE0226C1E4500F2CC10 /* IHTCShareFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				6D4ABD6B225088E40022AAFC /* CommonDefine.swift */,
+				6DC7CFD4226C1BB600F2CC10 /* IAppleServiceUtil.swift */,
 				6D4ABD6C225088E40022AAFC /* ITCommonAPI.swift */,
 			);
 			path = Common;
@@ -329,6 +349,7 @@
 		6D4ABD6F225088F00022AAFC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				6DC7CFD6226C1E3200F2CC10 /* DHSmartScreenshot */,
 				6D4ABD70225088F00022AAFC /* ITScalePushTransition.swift */,
 				6D4ABD71225088F00022AAFC /* ITScalePopTransition.swift */,
 				6D4ABE982250F5B10022AAFC /* TCDataTool.swift */,
@@ -349,6 +370,7 @@
 		6D4ABD75225088FD0022AAFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DC7CFE3226C255400F2CC10 /* iLeetCoder-qrcode.png */,
 				6D4ABE9A225184070022AAFC /* App-share-Icon.png */,
 				6D4ABE8C22509BD40022AAFC /* App-LaunchScreen-Image.png */,
 				6D4ABE8A225099050022AAFC /* App-TextLogo-Alpha.png */,
@@ -375,6 +397,8 @@
 		6D4ABD89225088FD0022AAFC /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				6DC7CFCF226C01D800F2CC10 /* iLeetCoder.css */,
+				6DC7CFD0226C01D800F2CC10 /* iLeetCoder.html */,
 				6D4ABD8A225088FD0022AAFC /* jsonFiles */,
 			);
 			path = Documents;
@@ -391,18 +415,8 @@
 		6D4ABDE4225088FE0022AAFC /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
-				6D4ABDE5225088FE0022AAFC /* ios_api */,
 			);
 			path = Thirdparty;
-			sourceTree = "<group>";
-		};
-		6D4ABDE5225088FE0022AAFC /* ios_api */ = {
-			isa = PBXGroup;
-			children = (
-				6D4ABE6F2250936B0022AAFC /* BaiduMobStat.h */,
-				6D4ABDE6225088FE0022AAFC /* libBaiduMobStat.a */,
-			);
-			path = ios_api;
 			sourceTree = "<group>";
 		};
 		6D5000032245303900E114EE /* iLeetcodeUITests */ = {
@@ -439,6 +453,7 @@
 		6D50FFE32245303800E114EE /* iLeetcode */ = {
 			isa = PBXGroup;
 			children = (
+				6DC7CFD3226C04E000F2CC10 /* iLeetcode.entitlements */,
 				6D4ABE702250937C0022AAFC /* iLeetcode-Bridging-Header.h */,
 				6D50FFE42245303800E114EE /* AppDelegate.swift */,
 				6D4ABD37225088660022AAFC /* ViewController */,
@@ -467,6 +482,17 @@
 			path = iLeetcodeTests;
 			sourceTree = "<group>";
 		};
+		6DC7CFD6226C1E3200F2CC10 /* DHSmartScreenshot */ = {
+			isa = PBXGroup;
+			children = (
+				6DC7CFD7226C1E3200F2CC10 /* UIImage+Additions.swift */,
+				6DC7CFD8226C1E3200F2CC10 /* UIView+Additions.swift */,
+				6DC7CFD9226C1E3200F2CC10 /* UIScrollView+Additions.swift */,
+				6DC7CFDA226C1E3200F2CC10 /* UITableView+Additions.swift */,
+			);
+			path = DHSmartScreenshot;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,7 +504,6 @@
 				6D50FFDD2245303800E114EE /* Sources */,
 				6D50FFDE2245303800E114EE /* Frameworks */,
 				6D50FFDF2245303800E114EE /* Resources */,
-				7AAD9B44ABD7D5D116B475F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -540,6 +565,14 @@
 					6D50FFE02245303800E114EE = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					6D50FFF42245303900E114EE = {
 						CreatedOnToolsVersion = 10.1;
@@ -586,9 +619,11 @@
 				6D50FFEC2245303900E114EE /* Assets.xcassets in Resources */,
 				6D4ABE8B225099050022AAFC /* App-TextLogo-Alpha.png in Resources */,
 				6D4ABE9B225184080022AAFC /* App-share-Icon.png in Resources */,
+				6DC7CFD1226C01D900F2CC10 /* iLeetCoder.css in Resources */,
 				6D4ABDFA225088FE0022AAFC /* Engineer_normal@2x.png in Resources */,
 				6D4ABDF3225088FE0022AAFC /* language_tabbar_selected@2x.png in Resources */,
 				6D4ABDFB225088FE0022AAFC /* Engineer_normal@3x.png in Resources */,
+				6DC7CFD2226C01D900F2CC10 /* iLeetCoder.html in Resources */,
 				6D4ABDF9225088FE0022AAFC /* Engineer_selected@3x.png in Resources */,
 				6D4ABDF5225088FE0022AAFC /* company_tabbar_selected@2x.png in Resources */,
 				6D4ABE02225088FE0022AAFC /* iTalkerman_blue@3x.png in Resources */,
@@ -597,7 +632,9 @@
 				6D4ABDF7225088FE0022AAFC /* italkerman_gray@2x.png in Resources */,
 				6D4ABD5F225088D00022AAFC /* ITQuestionDetailViewCell.xib in Resources */,
 				6D4ABDFC225088FE0022AAFC /* Engineer_selected@2x.png in Resources */,
+				6DC7CFE4226C255400F2CC10 /* iLeetCoder-qrcode.png in Resources */,
 				6D4ABE922250E03A0022AAFC /* iLeetCoder-Question.json in Resources */,
+				6DC7CFE2226C1E4500F2CC10 /* IHTCShareFooterView.xib in Resources */,
 				6D4ABE9022509ED70022AAFC /* AppLaunchScreen.storyboard in Resources */,
 				6D4ABE01225088FE0022AAFC /* company_tabbar_normal@2x.png in Resources */,
 				6D4ABDF6225088FE0022AAFC /* company_tabbar_selected@3x.png in Resources */,
@@ -648,28 +685,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AAD9B44ABD7D5D116B475F0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyMarkdown.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E43D63C14FD5656C3D955F0B /* [CP] Check Pods Manifest.lock */ = {
@@ -727,15 +742,20 @@
 				6D4ABD72225088F00022AAFC /* ITScalePushTransition.swift in Sources */,
 				6D4ABD61225088D00022AAFC /* ITQuestionListViewCell.swift in Sources */,
 				6D4ABD64225088D00022AAFC /* ITPageContentView.swift in Sources */,
+				6DC7CFD5226C1BB600F2CC10 /* IAppleServiceUtil.swift in Sources */,
 				6D4ABD68225088D00022AAFC /* ITQuestionModel.swift in Sources */,
 				6D4ABD4C225088660022AAFC /* ITBasePushTransitionVC.swift in Sources */,
+				6DC7CFDD226C1E3200F2CC10 /* UIScrollView+Additions.swift in Sources */,
 				6D4ABD46225088660022AAFC /* ITCompanyViewController.swift in Sources */,
+				6DC7CFDE226C1E3200F2CC10 /* UITableView+Additions.swift in Sources */,
 				6D4ABD4A225088660022AAFC /* ITQuestionListViewController.swift in Sources */,
 				6D4ABD48225088660022AAFC /* ITBasePopTransitionVC.swift in Sources */,
 				6D4ABE972250E08A0022AAFC /* ILeetCoderModel.swift in Sources */,
 				6D4ABD4D225088660022AAFC /* ITLanguageViewController.swift in Sources */,
 				6D4ABD44225088660022AAFC /* ITAboutAppVC.swift in Sources */,
+				6DC7CFE1226C1E4500F2CC10 /* IHTCShareFooterView.swift in Sources */,
 				6D4ABD63225088D00022AAFC /* ITPageTitleView.swift in Sources */,
+				6DC7CFDB226C1E3200F2CC10 /* UIImage+Additions.swift in Sources */,
 				6D4ABD45225088660022AAFC /* ITProgrammerVC.swift in Sources */,
 				6D4ABD6E225088E50022AAFC /* ITCommonAPI.swift in Sources */,
 				6D4ABD60225088D00022AAFC /* ITQuestionDetailViewCell.swift in Sources */,
@@ -745,6 +765,7 @@
 				6D4ABD73225088F00022AAFC /* ITScalePopTransition.swift in Sources */,
 				6D4ABD49225088660022AAFC /* ITQuestionDetailViewController.swift in Sources */,
 				6D4ABD67225088D00022AAFC /* ITModel.swift in Sources */,
+				6DC7CFDC226C1E3200F2CC10 /* UIView+Additions.swift in Sources */,
 				6D50FFE52245303800E114EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

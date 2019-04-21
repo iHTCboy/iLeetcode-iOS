@@ -135,7 +135,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
 
                 let image = UIImage(named: "App-share-Icon")
                 let url = NSURL(string: kAppDownloadURl)
-                let string = "Hello, \(kiTalker)! 这是一款为IT工程师们提供算法知识充电的应用，IT算法和数据结构知识，求职面试必备的好工具哦！" + "iOS下载链接：" + kAppDownloadURl
+                let string = kAppShare
                 let activityController = UIActivityViewController(activityItems: [image! ,url!,string], applicationActivities: nil)
                 self.present(activityController, animated: true, completion: nil)
             }

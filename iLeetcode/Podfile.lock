@@ -1,16 +1,16 @@
 PODS:
-  - SwiftyMarkdown (0.6.0)
+  - BaiduMobStatCodeless (5.0.0)
 
 DEPENDENCIES:
-  - SwiftyMarkdown
+  - BaiduMobStatCodeless
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - SwiftyMarkdown
+    - BaiduMobStatCodeless
 
 SPEC CHECKSUMS:
-  SwiftyMarkdown: 698fe6b283dddac69747f4e08ed0d067c18e0356
+  BaiduMobStatCodeless: ef513de2f4fd1f39cf1ca70f0d2ddaedd0afb3ca
 
-PODFILE CHECKSUM: 38cae24b3e3d07c64281a4f5e75de632dbcade97
+PODFILE CHECKSUM: d6ed30c95c016cf05f468f0e7c4c7e69e330f164
 
 COCOAPODS: 1.5.3

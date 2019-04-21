@@ -18,24 +18,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="326" height="272.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYQ-Ie-Nha" customClass="ITCopyLabel" customModule="iLeetcode" customModuleProvider="target">
-                        <rect key="frame" x="26" y="21" width="274" height="231"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtF-jg-kgI">
+                        <rect key="frame" x="0.0" y="0.0" width="326" height="252"/>
+                        <color key="backgroundColor" white="0.87417059075342463" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </webView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="DYQ-Ie-Nha" secondAttribute="bottom" constant="10" id="N42-jf-lO6"/>
-                    <constraint firstItem="DYQ-Ie-Nha" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="T7h-VK-qen"/>
-                    <constraint firstItem="DYQ-Ie-Nha" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="VAL-fJ-n3k"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="DYQ-Ie-Nha" secondAttribute="trailing" constant="10" id="WDl-e9-O0A"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vtF-jg-kgI" secondAttribute="bottom" constant="10" id="7UB-ut-eSi"/>
+                    <constraint firstItem="vtF-jg-kgI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Ni-xl-nBJ"/>
+                    <constraint firstItem="vtF-jg-kgI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZkU-J5-N6p"/>
+                    <constraint firstAttribute="trailing" secondItem="vtF-jg-kgI" secondAttribute="trailing" id="ndx-zS-IAY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="answerLbl" destination="DYQ-Ie-Nha" id="NBq-fc-NKq"/>
+                <outlet property="webView" destination="vtF-jg-kgI" id="io2-YJ-Q6A"/>
             </connections>
-            <point key="canvasLocation" x="-493" y="-35"/>
+            <point key="canvasLocation" x="-1304" y="-259.52023988005999"/>
         </tableViewCell>
     </objects>
 </document>
