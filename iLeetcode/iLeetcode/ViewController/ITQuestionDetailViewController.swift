@@ -77,6 +77,8 @@ extension ITQuestionDetailViewController {
         let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + kStatusBarH
         let webView = UIWebView.init(frame: CGRect.zero)
         webView.translatesAutoresizingMaskIntoConstraints = false
+        //webView.scalesPageToFit = true
+        webView.allowsLinkPreview = true
         self.webView = webView
         view.addSubview(webView)
         let webViewConstraintViews = [
@@ -102,23 +104,35 @@ extension ITQuestionDetailViewController {
     }
     
     @objc func showAnswer(item: UIBarButtonItem) {
-        let alert = UIAlertController(title: "提示",
-                                      message: "请选择要显示的解答的答案的语言\nSelect the language of the answer for the solution",
+        let alert = UIAlertController(title: "Tips(提示)",
+                                      message: "Select the language of the answer for the solution.\n(请选择要显示的解答的答案的语言)",
                                       preferredStyle: UIAlertController.Style.alert)
         
-        let zhAction = UIAlertAction.init(title: "中文", style: .default) { (action: UIAlertAction) in
+        let zhProblemsAction = UIAlertAction.init(title: "中文原题", style: .default) { (action: UIAlertAction) in
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
+            self.showWebView(url: url)
+        }
+        alert.addAction(zhProblemsAction)
+        
+        let zhAction = UIAlertAction.init(title: "解法(中文)", style: .default) { (action: UIAlertAction) in
             let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
             self.showWebView(url: url)
         }
         alert.addAction(zhAction)
         
-        let enAction = UIAlertAction.init(title: "English", style: .default) { (action: UIAlertAction) in
+        let enProblemsAction = UIAlertAction.init(title: "English Problem", style: .default) { (action: UIAlertAction) in
+            let url = "https://leetcode.com/problems/" + self.questionModle!.link
+            self.showWebView(url: url)
+        }
+        alert.addAction(enProblemsAction)
+        
+        let enAction = UIAlertAction.init(title: "Solution(English)", style: .default) { (action: UIAlertAction) in
             let url = "https://leetcode.com/articles/" + self.questionModle!.link
             self.showWebView(url: url)
         }
         alert.addAction(enAction)
         
-        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel) { (action: UIAlertAction) in
+        let cancelAction = UIAlertAction.init(title: "Cancel(取消)", style: .cancel) { (action: UIAlertAction) in
             
         }
         alert.addAction(cancelAction)

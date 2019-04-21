@@ -22,6 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="326" height="252"/>
                         <color key="backgroundColor" white="0.87417059075342463" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <dataDetectorType key="dataDetectorTypes"/>
                     </webView>
                 </subviews>
                 <constraints>
