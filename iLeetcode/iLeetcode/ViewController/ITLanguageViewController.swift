@@ -25,6 +25,12 @@ class ITLanguageViewController: ITBasePushTransitionVC {
         self.tabBarController?.tabBar.tintColor = UIColor.orange
     }
     
+    @IBAction func clickedSearch(_ sender: Any) {
+        let vc = IHTCSearchViewController()
+        let navi = UINavigationController.init(rootViewController: vc)
+        navi.navigationBar.isHidden = true
+        self.present(navi, animated: true, completion: nil)
+    }
     // MARK:- 懒加载
     fileprivate var titles = ILeetCoderModel.shared.defaultArray
     
@@ -100,7 +106,6 @@ extension ITLanguageViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
 }
 
 // MARK:- pageTitleViewDelegate

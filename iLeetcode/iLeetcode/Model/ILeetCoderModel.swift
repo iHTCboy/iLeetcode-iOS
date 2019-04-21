@@ -21,8 +21,9 @@ class ILeetCoderModel: NSObject {
                                 "Hard",
                                 "Public",
                                 "Private"]
-    public var tagsArray = Array<String>() //[]
-    public var enterpriseArray = Array<String>() //[]
+    public var tagsArray = Array<String>()
+    public var enterpriseArray = Array<String>()
+    public var leetsArray = Array<Dictionary<String, Any>>()
     
 
     fileprivate var defaultDict  = Dictionary<String, ITModel>()
@@ -84,6 +85,9 @@ extension ILeetCoderModel
                     
                     // 分类保存
                     for question in objects {
+                        
+                        leetsArray.append(question)
+                        
                         // default
                         let allDict = dfDict["All"]
                         allDict?.add(question)

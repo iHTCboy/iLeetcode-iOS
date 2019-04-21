@@ -22,7 +22,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="iTer" id="7Dd-N7-EHW"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="iTer" id="7Dd-N7-EHW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="5cK-cZ-waf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="clickedSearch:" destination="hzK-He-MKE" id="AoF-ma-wqg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7X-KB-i9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +111,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="iTer" id="v8D-Zh-aQr"/>
+                    <navigationItem key="navigationItem" title="iTer" id="v8D-Zh-aQr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="o4p-G3-Lrs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="clickedSearch:" destination="1kw-k5-wsh" id="dS4-X9-n1m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0p-ph-UUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,7 +137,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="iTer" id="dj7-EA-3Bs"/>
+                    <navigationItem key="navigationItem" title="iTer" id="dj7-EA-3Bs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Gqc-sr-m5C">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="clickedSearch:" destination="9g4-eb-czi" id="4hz-ql-FVo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCE-1a-eJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

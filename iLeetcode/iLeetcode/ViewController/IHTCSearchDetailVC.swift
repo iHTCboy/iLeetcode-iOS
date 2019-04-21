@@ -1,27 +1,32 @@
 //
-//  ITQuestionDetailViewController.swift
-//  iTalker
+//  IHTCSearchDetailVC.swift
+//  iWuBi
 //
-//  Created by HTC on 2017/4/9.
-//  Copyright © 2017年 ihtc.cc @iHTCboy. All rights reserved.
+//  Created by HTC on 2019/4/13.
+//  Copyright © 2019 HTC. All rights reserved.
 //
 
 import UIKit
 import SafariServices
-//import SwiftyMarkdown
 
 
-class ITQuestionDetailViewController: ITBasePopTransitionVC {
- 
+class IHTCSearchDetailVC: UIViewController {
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,9 +34,8 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
         // Dispose of any resources that can be recreated.
     }
     
-    var selectedCell: ITQuestionListViewCell!
-    
     var webView: UIWebView!
+    var selectedCell: ITQuestionListViewCell!
     var questionModle : ITQuestionModel?
     var isShowZH : Bool = false
     
@@ -73,7 +77,7 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
 }
 
 
-extension ITQuestionDetailViewController {
+extension IHTCSearchDetailVC {
     fileprivate func setUpUI() {
         //tableView
         view.addSubview(tableView)
@@ -116,7 +120,7 @@ extension ITQuestionDetailViewController {
         let fixedSpace = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         fixedSpace.width = 15
         navigationItem.rightBarButtonItems = [shareItem, infoItem, fixedSpace, language, fixedSpace, font]
-
+        
     }
     
     @objc func showAnswer(item: Any) {
@@ -152,7 +156,7 @@ extension ITQuestionDetailViewController {
             
         }
         alert.addAction(cancelAction)
-        UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
+        UIApplication.shared.keyWindow?.rootViewController!.presentedViewController!.present(alert, animated: true, completion: {
             //print("UIAlertController present");
         })
     }
@@ -195,7 +199,7 @@ extension ITQuestionDetailViewController {
         let masterImage = webView.scrollView.screenshotImage ?? UIImage.init(named: "App-share-Icon")!
         let footerImage = IHTCShareFooterView.footerView(image: UIImage.init(named: "iLeetCoder-qrcode")!, title: kShareTitle, subTitle: kShareSubTitle).screenshot
         let image = ImageHandle.slaveImageWithMaster(masterImage: masterImage, headerImage: headerImage!, footerImage: footerImage!)
-        IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!)
+         IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!.presentedViewController!)
     }
     
     func showWebView(url: String) {
@@ -208,7 +212,7 @@ extension ITQuestionDetailViewController {
         if #available(iOS 11.0, *) {
             vc.dismissButtonStyle = .close
         }
-        UIApplication.shared.keyWindow!.rootViewController!.present(vc, animated: true)
+        UIApplication.shared.keyWindow?.rootViewController!.presentedViewController!.present(vc, animated: true)
     }
     
     fileprivate func headerView() -> UIView {
@@ -293,11 +297,11 @@ extension ITQuestionDetailViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
 }
 
 
-extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataSource {
+extension IHTCSearchDetailVC : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -318,7 +322,7 @@ extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
+        
         let cell: ITQuestionDetailViewCell = tableView.dequeueReusableCell(withIdentifier: "ITQuestionDetailViewCell") as! ITQuestionDetailViewCell
         cell.accessoryType = .none
         cell.selectionStyle = .none
@@ -331,4 +335,5 @@ extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataS
         
     }
 }
+
 
