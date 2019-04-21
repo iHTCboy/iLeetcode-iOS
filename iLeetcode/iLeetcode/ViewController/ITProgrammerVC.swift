@@ -36,7 +36,7 @@ class ITProgrammerVC: UIViewController {
     }()
     
     fileprivate var titles = ["0": "应用内评分:欢迎给\(kiTalker)打评分！,AppStore评价:欢迎给\(kiTalker)写评论!,分享给朋友:与身边的好友一起学习！",
-        "1":"意见反馈:欢迎到AppStore提需求或bug问题,邮件联系:如有问题欢迎来信,开源地址:未来逐步开放代码，欢迎关注,更多关注:了解更多，欢迎访问作者博客,关于应用:\(kiTalker)"] as [String : String]
+        "1":"意见反馈:欢迎到AppStore提需求或bug问题,邮件联系:如有问题欢迎来信,隐私条款:用户使用服务协议,开源地址:未来逐步开放代码，欢迎关注,更多关注:了解更多，欢迎访问作者博客,关于应用:\(kiTalker)"] as [String : String]
 
 }
 
@@ -47,12 +47,6 @@ extension ITProgrammerVC
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    func gotoAppstore(isAssessment: Bool) {
-        if UIApplication.shared.canOpenURL(URL.init(string: kAppDownloadURl + (isAssessment ? kReviewAction: ""))!) {
-            UIApplication.shared.openURL(URL.init(string: kAppDownloadURl + (isAssessment ? kReviewAction: ""))!)
-        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -125,68 +119,49 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
                 if #available(iOS 10.3, *) {
                     SKStoreReviewController.requestReview()
                 } else {
-                    gotoAppstore(isAssessment: true)
+                    IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: true)
                 }
             }
             if row == 1 {
-                gotoAppstore(isAssessment: true)
+                IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: false)
             }
             if row == 2 {
-
+                
                 let image = UIImage(named: "App-share-Icon")
                 let url = NSURL(string: kAppDownloadURl)
                 let string = kAppShare
                 let activityController = UIActivityViewController(activityItems: [image! ,url!,string], applicationActivities: nil)
-                self.present(activityController, animated: true, completion: nil)
+                //if iPhone
+                if (UIDevice.current.userInterfaceIdiom == .phone) {
+                    self.present(activityController, animated: true, completion: nil)
+                } else {
+                    //if iPad
+                    // Change Rect to position Popover
+                    let popup = UIPopoverController.init(contentViewController: activityController);
+                    popup.present(from: CGRect.init(x: self.view.frame.width-44, y: 64, width: 0, height: 0), in: self.view, permittedArrowDirections: .any, animated: true)
+                }
             }
             
             break
         case 1:
             if row == 0 {
-                gotoAppstore(isAssessment: true)
+                IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: true)
             }
             if row == 1 {
                 let message = "欢迎来信，写下你的问题吧" + "\n\n\n\n" + kMarginLine + "\n 当前\(kiTalker)版本：" + KAppVersion + "， 系统版本：" + String(Version.SYS_VERSION_FLOAT) + "， 设备信息：" + UIDevice.init().modelName
                 
-                ITCommonAPI.sharedInstance.sendEmail(recipients: [kEmail], messae: message, vc: self)
+                ITCommonAPI.shared.sendEmail(recipients: [kEmail], messae: message, vc: self)
             }
             if row == 2 {
-                if #available(iOS 9.0, *) {
-                    let vc = SFSafariViewController(url: URL(string: kGithubURL
-                        )!, entersReaderIfAvailable: true)
-                    if #available(iOS 10.0, *) {
-                        vc.preferredBarTintColor = kColorAppOrange
-                        vc.preferredControlTintColor = UIColor.white
-                    }
-                    if #available(iOS 11.0, *) {
-                        vc.dismissButtonStyle = .close
-                    }
-                    present(vc, animated: true)
-                } else {
-                    if UIApplication.shared.canOpenURL(URL.init(string: kGithubURL )!) {
-                        UIApplication.shared.openURL(URL.init(string: kGithubURL)!)
-                    }
-                }
+                IAppleServiceUtil.openWebView(url: kLicenseURL, tintColor: kColorAppOrange, vc: self)
             }
             if row == 3 {
-                if #available(iOS 9.0, *) {
-                    let vc = SFSafariViewController(url: URL(string: kiHTCboyURL
-                        )!, entersReaderIfAvailable: true)
-                    if #available(iOS 10.0, *) {
-                        vc.preferredBarTintColor = kColorAppOrange
-                        vc.preferredControlTintColor = UIColor.white
-                    }
-                    if #available(iOS 11.0, *) {
-                        vc.dismissButtonStyle = .close
-                    }
-                    present(vc, animated: true)
-                } else {
-                    if UIApplication.shared.canOpenURL(URL.init(string: kiHTCboyURL )!) {
-                        UIApplication.shared.openURL(URL.init(string: kiHTCboyURL)!)
-                    }
-                }
+                IAppleServiceUtil.openWebView(url: kGithubURL, tintColor: kColorAppOrange, vc: self)
             }
             if row == 4 {
+                IAppleServiceUtil.openWebView(url: kiHTCboyURL, tintColor: kColorAppOrange, vc: self)
+            }
+            if row == 5 {
                 let vc = ITAboutAppVC()
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)
