@@ -212,7 +212,6 @@ extension ITQuestionDetailViewController {
         
         if ILeetCoderModel.shared.defaultArray.contains(self.title!) {
             if question.tagString.count > 0 {
-                //cell.langugeLbl.text =  " " + question.tagString.componentsJoined(by: " · ") + "   "
                 cell.langugeLbl.isHidden = false
             }
             else {
@@ -221,9 +220,9 @@ extension ITQuestionDetailViewController {
             
         }
         
-        if ILeetCoderModel.shared.tagsArray.contains(self.title!) {
-            //cell.langugeLbl.text =  " " + self.title! + "   "
-            cell.langugeLbl.isHidden = false
+        if ILeetCoderModel.shared.tagsArray.contains(self.title!) ||
+            ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
+            cell.langugeLbl.isHidden = question.tagString.count == 0 ? true : false
         }
         
         if isShowZH {

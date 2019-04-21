@@ -148,23 +148,18 @@ extension ITQuestionListViewController : UITableViewDelegate, UITableViewDataSou
             cell.langugeLbl.isHidden = false
         }
         
+        if ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
+            cell.langugeLbl.text =  " " + self.title! + "   "
+            cell.langugeLbl.backgroundColor = kColorAppGray
+            cell.langugeLbl.isHidden = false
+        }
+        
         
         if false {
             cell.questionLbl.text = question.titleZh
         }else{
             cell.questionLbl.text = question.title
         }
-        
-
-//        if question.language == "All" {
-//            // 判断当前是语言tabbar 也可以用 self.tabBarController?.selectedIndex 判断，但兼容性不好
-//            cell.tagLbl.isHidden = true
-//            cell.langugeLbl.isHidden = true
-//        }else{
-//
-//            cell.tagLbl.backgroundColor = ILeetCoderModel.shared.colorForKey(level: question.difficulty)
-//            cell.langugeLbl.isHidden = false
-//        }
         
         return cell
     }
