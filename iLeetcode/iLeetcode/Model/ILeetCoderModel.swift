@@ -28,6 +28,7 @@ class ILeetCoderModel: NSObject {
     fileprivate var defaultDict  = Dictionary<String, ITModel>()
     fileprivate var tagsDict = Dictionary<String, ITModel>()
     fileprivate var enterpriseDict = Dictionary<String, ITModel>()
+    fileprivate var leetIdsDict = Dictionary<String, ITQuestionModel>()
 }
 
 
@@ -43,6 +44,10 @@ extension ILeetCoderModel
     
     func enterpriseData() -> Dictionary<String, ITModel> {
         return self.enterpriseDict
+    }
+    
+    func leetData(id: String) -> ITQuestionModel {
+        return self.leetIdsDict[id] ?? ITQuestionModel(dictionary: [:])
     }
     
     func colorForKey(level: String) -> UIColor {
@@ -74,11 +79,17 @@ extension ILeetCoderModel
                     }
                     
                     var tagDict = Dictionary<String, NSMutableArray>()
+                    var enterDict = Dictionary<String, NSMutableArray>()
+                    var idsDict = Dictionary<String, Dictionary<String, Any>>()
+                    
                     // 分类保存
                     for question in objects {
                         // default
                         let allDict = dfDict["All"]
                         allDict?.add(question)
+                        
+                        let leetId = question["leetId"] as! String
+                        idsDict[leetId] = question
                         
                         let difficulty = question["difficulty"] as! String
                         let difDict = dfDict[difficulty]
@@ -104,6 +115,22 @@ extension ILeetCoderModel
                                 }
                             }
                         }
+                        
+                        //ids
+                        if let companies = question["companies"] as? Array<String> {
+                            if companies.count > 0 {
+                                for company in companies {
+                                    if let cpArray = enterDict[company] {
+                                        cpArray.add(question)
+                                    }
+                                    else {
+                                        let newCpArray = NSMutableArray.init();
+                                        newCpArray.add(question)
+                                        enterDict[company] = newCpArray
+                                    }
+                                }
+                            }
+                        }
                     }
                     
                     // 转成模型
@@ -117,6 +144,19 @@ extension ILeetCoderModel
                         let model = ITModel.init(array: tagDict[tagKey] as! Array<Dictionary<String, Any>>, language: tagKey)
                         self.tagsDict[tagKey] = model
                         self.tagsArray.append(tagKey)
+                    }
+                    
+                    let cpsArray = enterDict.keys.sorted(){$0 < $1} //排序
+                    for cpKey in cpsArray {
+                        let model = ITModel.init(array: enterDict[cpKey] as! Array<Dictionary<String, Any>>, language: cpKey)
+                        self.enterpriseDict[cpKey] = model
+                        self.enterpriseArray.append(cpKey)
+                    }
+                    
+                    // ids
+                    for idKey in idsDict.keys {
+                        let questionModel = ITQuestionModel.init(dictionary: idsDict[idKey]!);
+                        leetIdsDict[idKey] = questionModel
                     }
                     
                 } else {

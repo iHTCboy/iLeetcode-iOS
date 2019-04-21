@@ -75,7 +75,8 @@ extension ITQuestionListViewController {
         let constraintViews = [
             "tableView": tableView
         ]
-        let vFormat = "V:|-0-[tableView]-0-|"
+        let tabBarHeight = 58
+        let vFormat = "V:|-0-[tableView]-\(tabBarHeight)-|"
         let hFormat = "H:|-0-[tableView]-0-|"
         let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: vFormat, options: [], metrics: [:], views: constraintViews)
         let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: hFormat, options: [], metrics: [:], views: constraintViews)

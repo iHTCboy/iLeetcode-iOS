@@ -26,6 +26,10 @@ class ITQuestionModel: NSObject {
     
     init(dictionary: Dictionary<String, Any>) {
         
+        if dictionary.count == 0 {
+            return
+        }
+        
         leetId = dictionary["leetId"] as! String
         title = dictionary["title"] as! String
         if let tZh = dictionary["titleZh"] as? String {
