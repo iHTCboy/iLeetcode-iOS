@@ -147,11 +147,11 @@
             </objects>
             <point key="canvasLocation" x="-1260" y="-550"/>
         </scene>
-        <!--语言-->
+        <!--力扣-->
         <scene sceneID="EjM-gk-Jnz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2km-lX-hSg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="语言" image="language_tabbar_normal.png" selectedImage="language_tabbar_selected.png" id="fhS-3c-oCy"/>
+                    <tabBarItem key="tabBarItem" title="力扣" image="language_tabbar_normal.png" selectedImage="language_tabbar_selected.png" id="fhS-3c-oCy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O3v-qv-Ey5">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -170,11 +170,11 @@
             </objects>
             <point key="canvasLocation" x="557.60000000000002" y="-1590.8545727136434"/>
         </scene>
-        <!--职位-->
+        <!--标签-->
         <scene sceneID="UkM-GO-KDx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bLq-5e-DWk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="职位" image="Engineer_normal.png" selectedImage="Engineer_selected.png" id="Auc-75-r2L"/>
+                    <tabBarItem key="tabBarItem" title="标签" image="Tags_selected.png" selectedImage="Tags_selected.png" id="Auc-75-r2L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IZs-vs-zoc">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -195,8 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Engineer_normal.png" width="45" height="45"/>
-        <image name="Engineer_selected.png" width="45" height="45"/>
+        <image name="Tags_selected.png" width="30" height="30"/>
         <image name="company_tabbar_normal.png" width="30" height="30"/>
         <image name="company_tabbar_selected.png" width="30" height="30"/>
         <image name="iTalkerman_blue.png" width="45" height="45"/>
