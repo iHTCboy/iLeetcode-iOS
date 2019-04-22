@@ -103,6 +103,7 @@ extension ITQuestionDetailViewController {
         let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + kStatusBarH
         let webView = UIWebView.init(frame: CGRect.zero)
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.dataDetectorTypes = []
         //webView.scalesPageToFit = true
         webView.allowsLinkPreview = true
         self.webView = webView
