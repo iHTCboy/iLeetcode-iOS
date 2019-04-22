@@ -75,6 +75,16 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
 
 extension ITQuestionDetailViewController {
     fileprivate func setUpUI() {
+        switch IHTCUserDefaults.shared.getUDLanguage() {
+            case "zh_CN":
+                isShowZH = true
+                break
+            case "en_US":
+                isShowZH = false
+                break
+            default: break
+        }
+        
         //tableView
         view.addSubview(tableView)
         let constraintViews = [
@@ -111,7 +121,7 @@ extension ITQuestionDetailViewController {
         
         // UIBarButtonItem
         let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedPageView))
-        let language = UIBarButtonItem(title: "中", style: .plain, target: self, action: #selector(switchLanguage))
+        let language = UIBarButtonItem(title: isShowZH ? "En" : "中", style: .plain, target: self, action: #selector(switchLanguage))
         let font = UIBarButtonItem(title: "a", style: .plain, target: self, action: #selector(fontSize))
         let fixedSpace = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         fixedSpace.width = 15

@@ -19,6 +19,12 @@ class ITProgrammerVC: UIViewController {
         setupUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,8 +41,9 @@ class ITProgrammerVC: UIViewController {
         return tableView
     }()
     
-    fileprivate var titles = ["0": "应用内评分:欢迎给\(kiTalker)打评分！,AppStore评价:欢迎给\(kiTalker)写评论!,分享给朋友:与身边的好友一起学习！",
-        "1":"意见反馈:欢迎到AppStore提需求或bug问题,邮件联系:如有问题欢迎来信,隐私条款:用户使用服务协议,开源地址:未来逐步开放代码，欢迎关注,更多关注:了解更多，欢迎访问作者博客,关于应用:\(kiTalker)"] as [String : String]
+    fileprivate var titles = ["0": "显示语言:设置题目显示的默认语言",
+        "1": "应用内评分:欢迎给\(kiTalker)打评分！,AppStore评价:欢迎给\(kiTalker)写评论!,分享给朋友:与身边的好友一起学习！",
+        "2":"意见反馈:欢迎到AppStore提需求或bug问题,邮件联系:如有问题欢迎来信,隐私条款:用户使用服务协议,开源地址:未来逐步开放代码，欢迎关注,更多关注:了解更多，欢迎访问作者博客,关于应用:\(kiTalker)"] as [String : String]
 
 }
 
@@ -94,7 +101,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let titles = titleArray?[indexPath.row]
         let titleA = titles?.components(separatedBy: ":")
         cell!.textLabel?.text = titleA?[0]
-        cell?.detailTextLabel?.text = titleA?[1]
+        cell?.detailTextLabel?.text = (indexPath.section == 0 ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? "中文" : "English") : titleA?[1])
         
         return cell!
     }
@@ -106,15 +113,13 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let row = indexPath.row;
         
         switch section {
-//        case 0:
-//            if row == 0 {
-////                let vc = NTWaterfallViewController.init(collectionViewLayout:CHTCollectionViewWaterfallLayout())
-////                let nav = NTNavigationController.init(rootViewController: vc)
-////                vc.title = "实拍面试题目"
-////                self.present(nav, animated: true, completion: nil);
-//            }
-//            break
         case 0:
+            if row == 0 {
+                let vc = IHTCLanguageSettingVC()
+                navigationController?.pushViewController(vc, animated: true)
+            }
+            break
+        case 1:
             if row == 0 {
                 if #available(iOS 10.3, *) {
                     SKStoreReviewController.requestReview()
@@ -143,7 +148,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
             }
             
             break
-        case 1:
+        case 2:
             if row == 0 {
                 IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: true)
             }
@@ -171,9 +176,6 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         default: break
             
         }
-        
-        
-
     }
 }
 

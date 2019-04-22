@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		231F53AD372D96E7B96E6040 /* Pods_iLeetcodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */; };
+		6D053EB1226DF78D006D55B6 /* IHTCLanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */; };
+		6D053EB3226DF7ED006D55B6 /* IHTCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */; };
 		6D4ABD2C225087EF0022AAFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD2E225087EF0022AAFC /* Main.storyboard */; };
 		6D4ABD44225088660022AAFC /* ITAboutAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */; };
 		6D4ABD45225088660022AAFC /* ITProgrammerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */; };
@@ -110,6 +112,8 @@
 		51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2C32754F8905ECDFAFD8B9 /* Pods-iLeetcodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcodeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCLanguageSettingVC.swift; sourceTree = "<group>"; };
+		6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCUserDefaults.swift; sourceTree = "<group>"; };
 		6D4ABD2D225087EF0022AAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D4ABD30225087F60022AAFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6D4ABD32225087F70022AAFC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 				6DC7CFE5226C90FD00F2CC10 /* IHTCSearchViewController.xib */,
 				6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */,
 				6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */,
+				6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */,
 				6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */,
 				6D4ABD3C225088660022AAFC /* ITAboutAppVC.xib */,
 			);
@@ -337,6 +342,7 @@
 				6D4ABE962250E08A0022AAFC /* ILeetCoderModel.swift */,
 				6D4ABD5C225088D00022AAFC /* ITModel.swift */,
 				6D4ABD5D225088D00022AAFC /* ITQuestionModel.swift */,
+				6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -746,11 +752,13 @@
 				6D4ABD64225088D00022AAFC /* ITPageContentView.swift in Sources */,
 				6DC7CFD5226C1BB600F2CC10 /* IAppleServiceUtil.swift in Sources */,
 				6D4ABD68225088D00022AAFC /* ITQuestionModel.swift in Sources */,
+				6D053EB3226DF7ED006D55B6 /* IHTCUserDefaults.swift in Sources */,
 				6D4ABD4C225088660022AAFC /* ITBasePushTransitionVC.swift in Sources */,
 				6DC7CFDD226C1E3200F2CC10 /* UIScrollView+Additions.swift in Sources */,
 				6D4ABD46225088660022AAFC /* ITCompanyViewController.swift in Sources */,
 				6DC7CFDE226C1E3200F2CC10 /* UITableView+Additions.swift in Sources */,
 				6D4ABD4A225088660022AAFC /* ITQuestionListViewController.swift in Sources */,
+				6D053EB1226DF78D006D55B6 /* IHTCLanguageSettingVC.swift in Sources */,
 				6D4ABD48225088660022AAFC /* ITBasePopTransitionVC.swift in Sources */,
 				6D4ABE972250E08A0022AAFC /* ILeetCoderModel.swift in Sources */,
 				6D4ABD4D225088660022AAFC /* ITLanguageViewController.swift in Sources */,

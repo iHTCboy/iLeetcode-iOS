@@ -16,7 +16,24 @@ class ITQuestionListViewController: UIViewController {
         
         setUpUI()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // language
+        switch IHTCUserDefaults.shared.getUDLanguage() {
+            case "zh_CN":
+                isShowZH = true
+                break
+            case "en_US":
+                isShowZH = false
+                break
+            default: break
+        }
+        
+        tableView.reloadData()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return false
     }
@@ -32,6 +49,7 @@ class ITQuestionListViewController: UIViewController {
     
     let refreshControl = UIRefreshControl.init()
     var selectedCell: ITQuestionListViewCell!
+    var isShowZH : Bool = false
     
     // MARK:- 懒加载
     lazy var tableView: UITableView = {
@@ -63,14 +81,13 @@ class ITQuestionListViewController: UIViewController {
             return ITModel()
         }
     }()
-    
-
 }
 
 
 // MARK:- Prive mothod
 extension ITQuestionListViewController {
     fileprivate func setUpUI() {
+        // tableview
         view.addSubview(tableView)
         let constraintViews = [
             "tableView": tableView
@@ -132,13 +149,14 @@ extension ITQuestionListViewController : UITableViewDelegate, UITableViewDataSou
         
         let question = self.listModel.result[indexPath.row]
         cell.numLbl.text =  " #" + question.leetId + " "
-        cell.tagLbl.text =  " " + question.difficulty + " "
+        let difZh = (question.difficulty == "Easy" ? "容易" : (question.difficulty == "Medium" ? "中等" : "困难" ))
+        cell.tagLbl.text =  " " + (isShowZH ? difZh : question.difficulty) + " "
         cell.tagLbl.backgroundColor = ILeetCoderModel.shared.colorForKey(level: question.difficulty)
         cell.frequencyLbl.text = " " + (question.frequency.count < 3 ? (question.frequency + ".0%") : question.frequency) + " "
         
         if ILeetCoderModel.shared.defaultArray.contains(self.title!) {
             if question.tagString.count > 0 {
-                cell.langugeLbl.text =  " " + question.tagString.componentsJoined(by: " · ") + " "
+                cell.langugeLbl.text =  " " + (isShowZH ? question.tagStringZh : question.tagString).componentsJoined(by: " · ") + " "
                 cell.langugeLbl.backgroundColor = kColorAppGray
                 cell.langugeLbl.isHidden = false
             }
@@ -152,6 +170,17 @@ extension ITQuestionListViewController : UITableViewDelegate, UITableViewDataSou
             cell.langugeLbl.text =  " " + self.title! + "   "
             cell.langugeLbl.backgroundColor = kColorAppGray
             cell.langugeLbl.isHidden = false
+            
+            if let tags = question.tags as? [Dictionary<String, String>] {
+                for tag in tags {
+                    let tagEn = tag["tag"]
+                    let tagZh = tag["tagZh"]
+                    if self.title! == tagEn || self.title! == tagZh {
+                        cell.langugeLbl.text = " " + ((isShowZH ? tagZh : tagEn)!) + "   "
+                        break
+                    }
+                }
+            }
         }
         
         if ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
@@ -160,11 +189,14 @@ extension ITQuestionListViewController : UITableViewDelegate, UITableViewDataSou
             cell.langugeLbl.isHidden = false
         }
         
-        
-        if false {
-            cell.questionLbl.text = question.titleZh
-        }else{
-            cell.questionLbl.text = question.title
+        switch IHTCUserDefaults.shared.getUDLanguage() {
+            case "zh_CN":
+                cell.questionLbl.text = question.titleZh.count > 0 ? question.titleZh : question.title
+                break
+            case "en_US":
+                cell.questionLbl.text = question.title
+                break
+            default: break
         }
         
         return cell

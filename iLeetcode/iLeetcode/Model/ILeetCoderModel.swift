@@ -73,6 +73,24 @@ extension ILeetCoderModel
                 let data = try Data(contentsOf: file)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let objects = json as? [Dictionary<String, Any>] {
+                    
+                    var isShowZH = false
+                    switch IHTCUserDefaults.shared.getUDLanguage() {
+                    case "zh_CN":
+                        isShowZH = true
+                        defaultArray = ["全部",
+                                        "容易",
+                                        "中等",
+                                        "困难",
+                                        "公开",
+                                        "VIP"]
+                        break
+                    case "en_US":
+                        isShowZH = false
+                        break
+                    default: break
+                    }
+                    
                     // json is a dictionary
                     var dfDict = Dictionary<String, NSMutableArray>()
                     for df in self.defaultArray {
@@ -89,25 +107,26 @@ extension ILeetCoderModel
                         leetsArray.append(question)
                         
                         // default
-                        let allDict = dfDict["All"]
+                        let allDict = dfDict[(isShowZH ? "全部" : "All")]
                         allDict?.add(question)
                         
                         let leetId = question["leetId"] as! String
                         idsDict[leetId] = question
                         
-                        let difficulty = question["difficulty"] as! String
+                        var difficulty = question["difficulty"] as! String
+                        difficulty = isShowZH ? (difficulty == "Easy" ? "容易" : (difficulty == "Medium" ? "中等" : "困难" )) : difficulty
                         let difDict = dfDict[difficulty]
                         difDict?.add(question)
                         
                         let is_locked = question["is_locked"] as! String
-                        let is_lockedDict = dfDict[is_locked == "Normal" ? "Public" : "Private"]
+                        let is_lockedDict = dfDict[is_locked == "Normal" ? (isShowZH ? "公开" : "Public") : (isShowZH ? "VIP" : "Private")]
                         is_lockedDict?.add(question)
                         
                         // tags
                         if let tags = question["tags"] as? [Dictionary<String, String>] {
                             if tags.count > 0 {
                                 for tag in tags {
-                                    let tg = tag["tag"]
+                                    let tg = isShowZH ? tag["tagZh"] : tag["tag"]
                                     if let tagArray = tagDict[tg!] {
                                         tagArray.add(question)
                                     }

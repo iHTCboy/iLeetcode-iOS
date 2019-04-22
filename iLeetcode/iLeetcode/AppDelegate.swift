@@ -56,15 +56,13 @@ extension AppDelegate {
     func startBaiduMobStat() {
         
         let statTracker = BaiduMobStat.default()
-        statTracker?.shortAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        #if DEBUG
+#if DEBUG
         print("Debug modle")
         //statTracker.enableDebugOn = true;
         statTracker?.channelId = "Debug"
-        #else
+#else
+        statTracker?.shortAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         statTracker?.channelId = "AppStore"
-        #endif
-        
         statTracker?.start(withAppId: "16b4ffd70b")
         let formatter = DateFormatter()
         formatter.locale = Locale.current
@@ -77,7 +75,7 @@ extension AppDelegate {
         statTracker?.logEvent("DateSystemVersion", eventLabel: currentDate + " " + UIDevice.current.systemVersion)
         statTracker?.logEvent("DateAndDeviceName", eventLabel: currentDate + " " + UIDevice.current.name)
         statTracker?.logEvent("Devices", eventLabel:UIDevice.current.name)
-        
+#endif
     }
     
     func setupBaseUI() {

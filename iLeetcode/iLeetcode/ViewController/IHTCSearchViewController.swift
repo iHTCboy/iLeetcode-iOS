@@ -45,14 +45,25 @@ class IHTCSearchViewController: UIViewController {
     }
 
     var selectedCell: ITQuestionListViewCell!
-    private var isSingleWord : Bool = true
-    var is86Word: Bool = true
+    var isShowZH: Bool = false
     private var searchArray: Array<ITQuestionModel> = []
 }
 
 
 extension IHTCSearchViewController {
     func setupUI() {
+        
+        // language
+        switch IHTCUserDefaults.shared.getUDLanguage() {
+            case "zh_CN":
+                isShowZH = true
+                break
+            case "en_US":
+                isShowZH = false
+                break
+            default: break
+        }
+        
         self.searchBar.tintColor = kColorAppOrange
         self.searchBar.becomeFirstResponder()
         self.searchBar.delegate = self
@@ -209,13 +220,14 @@ extension IHTCSearchViewController : UITableViewDelegate, UITableViewDataSource 
         
         let question = self.searchArray[indexPath.row]
         cell.numLbl.text =  " #" + question.leetId + " "
-        cell.tagLbl.text =  " " + question.difficulty + " "
+        let difZh = (question.difficulty == "Easy" ? "容易" : (question.difficulty == "Medium" ? "中等" : "困难" ))
+        cell.tagLbl.text =  " " + (isShowZH ? difZh : question.difficulty) + " "
         cell.tagLbl.backgroundColor = ILeetCoderModel.shared.colorForKey(level: question.difficulty)
         cell.frequencyLbl.text = " " + (question.frequency.count < 3 ? (question.frequency + ".0%") : question.frequency) + " "
         
         
         if question.tagString.count > 0 {
-            cell.langugeLbl.text =  " " + question.tagString.componentsJoined(by: " · ") + " "
+            cell.langugeLbl.text =  " " + (isShowZH ? question.tagStringZh : question.tagString).componentsJoined(by: " · ") + " "
             cell.langugeLbl.backgroundColor = kColorAppGray
             cell.langugeLbl.isHidden = false
         }
@@ -224,10 +236,14 @@ extension IHTCSearchViewController : UITableViewDelegate, UITableViewDataSource 
             cell.langugeLbl.isHidden = true
         }
         
-        if false {
-            cell.questionLbl.text = question.titleZh
-        }else{
-            cell.questionLbl.text = question.title
+        switch IHTCUserDefaults.shared.getUDLanguage() {
+            case "zh_CN":
+                cell.questionLbl.text = question.titleZh.count > 0 ? question.titleZh : question.title
+                break
+            case "en_US":
+                cell.questionLbl.text = question.title
+                break
+            default: break
         }
         
         return cell
