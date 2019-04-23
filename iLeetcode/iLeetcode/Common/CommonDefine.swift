@@ -25,9 +25,9 @@ let kShareSubTitle = "1000+题库，满足你对算法求知欲望！"
 
 
 
-let kStatusBarH: CGFloat = (UIApplication.shared.statusBarFrame.size.height)
+let kStatusBarH: CGFloat = 20 //(UIApplication.shared.statusBarFrame.size.height)
 let kNavBarH: CGFloat = (DeviceType.IS_IPHONE_X_S ? 68 : 40)
-let kHomeIndcator: CGFloat = (DeviceType.IS_IPHONE_X_S ? (34 + 49) : 0) //49 Tab bars
+let kHomeIndcator: CGFloat = (DeviceType.IS_IPHONE_X_S ? 34 : 0) //49 Tab bars
 let kLargeTitle: CGFloat = 52.0 //52 Large Title
 let kTitleViewH : CGFloat = 40
 let kScreenW = UIScreen.main.bounds.width
@@ -67,7 +67,7 @@ struct DeviceType
     static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
     static let IS_IPHONE_6_7          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
     static let IS_IPHONE_6P_7P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-    static let IS_IPHONE_X_S         = UIDevice.current.userInterfaceIdiom == .phone && (ScreenSize.SCREEN_MAX_LENGTH == 812.0 || ScreenSize.SCREEN_MAX_LENGTH == 896.0)
+    static let IS_IPHONE_X_S         = UIDevice.current.userInterfaceIdiom == .phone && (Version.GREATER_iOS11 ? ((UIApplication.shared.keyWindow?.value(forKey: "safeAreaInsets") as! UIEdgeInsets).bottom != 0.0) : false)
     static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
     static let IS_IPAD_PRO          = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1366.0
 }
@@ -78,6 +78,7 @@ struct Version{
     static let iOS8 = (Version.SYS_VERSION_FLOAT >= 8.0 && Version.SYS_VERSION_FLOAT < 9.0)
     static let iOS9 = (Version.SYS_VERSION_FLOAT >= 9.0 && Version.SYS_VERSION_FLOAT < 10.0)
     static let iOS10 = (Version.SYS_VERSION_FLOAT >= 10.0 && Version.SYS_VERSION_FLOAT < 11.0)
+    static let GREATER_iOS11 = (Version.SYS_VERSION_FLOAT >= 11.0)
 }
 
 public extension UIDevice {
