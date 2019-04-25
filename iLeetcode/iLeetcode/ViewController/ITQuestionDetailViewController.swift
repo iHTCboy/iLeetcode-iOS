@@ -103,6 +103,7 @@ extension ITQuestionDetailViewController {
         let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + (UIApplication.shared.statusBarFrame.size.height)
         let webView = UIWebView.init(frame: CGRect.zero)
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.backgroundColor = .groupTableViewBackground
         webView.dataDetectorTypes = []
         //webView.scalesPageToFit = true
         webView.allowsLinkPreview = true
@@ -182,23 +183,25 @@ extension ITQuestionDetailViewController {
     }
     
     @objc func fontSize(item: UIBarButtonItem) {
-        // var str = "document.body.style.fontSize= 33;"
-        var size = ""
         if item.title == "a" {
             item.title = "A"
-            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '120%'"
+            setCssFont(percentFont: 120, rowSpace: 26)
         }
         else if item.title == "A"  {
             item.title = "aA"
-            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '150%'"
+            setCssFont(percentFont: 150, rowSpace: 28)
         } else if item.title == "aA"  {
             item.title = "AA"
-            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '200%'"
+            setCssFont(percentFont: 200, rowSpace: 30)
         } else if item.title == "AA"  {
             item.title = "a"
-            size = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '100%'"
+            setCssFont(percentFont: 100, rowSpace: 24)
         }
-        webView?.stringByEvaluatingJavaScript(from: size)
+    }
+    
+    func setCssFont(percentFont: NSInteger, rowSpace: NSInteger) {
+        let css = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '\(percentFont)%'; document.getElementsByClassName('markdown-body')[0].style.lineHeight= '\(rowSpace)px;'"
+        webView?.stringByEvaluatingJavaScript(from: css)
     }
     
     @objc func sharedPageView(item: Any) {
