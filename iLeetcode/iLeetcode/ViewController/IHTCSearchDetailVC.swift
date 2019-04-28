@@ -163,7 +163,7 @@ extension IHTCSearchDetailVC {
         }
         alert.addAction(enAction)
         
-        let cancelAction = UIAlertAction.init(title: "Cancel(取消)", style: .cancel) { (action: UIAlertAction) in
+        let cancelAction = UIAlertAction.init(title: "Cancel(取消)", style: .destructive) { (action: UIAlertAction) in
             
         }
         alert.addAction(cancelAction)
@@ -208,8 +208,13 @@ extension IHTCSearchDetailVC {
     }
     
     @objc func sharedPageView(item: Any) {
+        let heightjs = "(document.height !== undefined) ? document.height : document.body.offsetHeight;"
+        let webHeight = webView.stringByEvaluatingJavaScript(from: heightjs)
+        let height = CGFloat.init(Int(webHeight!)!)
+        
         let headerImage = selectedCell.screenshot ?? UIImage.init(named: "App-share-Icon")
-        let masterImage = webView.scrollView.screenshotImage ?? UIImage.init(named: "App-share-Icon")!
+        var masterImage = webView.scrollView.screenshotImage ?? UIImage.init(named: "App-share-Icon")!
+        masterImage = masterImage.imageCroppingRect(croppingRect: CGRect.init(x: 0, y: 0, width: masterImage.size.width, height: height)) ?? UIImage.init(named: "App-share-Icon")!
         let footerImage = IHTCShareFooterView.footerView(image: UIImage.init(named: "iLeetCoder-qrcode")!, title: kShareTitle, subTitle: kShareSubTitle).screenshot
         let image = ImageHandle.slaveImageWithMaster(masterImage: masterImage, headerImage: headerImage!, footerImage: footerImage!)
          IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!.presentedViewController!)

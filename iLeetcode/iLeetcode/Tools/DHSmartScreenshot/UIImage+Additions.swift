@@ -15,6 +15,16 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    func imageCroppingRect(croppingRect:CGRect) -> UIImage? {
+        
+        UIGraphicsBeginImageContextWithOptions(croppingRect.size, false, UIScreen.main.scale)
+        self.draw(in: CGRect.init(origin: CGPoint.zero, size: self.size))
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+        
+        return result
+    }
 }
 
 extension UIImage {
