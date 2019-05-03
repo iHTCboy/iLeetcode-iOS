@@ -96,6 +96,7 @@ extension AppDelegate {
         statTracker?.logEvent("DateSystemVersion", eventLabel: currentDate + " " + UIDevice.current.systemVersion)
         statTracker?.logEvent("DateAndDeviceName", eventLabel: currentDate + " " + UIDevice.current.name)
         statTracker?.logEvent("Devices", eventLabel:UIDevice.current.name)
+        statTracker?.logEvent("AppName", eventLabel:( Bundle.main.infoDictionary?["CFBundleName"] as! String))
 #endif
     }
     

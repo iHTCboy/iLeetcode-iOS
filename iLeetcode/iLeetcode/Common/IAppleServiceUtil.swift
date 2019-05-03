@@ -12,16 +12,21 @@ import SafariServices
 
 class IAppleServiceUtil: NSObject {
     class func openWebView(url: String, tintColor: UIColor, vc: UIViewController) {
-        let sf = SFSafariViewController(url: URL(string: url
-            )!, entersReaderIfAvailable: true)
-        if #available(iOS 10.0, *) {
-            sf.preferredBarTintColor = tintColor
-            sf.preferredControlTintColor = UIColor.white
+        if #available(iOS 9.0, *) {
+            let sf = SFSafariViewController(url: URL(string: url
+                )!, entersReaderIfAvailable: true)
+            if #available(iOS 10.0, *) {
+                sf.preferredBarTintColor = tintColor
+                sf.preferredControlTintColor = UIColor.white
+            }
+            if #available(iOS 11.0, *) {
+                sf.dismissButtonStyle = .close
+            }
+            vc.present(sf, animated: true)
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.openURL(URL.init(string: url)!)
         }
-        if #available(iOS 11.0, *) {
-            sf.dismissButtonStyle = .close
-        }
-       vc.present(sf, animated: true)
     }
     
     class func shareWithImage(image: UIImage, text: String, url: String,  vc: UIViewController) {
