@@ -385,7 +385,6 @@
 				6D79466322773A7700887F2D /* iHTCboyApp.json */,
 				6D4ABD75225088FD0022AAFC /* Images */,
 				6D4ABD89225088FD0022AAFC /* Documents */,
-				6D4ABDE4225088FE0022AAFC /* Thirdparty */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -431,13 +430,6 @@
 				6D4ABE912250E0390022AAFC /* iLeetCoder-Question.json */,
 			);
 			path = jsonFiles;
-			sourceTree = "<group>";
-		};
-		6D4ABDE4225088FE0022AAFC /* Thirdparty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Thirdparty;
 			sourceTree = "<group>";
 		};
 		6D5000032245303900E114EE /* iLeetcodeUITests */ = {
@@ -996,10 +988,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iLeetcode/Resource/Thirdparty/ios_api",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
@@ -1023,10 +1012,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iLeetcode/Resource/Thirdparty/ios_api",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";

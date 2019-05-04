@@ -68,13 +68,13 @@ class ITQuestionListViewController: UIViewController {
     
     lazy var listModel: ITModel = {
         if ILeetCoderModel.shared.defaultArray.contains(self.title!) {
-            return ILeetCoderModel.shared.defaultData()[self.title!] as! ITModel
+            return ILeetCoderModel.shared.defaultData()[self.title!]!
             
         } else if ILeetCoderModel.shared.tagsArray.contains(self.title!) {
-            return ILeetCoderModel.shared.tagsData()[self.title!] as! ITModel
+            return ILeetCoderModel.shared.tagsData()[self.title!]!
             
         } else if ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
-            return ILeetCoderModel.shared.enterpriseData()[self.title!] as! ITModel
+            return ILeetCoderModel.shared.enterpriseData()[self.title!]!
             
         } else {
             print("no featch title")
