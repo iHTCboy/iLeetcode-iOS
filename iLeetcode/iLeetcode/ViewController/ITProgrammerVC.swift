@@ -142,20 +142,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
                 IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: false)
             }
             if row == 2 {
-                
-                let image = UIImage(named: "App-share-Icon")
-                let url = NSURL(string: kAppDownloadURl)
-                let string = kAppShare
-                let activityController = UIActivityViewController(activityItems: [image! ,url!,string], applicationActivities: nil)
-                //if iPhone
-                if (UIDevice.current.userInterfaceIdiom == .phone) {
-                    self.present(activityController, animated: true, completion: nil)
-                } else {
-                    //if iPad
-                    // Change Rect to position Popover
-                    let popup = UIPopoverController.init(contentViewController: activityController);
-                    popup.present(from: CGRect.init(x: self.view.frame.width-44, y: 64, width: 0, height: 0), in: self.view, permittedArrowDirections: .any, animated: true)
-                }
+                IAppleServiceUtil.shareWithImage(image: UIImage(named: "App-share-Icon")!, text: kAppShare, url: kAppDownloadURl, vc: self)
             }
             
             break
@@ -179,7 +166,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
             }
             if row == 5 {
                 let vc = ITAdvancelDetailViewController()
-                vc.title = "更多学习"
+                vc.title = "更多推荐"
                 vc.advancelType = .iHTCboyApp
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)
