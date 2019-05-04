@@ -256,6 +256,8 @@ extension IHTCSearchViewController : UITableViewDelegate, UITableViewDataSource 
         let question = self.searchArray[indexPath.row]
         let questionVC = IHTCSearchDetailVC()
         questionVC.title = question.language
+        questionVC.currentIndex = indexPath.row
+        questionVC.questionsArray = self.searchArray
         questionVC.questionModle = question
         questionVC.hidesBottomBarWhenPushed = true
         self.navigationController?.navigationBar.isHidden = false
@@ -286,6 +288,8 @@ extension IHTCSearchViewController: UIViewControllerPreviewingDelegate {
         let question = self.searchArray[indexPath.row]
         let questionVC = IHTCSearchDetailVC()
         questionVC.title = question.language
+        questionVC.currentIndex = indexPath.row
+        questionVC.questionsArray = self.searchArray
         questionVC.questionModle = question
         questionVC.hidesBottomBarWhenPushed = true
         

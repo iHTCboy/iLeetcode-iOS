@@ -210,6 +210,8 @@ extension ITQuestionListViewController : UITableViewDelegate, UITableViewDataSou
         let question = self.listModel.result[indexPath.row]
         let questionVC = ITQuestionDetailViewController()
         questionVC.title = self.title
+        questionVC.currentIndex = indexPath.row
+        questionVC.questionsArray = self.listModel.result
         questionVC.questionModle = question
         questionVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(questionVC, animated: true)
@@ -266,6 +268,8 @@ extension ITQuestionListViewController: UIViewControllerPreviewingDelegate {
         let question = self.listModel.result[indexPath.row]
         let questionVC = ITQuestionDetailViewController()
         questionVC.title = self.title
+        questionVC.currentIndex = indexPath.row
+        questionVC.questionsArray = self.listModel.result
         questionVC.questionModle = question
         questionVC.hidesBottomBarWhenPushed = true
         

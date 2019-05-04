@@ -30,10 +30,11 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
     }
     
     var selectedCell: ITQuestionListViewCell!
-    
-    var webView: UIWebView!
     var questionModle : ITQuestionModel?
+    var questionsArray: Array<ITQuestionModel> = []
+    var currentIndex: Int = 0
     var isShowZH : Bool = false
+    fileprivate var webView: UIWebView!
     
     lazy var tableView: UITableView = {
         var tableView = UITableView.init(frame: CGRect.zero, style: .plain)
@@ -285,7 +286,58 @@ extension ITQuestionDetailViewController {
             cell.questionLbl.text = question.title
         }
         
+        let previousTap = UITapGestureRecognizer.init(target: self, action: #selector(showPreviousQuestion));
+        previousTap.numberOfTapsRequired = 2
+        cell.PreviousQuestionView.addGestureRecognizer(previousTap)
+        
+        let nextTap = UITapGestureRecognizer.init(target: self, action: #selector(showNexQuestion));
+        nextTap.numberOfTapsRequired = 2
+        cell.NextQuestionView.addGestureRecognizer(nextTap)
+        
         return cell
+    }
+    
+    @objc func showPreviousQuestion() {
+        
+        let previousIndex = currentIndex - 1
+        if previousIndex < 0 {
+            let alert = UIAlertController.init(title: "Tips", message: "No more previous questions\n没有更多上一题啦", preferredStyle: .alert)
+            let cancelAction = UIAlertAction.init(title: "OK", style: .destructive) { (action: UIAlertAction) in
+                
+            }
+            alert.addAction(cancelAction)
+            UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
+                //print("UIAlertController present");
+            })
+            return
+        }
+        
+        currentIndex = previousIndex
+        let question = questionsArray[previousIndex]
+        questionModle = question
+        self.tableView.reloadData()
+        reloadWebView()
+    }
+    
+    @objc func showNexQuestion() {
+        let previousIndex = currentIndex + 1
+        if previousIndex > questionsArray.count {
+            let alert = UIAlertController.init(title: "Tips", message: "No more next questions\n没有更多下一题啦", preferredStyle: .alert)
+            let cancelAction = UIAlertAction.init(title: "OK", style: .destructive) { (action: UIAlertAction) in
+                
+            }
+            alert.addAction(cancelAction)
+            UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
+                //print("UIAlertController present");
+            })
+            return
+        }
+        
+        currentIndex = previousIndex
+        let question = questionsArray[previousIndex]
+        questionModle = question
+        self.tableView.reloadData()
+        reloadWebView()
     }
     
     fileprivate func reloadWebView() {

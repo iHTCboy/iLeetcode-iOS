@@ -20,6 +20,11 @@ class ITQuestionListViewCell: UITableViewCell {
     
     @IBOutlet weak var questionLbl: ITCopyLabel!
     
+    @IBOutlet weak var PreviousQuestionView: UIView!
+    
+    @IBOutlet weak var NextQuestionView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

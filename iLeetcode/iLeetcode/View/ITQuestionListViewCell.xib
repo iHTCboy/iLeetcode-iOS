@@ -74,35 +74,53 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaO-Ks-4sF" userLabel="PreviousQuestionView">
+                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="108.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="071-67-4lL" userLabel="NextQuestionView">
+                        <rect key="frame" x="234.5" y="0.0" width="134.5" height="108.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="uaO-Ks-4sF" secondAttribute="bottom" id="0ud-MJ-HAt"/>
                     <constraint firstItem="0iT-FL-dXy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="1ua-pD-Ly1"/>
                     <constraint firstItem="Ca7-QA-H6s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="6bG-xQ-TJp"/>
                     <constraint firstItem="wr1-c5-CJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="BUS-Ck-siJ"/>
                     <constraint firstItem="k9m-Hw-2gV" firstAttribute="leading" secondItem="0iT-FL-dXy" secondAttribute="trailing" constant="8" id="NAP-0j-Ywd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="7Uc-TE-V7e" secondAttribute="bottom" constant="10" id="OPi-IW-0J4"/>
+                    <constraint firstItem="uaO-Ks-4sF" firstAttribute="width" secondItem="071-67-4lL" secondAttribute="width" id="PtH-nQ-wgL"/>
+                    <constraint firstItem="071-67-4lL" firstAttribute="leading" secondItem="uaO-Ks-4sF" secondAttribute="trailing" constant="100" id="RhF-vI-4AS"/>
+                    <constraint firstItem="uaO-Ks-4sF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vgw-bx-26d"/>
                     <constraint firstItem="r64-Rm-FMh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="W7O-KR-s2h"/>
+                    <constraint firstAttribute="bottom" secondItem="071-67-4lL" secondAttribute="bottom" id="Z41-yX-MXR"/>
                     <constraint firstAttribute="trailing" secondItem="r64-Rm-FMh" secondAttribute="trailing" constant="-37" id="aJW-BY-osg"/>
                     <constraint firstItem="7Uc-TE-V7e" firstAttribute="top" secondItem="wr1-c5-CJj" secondAttribute="bottom" constant="10" id="aeg-BN-Cxb"/>
                     <constraint firstItem="wr1-c5-CJj" firstAttribute="leading" secondItem="7Uc-TE-V7e" secondAttribute="leading" id="cr7-Ba-lsM"/>
                     <constraint firstItem="k9m-Hw-2gV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="g9V-Uw-kH6"/>
+                    <constraint firstAttribute="trailing" secondItem="071-67-4lL" secondAttribute="trailing" id="gh5-vT-RCK"/>
                     <constraint firstItem="0iT-FL-dXy" firstAttribute="leading" secondItem="Ca7-QA-H6s" secondAttribute="trailing" constant="8" id="ism-pg-6vW"/>
                     <constraint firstItem="Ca7-QA-H6s" firstAttribute="leading" secondItem="wr1-c5-CJj" secondAttribute="trailing" constant="8" id="jE1-1P-4yi"/>
                     <constraint firstItem="k9m-Hw-2gV" firstAttribute="leading" secondItem="Ca7-QA-H6s" secondAttribute="trailing" priority="750" constant="8" id="jRZ-gK-cYD"/>
                     <constraint firstItem="7Uc-TE-V7e" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="kiG-L5-eZb"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="k9m-Hw-2gV" secondAttribute="trailing" constant="-10" id="n5z-rf-j7d"/>
                     <constraint firstItem="7Uc-TE-V7e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="nNi-nR-Ec9"/>
+                    <constraint firstItem="071-67-4lL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ndV-aR-XrL"/>
                     <constraint firstAttribute="bottom" secondItem="r64-Rm-FMh" secondAttribute="bottom" id="sJy-YO-son"/>
+                    <constraint firstItem="uaO-Ks-4sF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yBo-lA-z1U"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="NextQuestionView" destination="071-67-4lL" id="yNM-4d-uq0"/>
+                <outlet property="PreviousQuestionView" destination="uaO-Ks-4sF" id="225-qb-RDa"/>
                 <outlet property="frequencyLbl" destination="k9m-Hw-2gV" id="7Hw-f4-J3U"/>
                 <outlet property="langugeLbl" destination="0iT-FL-dXy" id="thq-du-Eb0"/>
                 <outlet property="numLbl" destination="wr1-c5-CJj" id="uyO-FJ-UIB"/>
                 <outlet property="questionLbl" destination="7Uc-TE-V7e" id="S03-Rr-0jM"/>
                 <outlet property="tagLbl" destination="Ca7-QA-H6s" id="51j-y9-ioH"/>
             </connections>
-            <point key="canvasLocation" x="-323.5" y="6.5"/>
+            <point key="canvasLocation" x="-323.73046875" y="6.3689604685212293"/>
         </tableViewCell>
     </objects>
 </document>
