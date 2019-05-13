@@ -15,10 +15,40 @@ class IHTCLanguageSettingVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+    
+    func setupUI() {
         title = "Language"
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
+        
+        updateItem()
+    }
+    
+    func updateItem() {
+        var isShowZH = ""
+        switch IHTCUserDefaults.shared.getUDLanguage() {
+        case "zh_CN":
+            isShowZH = "确定"
+            break
+        case "en_US":
+            isShowZH = "OK"
+            break
+        default: break
+        }
+        
+        // UIBarButtonItem
+        let resetItem = UIBarButtonItem(title: isShowZH, style: .plain, target: self, action: #selector(resetLanguage))
+        navigationItem.rightBarButtonItems = [resetItem]
+        
+    }
+    
+    @objc func resetLanguage(item: UIBarButtonItem) {
+        ILeetCoderModel.shared.resetData()
+        let vc = UIStoryboard.init(name: "Main", bundle: nil);
+        UIApplication.shared.keyWindow?.rootViewController = vc.instantiateInitialViewController()!
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,7 +109,7 @@ class IHTCLanguageSettingVC: UITableViewController {
         default:break
             
         }
-        
+        updateItem()
         tableView.reloadData()
     }
 }

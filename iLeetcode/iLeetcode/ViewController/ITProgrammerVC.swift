@@ -127,6 +127,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         case 0:
             if row == 0 {
                 let vc = IHTCLanguageSettingVC()
+                vc.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(vc, animated: true)
             }
             break
@@ -166,7 +167,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
             }
             if row == 5 {
                 let vc = ITAdvancelDetailViewController()
-                vc.title = "更多推荐"
+                vc.title = "更多学习"
                 vc.advancelType = .iHTCboyApp
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)

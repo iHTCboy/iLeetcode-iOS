@@ -66,6 +66,25 @@ extension ILeetCoderModel
         }
     }
     
+    func resetData() {
+        self.defaultArray = ["All",
+                             "Easy",
+                             "Medium",
+                             "Hard",
+                             "Public",
+                             "Private"]
+        self.tagsArray = Array<String>()
+        self.enterpriseArray = Array<String>()
+        self.leetsArray = Array<Dictionary<String, Any>>()
+        
+        self.defaultDict  = Dictionary<String, ITModel>()
+        self.tagsDict = Dictionary<String, ITModel>()
+        self.enterpriseDict = Dictionary<String, ITModel>()
+        self.leetIdsDict = Dictionary<String, ITQuestionModel>()
+        
+        initModel()
+    }
+    
     private func initModel() {
         let fileName = "iLeetCoder-Question"
         if let file = Bundle.main.url(forResource: fileName, withExtension: "json") {
