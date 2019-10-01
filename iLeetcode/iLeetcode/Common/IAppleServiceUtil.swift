@@ -34,11 +34,12 @@ class IAppleServiceUtil: NSObject {
         let activityController = UIActivityViewController(activityItems: [image , iURL, text], applicationActivities: nil)
         //if iPhone
         if (UIDevice.current.userInterfaceIdiom == .phone) {
+            activityController.modalPresentationStyle = .fullScreen
             vc.present(activityController, animated: true, completion: nil)
         } else {
             //if iPad
             // Change Rect to position Popover
-            let popup = UIPopoverController.init(contentViewController: activityController);
+            let popup = UIPopoverController.init(contentViewController: activityController)
             popup.present(from: CGRect.init(x: vc.view.frame.width-44, y: 64, width: 0, height: 0), in: vc.view, permittedArrowDirections: .any, animated: true)
         }
     }
@@ -48,6 +49,7 @@ class IAppleServiceUtil: NSObject {
         vc.present(activityController, animated: true, completion: nil)
         //if iPhone
         if (UIDevice.current.userInterfaceIdiom == .phone) {
+            activityController.modalPresentationStyle = .fullScreen
             vc.present(activityController, animated: true, completion: nil)
         } else {
             //if iPad

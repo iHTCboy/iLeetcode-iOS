@@ -29,6 +29,18 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
         // Dispose of any resources that can be recreated.
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        // trait发生了改变
+        if #available(iOS 13.0, *) {
+            if (self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                // 执行操作
+                reloadWebView()
+            }
+        }
+    }
+    
+    
     var selectedCell: ITQuestionListViewCell!
     var questionModle : ITQuestionModel?
     var questionsArray: Array<ITQuestionModel> = []
@@ -104,7 +116,11 @@ extension ITQuestionDetailViewController {
         let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + (UIApplication.shared.statusBarFrame.size.height)
         let webView = UIWebView.init(frame: CGRect.zero)
         webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.backgroundColor = .groupTableViewBackground
+        if #available(iOS 13.0, *) {
+            webView.backgroundColor = .secondarySystemGroupedBackground
+        } else {
+            webView.backgroundColor = .groupTableViewBackground
+        }
         webView.dataDetectorTypes = []
         //webView.scalesPageToFit = true
         webView.allowsLinkPreview = true
@@ -229,6 +245,7 @@ extension ITQuestionDetailViewController {
         if #available(iOS 11.0, *) {
             vc.dismissButtonStyle = .close
         }
+        vc.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow!.rootViewController!.present(vc, animated: true)
     }
     
@@ -352,6 +369,15 @@ extension ITQuestionDetailViewController {
         let path = Bundle.main.path(forResource: "iLeetCoder", ofType: "html")!
         //reading
         var text = try! String.init(contentsOfFile: path, encoding: String.Encoding.utf8)
+        if #available(iOS 13.0, *) {
+            if (UITraitCollection.current.userInterfaceStyle == .dark) {
+                text = text.replacingOccurrences(of: "${css}", with: "iLeetCoder-dark.css")
+            } else {
+                text = text.replacingOccurrences(of: "${css}", with: "iLeetCoder.css")
+            }
+        } else {
+            text = text.replacingOccurrences(of: "${css}", with: "iLeetCoder.css")
+        }
         text = text.replacingOccurrences(of: "${contents}", with: contents)
         // load string
         let bundleURL = URL.init(string: path)

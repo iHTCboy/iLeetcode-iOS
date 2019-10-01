@@ -42,6 +42,11 @@ class ITAboutAppVC: UIViewController {
 extension ITAboutAppVC
 {
     func setupUI() {
+        
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = UIColor.secondarySystemGroupedBackground
+        }
+        
         self.title = "关于\(kiTalker)"
         
         guard (self.logoImgView != nil) else {
@@ -53,6 +58,9 @@ extension ITAboutAppVC
         self.logoImgView.layer.masksToBounds = true
         self.appNameLbl.text = kiTalker
         self.versionLbl.text = "v" + KAppVersion
+        if #available(iOS 13.0, *) {
+            self.versionLbl.textColor = UIColor.secondaryLabel
+        }
         self.contentLbl.text = kAppAbout
         let formatter = DateFormatter.init()
         formatter.dateFormat = "yyyy"

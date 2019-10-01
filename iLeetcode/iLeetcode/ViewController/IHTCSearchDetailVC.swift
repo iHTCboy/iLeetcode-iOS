@@ -232,6 +232,7 @@ extension IHTCSearchDetailVC {
         if #available(iOS 11.0, *) {
             vc.dismissButtonStyle = .close
         }
+        vc.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow?.rootViewController!.presentedViewController!.present(vc, animated: true)
     }
     
