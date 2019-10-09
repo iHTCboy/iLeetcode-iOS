@@ -98,6 +98,10 @@ extension ITQuestionDetailViewController {
             default: break
         }
         
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .groupTableViewBackground
+        }
+        
         //tableView
         view.addSubview(tableView)
         let constraintViews = [
@@ -118,6 +122,7 @@ extension ITQuestionDetailViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         if #available(iOS 13.0, *) {
             webView.backgroundColor = .secondarySystemGroupedBackground
+            webView.scrollView.backgroundColor = .secondarySystemGroupedBackground
         } else {
             webView.backgroundColor = .groupTableViewBackground
         }

@@ -260,6 +260,8 @@ extension IHTCSearchViewController : UITableViewDelegate, UITableViewDataSource 
         questionVC.questionsArray = self.searchArray
         questionVC.questionModle = question
         questionVC.hidesBottomBarWhenPushed = true
+        questionVC.modalPresentationStyle = .fullScreen
+
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.pushViewController(questionVC, animated: true)
     }
@@ -292,7 +294,8 @@ extension IHTCSearchViewController: UIViewControllerPreviewingDelegate {
         questionVC.questionsArray = self.searchArray
         questionVC.questionModle = question
         questionVC.hidesBottomBarWhenPushed = true
-        
+        questionVC.modalPresentationStyle = .fullScreen
+
         // 返回需要弹出的控制权
         return questionVC
     }
