@@ -245,7 +245,6 @@ extension ITQuestionDetailViewController {
         if #available(iOS 11.0, *) {
             vc.dismissButtonStyle = .close
         }
-        vc.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow!.rootViewController!.present(vc, animated: true)
     }
     
@@ -381,7 +380,9 @@ extension ITQuestionDetailViewController {
         text = text.replacingOccurrences(of: "${contents}", with: contents)
         // load string
         let bundleURL = URL.init(string: path)
-        webView.loadHTMLString(text, baseURL: bundleURL)
+        if bundleURL != nil  && webView != nil {
+            webView.loadHTMLString(text, baseURL: bundleURL)
+        }
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -29,7 +29,6 @@ class ITProfessionViewController: ITBasePushTransitionVC
         let vc = IHTCSearchViewController()
         let navi = UINavigationController.init(rootViewController: vc)
         navi.navigationBar.isHidden = true
-        navi.modalPresentationStyle = .fullScreen
         self.present(navi, animated: true, completion: nil)
     }
     

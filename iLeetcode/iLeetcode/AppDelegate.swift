@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = IHTCSearchViewController()
             let navi = UINavigationController.init(rootViewController: vc)
             navi.navigationBar.isHidden = true
-            navi.modalPresentationStyle = .fullScreen
             UIApplication.shared.keyWindow?.rootViewController!.present(navi, animated: true, completion: nil)
         }
         

@@ -46,10 +46,8 @@ class IAppleServiceUtil: NSObject {
     
     class func shareImage(image: UIImage, vc: UIViewController) {
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        vc.present(activityController, animated: true, completion: nil)
         //if iPhone
         if (UIDevice.current.userInterfaceIdiom == .phone) {
-            activityController.modalPresentationStyle = .fullScreen
             vc.present(activityController, animated: true, completion: nil)
         } else {
             //if iPad
@@ -173,5 +171,16 @@ extension UIViewController {
     
     func currentRootViewController() -> UIViewController {
         return UIApplication.shared.keyWindow!.rootViewController ?? self
+    }
+    
+    func topViewController() -> UIViewController {
+        
+        var vc = UIApplication.shared.keyWindow!.rootViewController ?? self
+        
+        while ((vc.presentedViewController) != nil) {
+            vc = vc.presentedViewController!;
+        }
+        
+        return vc;
     }
 }
