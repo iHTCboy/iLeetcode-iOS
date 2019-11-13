@@ -38,7 +38,7 @@ LeetCode 平台具有丰富的题库，分类全面，可以针对自己的弱�
 
 ### 下载地址
 ![](screenshot/iLeetCoder-qrcode.png)
-因为苹果开发者账号需要年费，所以AppStore下载收费人民币1元以表示意  [iOS App Store](https://itunes.apple.com/cn/app/iLeetCoder/id1458259471?l=zh&ls=1&mt=8)，如果介意，可以下载本项目编译安装。
+因为苹果开发者账号需要年费，所以AppStore下载收费请见谅  [iOS App Store](https://itunes.apple.com/cn/app/iLeetCoder/id1458259471?l=zh&ls=1&mt=8)，如果不愿意付费支持，也可以下载本项目代码自行编译安装。
 
 
 ### 应用截图

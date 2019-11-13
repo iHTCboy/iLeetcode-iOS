@@ -1,6 +1,6 @@
 
-/* Class = "UINavigationItem"; title = "iLeetCoder"; ObjectID = "7Dd-N7-EHW"; */
-"7Dd-N7-EHW.title" = "iLCoder";
+/* Class = "UINavigationItem"; title = "iCoder"; ObjectID = "7Dd-N7-EHW"; */
+"7Dd-N7-EHW.title" = "iCoder";
 
 /* Class = "UITabBarItem"; title = "职位"; ObjectID = "Auc-75-r2L"; */
 "Auc-75-r2L.title" = "标签";
@@ -8,17 +8,17 @@
 /* Class = "UITabBarItem"; title = "猿人"; ObjectID = "U2l-c7-sle"; */
 "U2l-c7-sle.title" = "猿人";
 
-/* Class = "UINavigationItem"; title = "iLeetCoder"; ObjectID = "dj7-EA-3Bs"; */
-"dj7-EA-3Bs.title" = "iLCoder";
+/* Class = "UINavigationItem"; title = "iCoder"; ObjectID = "dj7-EA-3Bs"; */
+"dj7-EA-3Bs.title" = "iCoder";
 
 /* Class = "UITabBarItem"; title = "语言"; ObjectID = "fhS-3c-oCy"; */
-"fhS-3c-oCy.title" = "力扣";
+"fhS-3c-oCy.title" = "算法";
 
-/* Class = "UINavigationItem"; title = "iLeetCoder"; ObjectID = "mDN-ix-urQ"; */
-"mDN-ix-urQ.title" = "iLCoder";
+/* Class = "UINavigationItem"; title = "iCoder"; ObjectID = "mDN-ix-urQ"; */
+"mDN-ix-urQ.title" = "iCoder";
 
 /* Class = "UITabBarItem"; title = "企业"; ObjectID = "tOD-5L-U1d"; */
 "tOD-5L-U1d.title" = "企业";
 
-/* Class = "UINavigationItem"; title = "iLeetCoder"; ObjectID = "v8D-Zh-aQr"; */
-"v8D-Zh-aQr.title" = "iLCoder";
+/* Class = "UINavigationItem"; title = "iCoder"; ObjectID = "v8D-Zh-aQr"; */
+"v8D-Zh-aQr.title" = "iCoder";

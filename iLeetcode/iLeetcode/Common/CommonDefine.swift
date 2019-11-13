@@ -10,7 +10,7 @@ import UIKit
 
 
 // 常量
-let kiTalker = "iLeetCoder"
+let kiTalker = "iCoder"
 let kAppAppleId = "1458259471"
 let kAppDownloadURl = "https://itunes.apple.com/cn/app/iLeetCoder/id1458259471?l=zh&ls=1&mt=8"
 let kReviewAction = "&action=write-review"

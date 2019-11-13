@@ -426,7 +426,7 @@ extension ITQuestionDetailViewController : UITableViewDelegate, UITableViewDataS
         let cell: ITQuestionDetailViewCell = tableView.dequeueReusableCell(withIdentifier: "ITQuestionDetailViewCell") as! ITQuestionDetailViewCell
         cell.accessoryType = .none
         cell.selectionStyle = .none
-        cell.textLabel!.text = "iLeetCoder"
+        cell.textLabel!.text = "iCoder"
         return cell
     }
     
