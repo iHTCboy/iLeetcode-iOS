@@ -120,10 +120,6 @@
 		6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCLanguageSettingVC.swift; sourceTree = "<group>"; };
 		6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCUserDefaults.swift; sourceTree = "<group>"; };
 		6D4ABD2D225087EF0022AAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6D4ABD30225087F60022AAFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		6D4ABD32225087F70022AAFC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		6D4ABD34225087F80022AAFC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
-		6D4ABD36225087FD0022AAFC /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
 		6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITAboutAppVC.swift; sourceTree = "<group>"; };
 		6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITProgrammerVC.swift; sourceTree = "<group>"; };
 		6D4ABD3B225088660022AAFC /* ITCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITCompanyViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +196,10 @@
 		6D79466322773A7700887F2D /* iHTCboyApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iHTCboyApp.json; sourceTree = "<group>"; };
 		6D79466522773A9E00887F2D /* TableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		6D79466622773A9E00887F2D /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		6D95FF15237C484C0074C292 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D95FF17237C48610074C292 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D95FF19237C48780074C292 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D95FF1B237C489F0074C292 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6D9F84CD23439AAD009057B5 /* iLeetCoder-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "iLeetCoder-dark.css"; sourceTree = "<group>"; };
 		6DC7CFCF226C01D800F2CC10 /* iLeetCoder.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iLeetCoder.css; sourceTree = "<group>"; };
 		6DC7CFD0226C01D800F2CC10 /* iLeetCoder.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iLeetCoder.html; sourceTree = "<group>"; };
@@ -830,10 +830,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D4ABD2D225087EF0022AAFC /* Base */,
-				6D4ABD30225087F60022AAFC /* en */,
-				6D4ABD32225087F70022AAFC /* zh-Hans */,
-				6D4ABD34225087F80022AAFC /* zh-Hant */,
-				6D4ABD36225087FD0022AAFC /* zh-HK */,
+				6D95FF15237C484C0074C292 /* zh-HK */,
+				6D95FF17237C48610074C292 /* zh-Hans */,
+				6D95FF19237C48780074C292 /* zh-Hant */,
+				6D95FF1B237C489F0074C292 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -985,7 +985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019.11.13;
+				CURRENT_PROJECT_VERSION = 2019.11.14;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1011,7 +1011,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019.11.13;
+				CURRENT_PROJECT_VERSION = 2019.11.14;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
