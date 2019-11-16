@@ -200,6 +200,13 @@ extension ITQuestionDetailViewController {
             isShowZH = false
             item.title = "中"
         }
+        
+        // titile localization
+        let old_title = self.navigationItem.title ?? ""
+        if let value = ILeetCoderModel.shared.titleLocaliDict[old_title] {
+            self.navigationItem.title = value
+        }
+        
         self.tableView.reloadData()
         reloadWebView()
     }

@@ -21,6 +21,20 @@ class ILeetCoderModel: NSObject {
                                 "Hard",
                                 "Public",
                                 "Private"]
+    public var titleLocaliDict = [
+        "All": "全部",
+        "Easy": "容易",
+        "Medium": "中等",
+        "Hard": "困难",
+        "Public": "公开",
+        "Private": "VIP",
+        "全部": "All",
+        "容易": "Easy",
+        "中等": "Medium",
+        "困难": "Hard",
+        "公开": "Public",
+        "VIP": "Private",
+    ]
     public var tagsArray = Array<String>()
     public var enterpriseArray = Array<String>()
     public var leetsArray = Array<Dictionary<String, Any>>()
@@ -154,6 +168,9 @@ extension ILeetCoderModel
                                         newTagArray.add(question)
                                         tagDict[tg!] = newTagArray
                                     }
+                                    // title localization
+                                    titleLocaliDict[tag["tag"] ?? ""] = tag["tagZh"]
+                                    titleLocaliDict[tag["tagZh"] ?? ""] = tag["tag"]
                                 }
                             }
                         }
