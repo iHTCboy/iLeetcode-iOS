@@ -985,7 +985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019.11.16;
+				CURRENT_PROJECT_VERSION = 2019.11.18;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -994,7 +994,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.3.0;
+				MARKETING_VERSION = 3.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
@@ -1011,7 +1011,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019.11.16;
+				CURRENT_PROJECT_VERSION = 2019.11.18;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1020,7 +1020,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.3.0;
+				MARKETING_VERSION = 3.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
