@@ -44,7 +44,7 @@ class ITProgrammerVC: UIViewController {
         return tableView
     }()
     
-    fileprivate var titles = ["0": "显示语言:设置题目显示的默认语言",
+    fileprivate var titles = ["0": "显示语言:设置题目显示的默认语言,设置主题外观:暗黑or浅色",
         "1": "应用内评分:欢迎给\(kiTalker)打评分！,AppStore评价:欢迎给\(kiTalker)写评论!,分享给朋友:与身边的好友一起学习！",
         "2":"意见反馈:欢迎到AppStore提需求或bug问题,邮件联系:如有问题欢迎来信,隐私条款:用户使用服务协议,开源地址:现已开放代码，欢迎关注,更多关注:欢迎访问作者博客,更多学习:更多开发者内容推荐,关于应用:\(kiTalker)"] as [String : String]
 
@@ -112,7 +112,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let titles = titleArray?[indexPath.row]
         let titleA = titles?.components(separatedBy: ":")
         cell!.textLabel?.text = titleA?[0]
-        cell?.detailTextLabel?.text = (indexPath.section == 0 ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? "中文" : "English") : titleA?[1])
+        cell?.detailTextLabel?.text = ((indexPath.section == 0 && indexPath.row == 0) ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? "中文" : "English") : titleA?[1])
         
         return cell!
     }
@@ -127,6 +127,11 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         case 0:
             if row == 0 {
                 let vc = IHTCLanguageSettingVC()
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            }
+            if row == 1 {
+                let vc = IHTCAppearanceVC()
                 vc.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(vc, animated: true)
             }
