@@ -1,0 +1,35 @@
+/*
+  Localizable.strings
+  iLeetcode
+
+  Created by HTC on 2020/4/4.
+  Copyright © 2020 HTC. All rights reserved.
+*/
+
+
+"Display Language" = "顯示語言";
+"Display Appearance" = "設置主題外觀";
+"In App Rating" = "應用內評分";
+"Welcome to iCoder app review!" = "歡迎給iCoder打評分！";
+"AppStore Evaluation" = "AppStore評價";
+"Welcome to write a review" = "歡迎給iCoder寫評論";
+"Send to a friend" = "分享給朋友";
+"Study together with friends around!" = "與身邊的好友一起學習！";
+"Feedback" = "意見反饋";
+"Welcome to AppStore for requests or bugs" = "歡迎到AppStore提需求或bug問題";
+"E-mail Contact" = "郵件聯繫";
+"If you have questions please email" = "如有問題歡迎來信";
+"Privacy Policy" = "隱私條款";
+"User Services Agreement" = "用戶使用服務協議";
+"Open Source" = "開源地址";
+"It is now open source code" = "現已開放代碼，歡迎關注";
+"Attention More" = "更多關注";
+"Welcome to the author's blog" = "歡迎訪問作者博客";
+"Learn More" = "更多學習";
+"More Developer Content recommendation" = "更多開發者內容推薦";
+"About Application" = "關於應用";
+"About App" = "iCoder 是一款為IT工程師們提供算法知識充電的應用，IT算法和數據結構知識學習、面試必備的工具，不斷努力打造更多更好方式呈現更有趣的知識，讓大家在零碎時間也可以快速和簡單的學習get! \n \n1、1000+題庫，滿足你對算法求知慾望！\n2、IT企業面試題目，為你完名企的夢！\n3、最全算法知識，為你準備好的面試！";
+"About" = "關於";
+"Follow System" = "跟隨系統";
+"Light Style" = "淺色主題";
+"Dark Style" = "深色主題";

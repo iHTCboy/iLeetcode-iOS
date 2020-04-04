@@ -44,9 +44,9 @@ extension IHTCUserDefaults
 // MARK: 主题外观设置
 enum AppAppearanceStyle : String
 {
-    case Default     = "FollowSystem"
-    case Light       = "LightStyle"
-    case Dark        = "DarkStyle"
+    case Default     = "Follow System"
+    case Light       = "Light Style"
+    case Dark        = "Dark Style"
 }
 
 extension IHTCUserDefaults

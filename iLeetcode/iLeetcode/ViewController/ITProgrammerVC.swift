@@ -35,7 +35,7 @@ class ITProgrammerVC: UIViewController {
     // MARK:- 懒加载
     lazy var tableView: UITableView = {
         var tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
-        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: -49, right: 0)
+        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 20, right: 0)
         tableView.sectionFooterHeight = 0.1;
         tableView.estimatedRowHeight = 55
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,9 +44,11 @@ class ITProgrammerVC: UIViewController {
         return tableView
     }()
     
-    fileprivate var titles = ["0": "显示语言:设置题目显示的默认语言,设置主题外观:暗黑or浅色",
-        "1": "应用内评分:欢迎给\(kiTalker)打评分！,AppStore评价:欢迎给\(kiTalker)写评论!,分享给朋友:与身边的好友一起学习！",
-        "2":"意见反馈:欢迎到AppStore提需求或bug问题,邮件联系:如有问题欢迎来信,隐私条款:用户使用服务协议,开源地址:现已开放代码，欢迎关注,更多关注:欢迎访问作者博客,更多学习:更多开发者内容推荐,关于应用:\(kiTalker)"] as [String : String]
+    fileprivate var titles = ["0": "\(HTCLocalized("Display Language")):设置题目显示的默认语言,\(HTCLocalized("Display Appearance")):暗黑or浅色",
+        
+        "1": "\(HTCLocalized("In App Rating")):\(HTCLocalized("Welcome to iCoder app review!")),\(HTCLocalized("AppStore Evaluation")):\(HTCLocalized("Welcome to write a review"))!,\(HTCLocalized("Send to a friend")):\(HTCLocalized("Study together with friends around!"))",
+        
+        "2":"\(HTCLocalized("Feedback")):\(HTCLocalized("Welcome to AppStore for requests or bugs")),\(HTCLocalized("E-mail Contact")):\(HTCLocalized("If you have questions please email")),\(HTCLocalized("Privacy Policy")):\(HTCLocalized("User Services Agreement")),\(HTCLocalized("Open Source")):\(HTCLocalized("It is now open source code")),\(HTCLocalized("Attention More")):\(HTCLocalized("Welcome to the author's blog")),\(HTCLocalized("Learn More")):\(HTCLocalized("More Developer Content recommendation")),\(HTCLocalized("About Application")):\(kiTalker)"] as [String : String]
 
 }
 
@@ -113,6 +115,10 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let titleA = titles?.components(separatedBy: ":")
         cell!.textLabel?.text = titleA?[0]
         cell?.detailTextLabel?.text = ((indexPath.section == 0 && indexPath.row == 0) ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? "中文" : "English") : titleA?[1])
+        
+        if (indexPath.section == 0 && indexPath.row == 1) {
+            cell?.detailTextLabel?.text = HTCLocalized(IHTCUserDefaults.shared.getAppAppearance().rawValue)
+        }
         
         return cell!
     }

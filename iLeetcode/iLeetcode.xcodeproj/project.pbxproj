@@ -90,6 +90,8 @@
 		6DC7CFE9226C90FE00F2CC10 /* IHTCSearchDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */; };
 		6DC7CFEA226C90FE00F2CC10 /* IHTCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */; };
 		6DC9407B2430C0C6009A9994 /* IHTCAppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */; };
+		6DCD77012438D39000CF3F46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD77032438D39000CF3F46 /* InfoPlist.strings */; };
+		6DCD77092438D5D400CF3F46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD770B2438D5D400CF3F46 /* Localizable.strings */; };
 		B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */; };
 		C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */; };
 /* End PBXBuildFile section */
@@ -217,6 +219,14 @@
 		6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCSearchDetailVC.swift; sourceTree = "<group>"; };
 		6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCSearchViewController.swift; sourceTree = "<group>"; };
 		6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCAppearanceVC.swift; sourceTree = "<group>"; };
+		6DCD77022438D39000CF3F46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6DCD77042438D39700CF3F46 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6DCD77052438D39800CF3F46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6DCD77062438D39900CF3F46 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6DCD770C2438D5D700CF3F46 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DCD770D2438D5D800CF3F46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DCD770E2438D5D800CF3F46 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DCD770F2438DCBA00CF3F46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
 		843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -486,8 +496,10 @@
 				6D4ABE8E22509ED70022AAFC /* AppLaunchScreen.storyboard */,
 				6D50FFEB2245303900E114EE /* Assets.xcassets */,
 				6D50FFF02245303900E114EE /* Info.plist */,
+				6DCD77032438D39000CF3F46 /* InfoPlist.strings */,
 				6D4ABE6A225089270022AAFC /* LICENSE */,
 				6D4ABE69225089270022AAFC /* README.md */,
+				6DCD770B2438D5D400CF3F46 /* Localizable.strings */,
 			);
 			path = iLeetcode;
 			sourceTree = "<group>";
@@ -638,10 +650,12 @@
 				6D50FFEC2245303900E114EE /* Assets.xcassets in Resources */,
 				6D4ABE8B225099050022AAFC /* App-TextLogo-Alpha.png in Resources */,
 				6DC7CFE8226C90FE00F2CC10 /* IHTCSearchViewController.xib in Resources */,
+				6DCD77012438D39000CF3F46 /* InfoPlist.strings in Resources */,
 				6D4ABE9B225184080022AAFC /* App-share-Icon.png in Resources */,
 				6DC7CFD1226C01D900F2CC10 /* iLeetCoder.css in Resources */,
 				6D4ABDF3225088FE0022AAFC /* language_tabbar_selected@2x.png in Resources */,
 				6D9F84CF23439AAD009057B5 /* iLeetCoder-dark.css in Resources */,
+				6DCD77092438D5D400CF3F46 /* Localizable.strings in Resources */,
 				6DC7CFD2226C01D900F2CC10 /* iLeetCoder.html in Resources */,
 				6D4ABDF9225088FE0022AAFC /* Tags_selected@3x.png in Resources */,
 				6D4ABDF5225088FE0022AAFC /* company_tabbar_selected@2x.png in Resources */,
@@ -861,6 +875,28 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		6DCD77032438D39000CF3F46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DCD77022438D39000CF3F46 /* en */,
+				6DCD77042438D39700CF3F46 /* zh-HK */,
+				6DCD77052438D39800CF3F46 /* zh-Hans */,
+				6DCD77062438D39900CF3F46 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6DCD770B2438D5D400CF3F46 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DCD770C2438D5D700CF3F46 /* zh-HK */,
+				6DCD770D2438D5D800CF3F46 /* zh-Hans */,
+				6DCD770E2438D5D800CF3F46 /* zh-Hant */,
+				6DCD770F2438DCBA00CF3F46 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -989,7 +1025,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.03.30;
+				CURRENT_PROJECT_VERSION = 2020.04.04;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -998,7 +1034,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
@@ -1015,7 +1051,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.03.30;
+				CURRENT_PROJECT_VERSION = 2020.04.04;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1024,7 +1060,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";

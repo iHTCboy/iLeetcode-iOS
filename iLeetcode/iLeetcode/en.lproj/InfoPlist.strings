@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  iLeetcode
+
+  Created by HTC on 2020/4/4.
+  Copyright © 2020 HTC. All rights reserved.
+*/
+
+
+NSPhotoLibraryUsageDescription = "Request access to the album, in order to save App Screenshots";
+NSPhotoLibraryAddUsageDescription = "Request access to the album, in order to save App Screenshots";

@@ -11,7 +11,7 @@ import UIKit
 
 class IHTCAppearanceVC: UITableViewController {
 
-    let language = ["跟随系统", "浅色主题", "深色主题"]
+    let language = [HTCLocalized("Follow System"), HTCLocalized("Light Style"), HTCLocalized("Dark Style")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

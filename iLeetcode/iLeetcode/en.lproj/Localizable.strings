@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  iLeetcode
+
+  Created by HTC on 2020/4/4.
+  Copyright © 2020 HTC. All rights reserved.
+*/
+
+
+"About App" = "iCoder is an application for IT engineers to charge algorithm knowledge. IT algorithms and data structure knowledge learning, interviews are necessary tools, and constantly strive to create more and better ways to present more interesting knowledge, so that everyone is fragmented Time can also quickly and easily learn get! \n\n1. 1000+ question bank to satisfy your desire for algorithm knowledge! \n2. IT enterprise interview questions, complete your dream of a famous enterprise! \n3. the most complete algorithm knowledge, an interview prepared for you! ";

@@ -19,7 +19,7 @@ let kLicenseURL = "https://raw.githubusercontent.com/iHTCboy/iLeetcode-iOS/maste
 let kiHTCboyURL = "https://ihtcboy.com"
 let kEmail = "ihetiancong@gmail.com"
 let kAppShare = "Hello, \(kiTalker)! 这是一款为IT工程师们提供算法知识充电的应用，IT算法和数据结构知识，求职面试必备的好工具哦！" + "iOS下载链接：" + kAppDownloadURl
-let kAppAbout = "\(kiTalker) 是一款为IT工程师们提供算法知识充电的应用，IT算法和数据结构知识学习、面试必备的工具，不断努力打造更多更好方式呈现更有趣的知识，让大家在零碎时间也可以快速和简单的学习get! \n \n 1、1000+题库，满足你对算法求知欲望！\n2、IT企业面试题目，为你完名企的梦！\n3、最全算法知识，为你准备好的面试！"
+let kAppAbout = "About App"
 let kShareTitle = "长按识别二维码下载"
 let kShareSubTitle = "1000+题库，满足你对算法求知欲望！"
 
@@ -155,4 +155,9 @@ public extension UIDevice {
         default:                                        return identifier
         }
     }
+}
+
+
+func HTCLocalized(_ key: String) -> String {
+    return NSLocalizedString(key, tableName: nil, comment: "")
 }

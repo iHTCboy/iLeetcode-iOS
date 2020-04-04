@@ -1,0 +1,11 @@
+/*
+  InfoPlist.strings
+  iLeetcode
+
+  Created by HTC on 2020/4/4.
+  Copyright © 2020 HTC. All rights reserved.
+*/
+
+
+NSPhotoLibraryUsageDescription = "请求访问相册，以便保存App截图";
+NSPhotoLibraryAddUsageDescription = "请求访问相册，以便保存App截图";

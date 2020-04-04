@@ -47,7 +47,7 @@ extension ITAboutAppVC
             self.view.backgroundColor = UIColor.secondarySystemGroupedBackground
         }
         
-        self.title = "关于\(kiTalker)"
+        self.title = "\(HTCLocalized("About")) \(kiTalker)"
         
         guard (self.logoImgView != nil) else {
             return
@@ -61,7 +61,7 @@ extension ITAboutAppVC
         if #available(iOS 13.0, *) {
             self.versionLbl.textColor = UIColor.secondaryLabel
         }
-        self.contentLbl.text = kAppAbout
+        self.contentLbl.text = HTCLocalized("About App")
         let formatter = DateFormatter.init()
         formatter.dateFormat = "yyyy"
         let yearString = formatter.string(from: Date.init())
