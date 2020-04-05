@@ -50,6 +50,9 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
     
     lazy var tableView: UITableView = {
         var tableView = UITableView.init(frame: CGRect.zero, style: .plain)
+        if #available(iOS 13.0, *) {
+            tableView.backgroundColor = .secondarySystemGroupedBackground
+        }
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.estimatedRowHeight = 80
@@ -99,7 +102,7 @@ extension ITQuestionDetailViewController {
         }
         
         if #available(iOS 13.0, *) {
-            view.backgroundColor = .groupTableViewBackground
+            view.backgroundColor = .secondarySystemGroupedBackground
         }
         
         //tableView
@@ -154,35 +157,35 @@ extension ITQuestionDetailViewController {
     }
     
     @objc func showAnswer(item: Any) {
-        let alert = UIAlertController(title: "Tips(提示)",
-                                      message: "Select the language of the answer for the solution.\n(请选择要显示的解答的答案的语言)",
+        let alert = UIAlertController(title: HTCLocalized("Tips"),
+                                      message: HTCLocalized("Select the language of the answer for the solution."),
                                       preferredStyle: UIAlertController.Style.alert)
         
-        let zhProblemsAction = UIAlertAction.init(title: "中文原题", style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
-            self.showWebView(url: url)
-        }
-        alert.addAction(zhProblemsAction)
-        
-        let zhAction = UIAlertAction.init(title: "解法(中文)", style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
-            self.showWebView(url: url)
-        }
-        alert.addAction(zhAction)
-        
-        let enProblemsAction = UIAlertAction.init(title: "English Problem", style: .default) { (action: UIAlertAction) in
+        let enProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(English)"), style: .default) { (action: UIAlertAction) in
             let url = "https://leetcode.com/problems/" + self.questionModle!.link
             self.showWebView(url: url)
         }
         alert.addAction(enProblemsAction)
         
-        let enAction = UIAlertAction.init(title: "Solution(English)", style: .default) { (action: UIAlertAction) in
+        let enAction = UIAlertAction.init(title: HTCLocalized("Solution(English)"), style: .default) { (action: UIAlertAction) in
             let url = "https://leetcode.com/articles/" + self.questionModle!.link
             self.showWebView(url: url)
         }
         alert.addAction(enAction)
         
-        let cancelAction = UIAlertAction.init(title: "Cancel(取消)", style: .destructive) { (action: UIAlertAction) in
+        let zhProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(Chinese)"), style: .default) { (action: UIAlertAction) in
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
+            self.showWebView(url: url)
+        }
+        alert.addAction(zhProblemsAction)
+        
+        let zhAction = UIAlertAction.init(title: HTCLocalized("Solution(Chinese)"), style: .default) { (action: UIAlertAction) in
+            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
+            self.showWebView(url: url)
+        }
+        alert.addAction(zhAction)
+        
+        let cancelAction = UIAlertAction.init(title: HTCLocalized("Cancel"), style: .destructive) { (action: UIAlertAction) in
             
         }
         alert.addAction(cancelAction)
@@ -262,7 +265,6 @@ extension ITQuestionDetailViewController {
     
     fileprivate func headerView() -> UIView {
         let cell = UINib(nibName: "ITQuestionListViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ITQuestionListViewCell
-        cell.backgroundColor = UIColor.white
         cell.accessoryType = .none
         cell.selectionStyle = .none
         cell.numLbl.layer.cornerRadius = 3

@@ -33,3 +33,10 @@
 "Follow System" = "跟随系统";
 "Light Style" = "浅色主题";
 "Dark Style" = "深色主题";
+"Tips" = "提示";
+"Select the language of the answer for the solution." = "请选择要显示的解答的答案的语言";
+"Subject(English)" = "题目(英文)";
+"Solution(English)" = "解法(英文)";
+"" = "题目(中文)";
+"" = "解法(中文)";
+"Cancel" = "取消";

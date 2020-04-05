@@ -87,6 +87,11 @@ class ITQuestionListViewController: UIViewController {
 // MARK:- Prive mothod
 extension ITQuestionListViewController {
     fileprivate func setUpUI() {
+        // backgroundColor
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .secondarySystemGroupedBackground
+        }
+        
         // tableview
         view.addSubview(tableView)
         let constraintViews = [

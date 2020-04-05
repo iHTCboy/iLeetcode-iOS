@@ -103,7 +103,7 @@ extension IHTCSearchDetailVC {
         }
         
         if #available(iOS 13.0, *) {
-            view.backgroundColor = .groupTableViewBackground
+            view.backgroundColor = .secondarySystemGroupedBackground
         }
         
         //tableView
