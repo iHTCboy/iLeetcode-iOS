@@ -35,7 +35,11 @@ class IHTCShareFooterView: UIView {
     
     class func footerView(image: UIImage, title: String, subTitle: String) -> IHTCShareFooterView {
         let fview = IHTCShareFooterView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width) * 0.35))
-        fview.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            fview.backgroundColor = .groupTableViewBackground
+        } else {
+            fview.backgroundColor = .white
+        }
         fview.shareImage.image = image
         fview.shareTitle.text = title
         fview.shareSubTitle.text = subTitle

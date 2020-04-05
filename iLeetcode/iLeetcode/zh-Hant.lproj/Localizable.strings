@@ -33,3 +33,22 @@
 "Follow System" = "跟隨系統";
 "Light Style" = "淺色主題";
 "Dark Style" = "深色主題";
+"Tips" = "提示";
+"Select the language of the answer for the solution." = "請選擇要顯示的解答的答案的語言";
+"Subject(English)" = "題目(英文)";
+"Solution(English)" = "解法(英文)";
+"Subject(Chinese)" = "題目(中文)";
+"Solution(Chinese)" = "解法(中文)";
+"Cancel" = "取消";
+"No more previous questions" = "沒有更多上一題啦";
+"No more next questions" = "沒有更多下一題啦";
+"OK" = "確認";
+"Appearance" = "設置主題";
+"Welcome to the mail. Write down your questions." = "歡迎來信，寫下你的問題吧";
+"The current " = "當前 ";
+" version" = "版本";
+"System version" = "系統版本";
+"Device Information" = "設備信息";
+"Problem-solving" = "解題";
+"Share" = "分享";
+

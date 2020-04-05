@@ -49,11 +49,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-TE-V7e" customClass="ITCopyLabel" customModule="iCoder" customModuleProvider="target">
-                        <rect key="frame" x="30" y="46" width="338" height="42"/>
+                        <rect key="frame" x="30" y="46" width="338" height="21.666666666666671"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r64-Rm-FMh">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r64-Rm-FMh" userLabel="LineView">
                         <rect key="frame" x="0.0" y="108.33333333333333" width="413" height="0.6666666666666714"/>
                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -86,8 +86,8 @@
                     <constraint firstItem="0iT-FL-dXy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="1ua-pD-Ly1"/>
                     <constraint firstItem="Ca7-QA-H6s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="6bG-xQ-TJp"/>
                     <constraint firstItem="wr1-c5-CJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="BUS-Ck-siJ"/>
+                    <constraint firstItem="r64-Rm-FMh" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Uc-TE-V7e" secondAttribute="bottom" constant="15" id="HFK-fB-QKQ"/>
                     <constraint firstItem="k9m-Hw-2gV" firstAttribute="leading" secondItem="0iT-FL-dXy" secondAttribute="trailing" constant="8" id="NAP-0j-Ywd"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="7Uc-TE-V7e" secondAttribute="bottom" constant="10" id="OPi-IW-0J4"/>
                     <constraint firstItem="uaO-Ks-4sF" firstAttribute="width" secondItem="071-67-4lL" secondAttribute="width" id="PtH-nQ-wgL"/>
                     <constraint firstItem="071-67-4lL" firstAttribute="leading" secondItem="uaO-Ks-4sF" secondAttribute="trailing" constant="100" id="RhF-vI-4AS"/>
                     <constraint firstItem="uaO-Ks-4sF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vgw-bx-26d"/>

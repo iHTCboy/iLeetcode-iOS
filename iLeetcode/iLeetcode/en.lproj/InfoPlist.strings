@@ -7,5 +7,9 @@
 */
 
 
-NSPhotoLibraryUsageDescription = "Request access to the album, in order to save App Screenshots";
-NSPhotoLibraryAddUsageDescription = "Request access to the album, in order to save App Screenshots";
+"NSPhotoLibraryUsageDescription" = "Request access to the album, in order to save App Screenshots";
+"NSPhotoLibraryAddUsageDescription" = "Request access to the album, in order to save App Screenshots";
+"快速搜索题目" = "Quick Search Topics";
+"问题建议反馈" = "Advice or Feedback";
+"应用星级评价" = "Application Rating";
+

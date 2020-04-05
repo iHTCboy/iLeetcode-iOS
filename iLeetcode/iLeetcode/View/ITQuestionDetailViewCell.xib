@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -15,26 +15,9 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="326" height="273"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtF-jg-kgI">
-                        <rect key="frame" x="0.0" y="0.0" width="326" height="252"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <dataDetectorType key="dataDetectorTypes"/>
-                    </webView>
-                </subviews>
-                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="vtF-jg-kgI" secondAttribute="bottom" constant="10" id="7UB-ut-eSi"/>
-                    <constraint firstItem="vtF-jg-kgI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Ni-xl-nBJ"/>
-                    <constraint firstItem="vtF-jg-kgI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZkU-J5-N6p"/>
-                    <constraint firstAttribute="trailing" secondItem="vtF-jg-kgI" secondAttribute="trailing" id="ndx-zS-IAY"/>
-                </constraints>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             </tableViewCellContentView>
-            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-            <connections>
-                <outlet property="webView" destination="vtF-jg-kgI" id="io2-YJ-Q6A"/>
-            </connections>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <point key="canvasLocation" x="-1304" y="-259.52023988005999"/>
         </tableViewCell>
     </objects>

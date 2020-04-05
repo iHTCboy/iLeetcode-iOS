@@ -163,7 +163,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
                 IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: true)
             }
             if row == 1 {
-                let message = "欢迎来信，写下你的问题吧" + "\n\n\n\n" + kMarginLine + "\n 当前\(kiTalker)版本：" + KAppVersion + "， 系统版本：" + String(Version.SYS_VERSION_FLOAT) + "， 设备信息：" + UIDevice.init().modelName
+                let message = HTCLocalized("Welcome to the mail. Write down your questions.") + "\n\n\n\n" + kMarginLine + "\n \(HTCLocalized("The current "))\(kiTalker)\(HTCLocalized(" version"))：" + KAppVersion + "， \(HTCLocalized("System version"))：" + String(Version.SYS_VERSION_FLOAT) + "， \(HTCLocalized("Device Information"))：" + UIDevice.init().modelName
                 
                 ITCommonAPI.shared.sendEmail(recipients: [kEmail], messae: message, vc: self)
             }
@@ -178,7 +178,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
             }
             if row == 5 {
                 let vc = ITAdvancelDetailViewController()
-                vc.title = "更多学习"
+                vc.title = HTCLocalized("Learn More")
                 vc.advancelType = .iHTCboyApp
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)

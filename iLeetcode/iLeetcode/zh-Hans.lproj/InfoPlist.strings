@@ -7,5 +7,8 @@
 */
 
 
-NSPhotoLibraryUsageDescription = "请求访问相册，以便保存App截图";
-NSPhotoLibraryAddUsageDescription = "请求访问相册，以便保存App截图";
+"NSPhotoLibraryUsageDescription" = "请求访问相册，以便保存App截图";
+"NSPhotoLibraryAddUsageDescription" = "请求访问相册，以便保存App截图";
+"快速搜索题目" = "快速搜索题目";
+"问题建议反馈" = "问题建议反馈";
+"应用星级评价" = "应用星级评价";

@@ -50,7 +50,6 @@ class IHTCSearchDetailVC: UIViewController {
     var questionsArray: Array<ITQuestionModel> = []
     var currentIndex: Int = 0
     var isShowZH : Bool = false
-    fileprivate var webView: UIWebView!
     
     lazy var tableView: UITableView = {
         var tableView = UITableView.init(frame: CGRect.zero, style: .plain)
@@ -65,6 +64,24 @@ class IHTCSearchDetailVC: UIViewController {
         return tableView
     }()
     
+    lazy var webView: WKWebView = {
+        let preferences = WKPreferences()
+        preferences.javaScriptEnabled = true
+        let configuration = WKWebViewConfiguration()
+        configuration.preferences = preferences
+        var webView = WKWebView.init(frame: CGRect.zero, configuration: configuration)
+        webView.allowsBackForwardNavigationGestures = true;
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.scrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+        webView.isOpaque = false;
+        if #available(iOS 13.0, *) {
+            webView.backgroundColor = .systemBackground
+        } else {
+            webView.backgroundColor = .groupTableViewBackground
+        }
+        return webView
+    }()
+    
     lazy var infoItem :UIBarButtonItem = {
         let infoBtn = UIButton.init(type: UIButton.ButtonType.detailDisclosure)
         infoBtn.addTarget(self, action: #selector(showAnswer), for: .touchUpInside)
@@ -74,10 +91,10 @@ class IHTCSearchDetailVC: UIViewController {
     
     @available(iOS 9.0, *)
     lazy var previewActions: [UIPreviewActionItem] = {
-        let a = UIPreviewAction(title: "解题", style: .default, handler: { (action, vc) in
+        let a = UIPreviewAction(title: HTCLocalized("Problem-solving"), style: .default, handler: { (action, vc) in
             self.showAnswer(item: action)
         })
-        let b = UIPreviewAction(title: "分享", style: .default, handler: { (action, vc) in
+        let b = UIPreviewAction(title: HTCLocalized("Share"), style: .default, handler: { (action, vc) in
             self.sharedPageView(item: action)
         })
         return [a, b]
@@ -125,18 +142,10 @@ extension IHTCSearchDetailVC {
         if #available(iOS 13.0, *) {
             webHeight -= UIApplication.shared.statusBarFrame.size.height
         }
-        let webView = UIWebView.init(frame: CGRect.zero)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        if #available(iOS 13.0, *) {
-            webView.backgroundColor = .secondarySystemGroupedBackground
-            webView.scrollView.backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            webView.backgroundColor = .groupTableViewBackground
-        }
-        //webView.scalesPageToFit = true
-        webView.allowsLinkPreview = true
-        self.webView = webView
+        let webView = self.webView
         view.addSubview(webView)
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
         let webViewConstraintViews = [
             "webView": webView
         ]
@@ -160,39 +169,39 @@ extension IHTCSearchDetailVC {
     }
     
     @objc func showAnswer(item: Any) {
-        let alert = UIAlertController(title: "Tips(提示)",
-                                      message: "Select the language of the answer for the solution.\n(请选择要显示的解答的答案的语言)",
+        let alert = UIAlertController(title: HTCLocalized("Tips"),
+                                      message: HTCLocalized("Select the language of the answer for the solution."),
                                       preferredStyle: UIAlertController.Style.alert)
         
-        let zhProblemsAction = UIAlertAction.init(title: "中文原题", style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
-            self.showWebView(url: url)
-        }
-        alert.addAction(zhProblemsAction)
-        
-        let zhAction = UIAlertAction.init(title: "解法(中文)", style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
-            self.showWebView(url: url)
-        }
-        alert.addAction(zhAction)
-        
-        let enProblemsAction = UIAlertAction.init(title: "English Problem", style: .default) { (action: UIAlertAction) in
+        let enProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(English)"), style: .default) { (action: UIAlertAction) in
             let url = "https://leetcode.com/problems/" + self.questionModle!.link
             self.showWebView(url: url)
         }
         alert.addAction(enProblemsAction)
         
-        let enAction = UIAlertAction.init(title: "Solution(English)", style: .default) { (action: UIAlertAction) in
+        let enAction = UIAlertAction.init(title: HTCLocalized("Solution(English)"), style: .default) { (action: UIAlertAction) in
             let url = "https://leetcode.com/articles/" + self.questionModle!.link
             self.showWebView(url: url)
         }
         alert.addAction(enAction)
         
-        let cancelAction = UIAlertAction.init(title: "Cancel(取消)", style: .destructive) { (action: UIAlertAction) in
+        let zhProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(Chinese)"), style: .default) { (action: UIAlertAction) in
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
+            self.showWebView(url: url)
+        }
+        alert.addAction(zhProblemsAction)
+        
+        let zhAction = UIAlertAction.init(title: HTCLocalized("Solution(Chinese)"), style: .default) { (action: UIAlertAction) in
+            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
+            self.showWebView(url: url)
+        }
+        alert.addAction(zhAction)
+        
+        let cancelAction = UIAlertAction.init(title: HTCLocalized("Cancel"), style: .destructive) { (action: UIAlertAction) in
             
         }
         alert.addAction(cancelAction)
-        UIApplication.shared.keyWindow?.rootViewController!.presentedViewController!.present(alert, animated: true, completion: {
+        UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
             //print("UIAlertController present");
         })
     }
@@ -229,20 +238,23 @@ extension IHTCSearchDetailVC {
     
     func setCssFont(percentFont: NSInteger, rowSpace: NSInteger) {
         let css = "document.getElementsByClassName('markdown-body')[0].style.webkitTextSizeAdjust= '\(percentFont)%'; document.getElementsByClassName('markdown-body')[0].style.lineHeight= '\(rowSpace)px;'"
-        webView?.stringByEvaluatingJavaScript(from: css)
+        webView.evaluateJavaScript(css, completionHandler: nil)
     }
     
     @objc func sharedPageView(item: Any) {
-        let heightjs = "(document.height !== undefined) ? document.height : document.body.offsetHeight;"
-        let webHeight = webView.stringByEvaluatingJavaScript(from: heightjs)
-        let height = CGFloat.init(Int(webHeight!)!)
-        
-        let headerImage = selectedCell.screenshot ?? UIImage.init(named: "App-share-Icon")
-        var masterImage = webView.scrollView.screenshotImage ?? UIImage.init(named: "App-share-Icon")!
-        masterImage = masterImage.imageCroppingRect(croppingRect: CGRect.init(x: 0, y: 0, width: masterImage.size.width, height: height)) ?? UIImage.init(named: "App-share-Icon")!
-        let footerImage = IHTCShareFooterView.footerView(image: UIImage.init(named: "iLeetCoder-qrcode")!, title: kShareTitle, subTitle: kShareSubTitle).screenshot
-        let image = ImageHandle.slaveImageWithMaster(masterImage: masterImage, headerImage: headerImage!, footerImage: footerImage!)
-         IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!.presentedViewController!)
+        // 页面高度
+        webView.evaluateJavaScript("document.body.scrollHeight") { (height, error) in
+            let height = height as! CGFloat + 15 //spacing 20
+            let headerImage = self.selectedCell.screenshot ?? UIImage.init(named: "App-share-Icon")
+            self.webView.scrollView.takeScreenshotOfFullContent { (masterImage: UIImage!) in
+                DispatchQueue.main.async {
+                    let mainImage = masterImage.imageCroppingRect(croppingRect: CGRect.init(x: 0, y: 0, width: Int(masterImage.size.width), height: Int(height))) ?? UIImage.init(named: "App-share-Icon")!
+                    let footerImage = IHTCShareFooterView.footerView(image: UIImage.init(named: "iLeetCoder-qrcode")!, title: kShareTitle, subTitle: kShareSubTitle).screenshot
+                    let image = ImageHandle.slaveImageWithMaster(masterImage: mainImage, headerImage: headerImage!, footerImage: footerImage!)
+                    IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!.presentedViewController!)
+                }
+            }
+        }
     }
     
     func showWebView(url: String) {
@@ -327,8 +339,8 @@ extension IHTCSearchDetailVC {
         
         let previousIndex = currentIndex - 1
         if previousIndex < 0 {
-            let alert = UIAlertController.init(title: "Tips", message: "No more previous questions\n没有更多上一题啦", preferredStyle: .alert)
-            let cancelAction = UIAlertAction.init(title: "OK", style: .destructive) { (action: UIAlertAction) in
+            let alert = UIAlertController.init(title: HTCLocalized("Tips"), message: HTCLocalized("No more previous questions"), preferredStyle: .alert)
+            let cancelAction = UIAlertAction.init(title: HTCLocalized("OK"), style: .destructive) { (action: UIAlertAction) in
                 
             }
             alert.addAction(cancelAction)
@@ -349,8 +361,8 @@ extension IHTCSearchDetailVC {
         
         let previousIndex = currentIndex + 1
         if previousIndex >= questionsArray.count {
-            let alert = UIAlertController.init(title: "Tips", message: "No more next questions\n没有更多下一题啦", preferredStyle: .alert)
-            let cancelAction = UIAlertAction.init(title: "OK", style: .destructive) { (action: UIAlertAction) in
+            let alert = UIAlertController.init(title: HTCLocalized("Tips"), message: HTCLocalized("No more next questions"), preferredStyle: .alert)
+            let cancelAction = UIAlertAction.init(title: HTCLocalized("OK"), style: .destructive) { (action: UIAlertAction) in
                 
             }
             alert.addAction(cancelAction)
@@ -391,8 +403,8 @@ extension IHTCSearchDetailVC {
         text = text.replacingOccurrences(of: "${contents}", with: contents)
         // load string
         let bundleURL = URL.init(string: path)
-        if bundleURL != nil  && webView != nil {
-            webView.loadHTMLString(text, baseURL: bundleURL)
+        if bundleURL != nil {
+            webView.loadHTMLString(text, baseURL: Bundle.main.resourceURL)
         }
     }
     
@@ -442,3 +454,16 @@ extension IHTCSearchDetailVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension IHTCSearchDetailVC: WKNavigationDelegate, WKUIDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        decisionHandler(.allow)
+    }
+    
+//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//
+//    }
+}

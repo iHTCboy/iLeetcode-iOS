@@ -37,6 +37,18 @@
 "Select the language of the answer for the solution." = "请选择要显示的解答的答案的语言";
 "Subject(English)" = "题目(英文)";
 "Solution(English)" = "解法(英文)";
-"" = "题目(中文)";
-"" = "解法(中文)";
+"Subject(Chinese)" = "题目(中文)";
+"Solution(Chinese)" = "解法(中文)";
 "Cancel" = "取消";
+"No more previous questions" = "没有更多上一题啦";
+"No more next questions" = "没有更多下一题啦";
+"OK" = "确认";
+"Appearance" = "设置主题";
+"Welcome to the mail. Write down your questions." = "欢迎来信，写下你的问题吧";
+"The current " = "当前 ";
+" version" = "版本";
+"System version" = "系统版本";
+"Device Information" = "设备信息";
+"Problem-solving" = "解题";
+"Share" = "分享";
+

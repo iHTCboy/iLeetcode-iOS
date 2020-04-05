@@ -20,7 +20,7 @@ class IHTCAppearanceVC: UITableViewController {
     }
     
     func setupUI() {
-        title = "设置主题"
+        title = HTCLocalized("Appearance")
         if #available(iOS 13.0, *) {
             tableView.backgroundColor = .secondarySystemBackground
         }

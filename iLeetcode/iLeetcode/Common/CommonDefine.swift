@@ -33,7 +33,7 @@ let kTitleViewH : CGFloat = 40
 let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height
 
-let kMarginLine = "———————————————————————"
+let kMarginLine = "—————————————————————"
 
 // Color
 let kColorAppBlue = UIColor(red:1.000, green:0.154, blue:0.000, alpha:1.000)
@@ -45,6 +45,13 @@ let kColorAppGray = UIColor(red:0.512, green:0.572, blue:0.630, alpha:1.000)
 
 // 系统
 let KAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+
+
+// 多语言
+func HTCLocalized(_ key: String) -> String {
+    return NSLocalizedString(key, tableName: nil, comment: "")
+}
+
 
 enum UIUserInterfaceIdiom : Int
 {
@@ -155,9 +162,4 @@ public extension UIDevice {
         default:                                        return identifier
         }
     }
-}
-
-
-func HTCLocalized(_ key: String) -> String {
-    return NSLocalizedString(key, tableName: nil, comment: "")
 }
