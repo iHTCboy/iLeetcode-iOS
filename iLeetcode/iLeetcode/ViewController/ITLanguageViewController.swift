@@ -86,13 +86,12 @@ extension ITLanguageViewController {
         if !isFirstLaunch {
             isFirstLaunch = true
             
-            let vc = UIStoryboard.init(name: "AppLaunchScreen", bundle: nil);
-            let launchView = vc.instantiateInitialViewController()!.view
-//            let window =  UIWindow.init(frame: (view?.frame)!)
-//            window.windowLevel = UIWindow.Level.alert
-//            window.backgroundColor = UIColor.clear
-//            window.addSubview(launchView!)
-//            window.makeKeyAndVisible()
+            let sb = UIStoryboard.init(name: "AppLaunchScreen", bundle: nil);
+            let vc = sb.instantiateInitialViewController()!
+            if #available(iOS 13.0, *), UIDevice.current.isMultitaskingSupported {
+                vc.view.frame = view.frame //Support iPadOS mutiple windows
+            }
+            let launchView = vc.view
             
             UIViewController.keyWindowHTC()?.addSubview(launchView!)
             

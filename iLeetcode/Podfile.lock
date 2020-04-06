@@ -1,16 +1,16 @@
 PODS:
-  - BaiduMobStatCodeless (5.0.0)
+  - BaiduMobStatCodeless (5.2.2)
 
 DEPENDENCIES:
   - BaiduMobStatCodeless
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - BaiduMobStatCodeless
 
 SPEC CHECKSUMS:
-  BaiduMobStatCodeless: ef513de2f4fd1f39cf1ca70f0d2ddaedd0afb3ca
+  BaiduMobStatCodeless: bfb398c6c2054b07f97bed51ddf0694311606324
 
-PODFILE CHECKSUM: d6ed30c95c016cf05f468f0e7c4c7e69e330f164
+PODFILE CHECKSUM: 6b3013a6055b9f6fc92f897c700737b9996aa35a
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
