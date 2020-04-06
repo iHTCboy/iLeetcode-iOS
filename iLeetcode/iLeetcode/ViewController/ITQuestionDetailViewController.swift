@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 import SafariServices
 //import SwiftyMarkdown
 
@@ -137,7 +138,11 @@ extension ITQuestionDetailViewController {
         
         // webview
         tableView.reloadData()
-        let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + (UIApplication.shared.statusBarFrame.size.height)
+        var webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + (UIApplication.shared.statusBarFrame.size.height ?? 0)
+        #if targetEnvironment(macCatalyst)
+//        webHeight += UIViewController.keyWindowHTC()?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 0
+        webHeight += 22
+        #endif
         let webView = self.webView
         view.addSubview(webView)
         webView.uiDelegate = self

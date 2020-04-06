@@ -56,6 +56,9 @@ class ITQuestionListViewController: UIViewController {
         var tableView = UITableView.init(frame: CGRect.zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 40, right: 0)
+        #if targetEnvironment(macCatalyst)
+        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 1024, right: 0)
+        #endif
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.estimatedRowHeight = 80
         tableView.delegate = self;
@@ -105,12 +108,14 @@ extension ITQuestionListViewController {
         view.addConstraints(vConstraints)
         view.addConstraints(hConstraints)
         view.layoutIfNeeded()
-        
+
+        #if !targetEnvironment(macCatalyst)
         // 判断系统版本，必须iOS 9及以上，同时检测是否支持触摸力度识别
         if #available(iOS 9.0, *), traitCollection.forceTouchCapability == .available {
             // 注册预览代理，self监听，tableview执行Peek
             registerForPreviewing(with: self, sourceView: tableView)
         }
+        #endif
     }
     
     @objc public func randomRefresh(sender: AnyObject) {
@@ -250,7 +255,7 @@ extension Sequence {
 }
 
 
-
+#if !targetEnvironment(macCatalyst)
 // MARK: - UIViewControllerPreviewingDelegate
 @available(iOS 9.0, *)
 extension ITQuestionListViewController: UIViewControllerPreviewingDelegate {
@@ -282,3 +287,4 @@ extension ITQuestionListViewController: UIViewControllerPreviewingDelegate {
         return questionVC
     }
 }
+#endif
