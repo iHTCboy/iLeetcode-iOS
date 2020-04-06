@@ -88,12 +88,35 @@ extension ITLanguageViewController {
             
             let sb = UIStoryboard.init(name: "AppLaunchScreen", bundle: nil);
             let vc = sb.instantiateInitialViewController()!
-            if #available(iOS 13.0, *), UIDevice.current.isMultitaskingSupported {
+            if #available(iOS 13.0, *), UIDevice.current.userInterfaceIdiom == .pad {
                 vc.view.frame = view.frame //Support iPadOS mutiple windows
             }
             let launchView = vc.view
+            var window = view.window
             
-            UIViewController.keyWindowHTC()?.addSubview(launchView!)
+            if window == nil {
+                 // Support iPadOS mutiple windows, 当前有2个窗口在前台时
+                if #available(iOS 13.0, *), UIDevice.current.userInterfaceIdiom == .pad {
+                    let scenes = UIApplication.shared.connectedScenes
+                    .filter({$0.activationState == .foregroundActive})
+                    .map({$0 as? UIWindowScene})
+                    .compactMap({$0})
+                    
+                    scenes.forEach { (scene) in
+                        scene.windows.forEach({ (wd) in
+                            if wd.isMember(of: UIWindow.self) && wd.frame.equalTo(view.frame) {
+                                window = wd
+                            }
+                        })
+                    }
+                }
+            }
+            
+            if window == nil {
+                window = UIViewController.keyWindowHTC()
+            }
+            
+            window?.addSubview(launchView!)
             
             UIView.animate(withDuration: 0.25, delay: 0.8, options: .beginFromCurrentState, animations: {
                 launchView?.layer.transform = CATransform3DScale(CATransform3DIdentity, 2, 2, 1)

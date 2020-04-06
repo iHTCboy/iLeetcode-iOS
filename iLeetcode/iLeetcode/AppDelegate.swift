@@ -95,7 +95,7 @@ extension AppDelegate {
         //statTracker.enableDebugOn = true;
         statTracker.channelId = "Debug"
 #else
-        statTracker.shortAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        statTracker.shortAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "None"
         statTracker.channelId = "AppStore"
         statTracker.start(withAppId: "16b4ffd70b")
         let formatter = DateFormatter()
