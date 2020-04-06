@@ -105,7 +105,7 @@ extension ITCommonAPI
         alert.addAction(cancelAction)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            let vc = UIApplication.shared.keyWindow?.rootViewController;
+            let vc = UIViewController.keyWindowHTC()?.rootViewController;
             vc?.present(alert, animated: true, completion: {
                 //print("UIAlertController present");
             })

@@ -197,7 +197,7 @@ extension ITQuestionDetailViewController {
             
         }
         alert.addAction(cancelAction)
-        UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
+        view.window!.rootViewController!.present(alert, animated: true, completion: {
             //print("UIAlertController present");
         })
     }
@@ -251,10 +251,13 @@ extension ITQuestionDetailViewController {
             let headerImage = self.selectedCell.screenshot ?? UIImage.init(named: "App-share-Icon")
             self.webView.scrollView.takeScreenshotOfFullContent { (masterImage: UIImage!) in
                 DispatchQueue.main.async {
+                    if masterImage == nil {
+                        return
+                    }
                     let mainImage = masterImage.imageCroppingRect(croppingRect: CGRect.init(x: 0, y: 0, width: Int(masterImage.size.width), height: Int(height))) ?? UIImage.init(named: "App-share-Icon")!
                     let footerImage = IHTCShareFooterView.footerView(image: UIImage.init(named: "iLeetCoder-qrcode")!, title: kShareTitle, subTitle: kShareSubTitle).screenshot
                     let image = ImageHandle.slaveImageWithMaster(masterImage: mainImage, headerImage: headerImage!, footerImage: footerImage!)
-                    IAppleServiceUtil.shareImage(image: image!, vc: UIApplication.shared.keyWindow!.rootViewController!)
+                    IAppleServiceUtil.shareImage(image: image!, vc: self.view.window!.rootViewController!)
                 }
             }
         }
@@ -270,7 +273,7 @@ extension ITQuestionDetailViewController {
         if #available(iOS 11.0, *) {
             vc.dismissButtonStyle = .close
         }
-        UIApplication.shared.keyWindow!.rootViewController!.present(vc, animated: true)
+        view.window!.rootViewController!.present(vc, animated: true)
     }
     
     fileprivate func headerView() -> UIView {
@@ -346,7 +349,7 @@ extension ITQuestionDetailViewController {
                 
             }
             alert.addAction(cancelAction)
-            UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
+            view.window!.rootViewController!.present(alert, animated: true, completion: {
                 //print("UIAlertController present");
             })
             return
@@ -367,7 +370,7 @@ extension ITQuestionDetailViewController {
                 
             }
             alert.addAction(cancelAction)
-            UIApplication.shared.keyWindow!.rootViewController!.present(alert, animated: true, completion: {
+            view.window!.rootViewController!.present(alert, animated: true, completion: {
                 //print("UIAlertController present");
             })
             return

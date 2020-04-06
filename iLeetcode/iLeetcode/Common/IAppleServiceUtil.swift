@@ -85,7 +85,7 @@ class IAppleServiceUtil: NSObject {
                 
             }
             alert.addAction(cancelAction)
-            UIApplication.shared.keyWindow?.rootViewController!.present(alert, animated: true, completion: nil)
+            UIViewController.keyWindowHTC()?.rootViewController!.present(alert, animated: true, completion: nil)
         }
     }
 }
@@ -170,12 +170,12 @@ extension UIViewController {
     }
     
     func currentRootViewController() -> UIViewController {
-        return UIApplication.shared.keyWindow!.rootViewController ?? self
+        return view.window!.rootViewController ?? self
     }
     
     func topViewController() -> UIViewController {
         
-        var vc = UIApplication.shared.keyWindow!.rootViewController ?? self
+        var vc = view.window!.rootViewController ?? self
         
         while ((vc.presentedViewController) != nil) {
             vc = vc.presentedViewController!;

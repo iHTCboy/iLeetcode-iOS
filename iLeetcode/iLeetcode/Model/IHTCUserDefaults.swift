@@ -66,15 +66,21 @@ extension IHTCUserDefaults
         if #available(iOS 13.0, *) {
             switch style {
             case .Default:
-                UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .unspecified
+                UIApplication.shared.windows.forEach { (window) in
+                    window.overrideUserInterfaceStyle = .unspecified
+                }
                 IHTCUserDefaults.shared.setAppAppearance(style: .Default)
                 break
             case .Light:
-                UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .light
+                UIApplication.shared.windows.forEach { (window) in
+                    window.overrideUserInterfaceStyle = .light
+                }
                 IHTCUserDefaults.shared.setAppAppearance(style: .Light)
                 break
             case .Dark:
-                UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .dark
+                UIApplication.shared.windows.forEach { (window) in
+                    window.overrideUserInterfaceStyle = .dark
+                }
                 IHTCUserDefaults.shared.setAppAppearance(style: .Dark)
                 break
             }

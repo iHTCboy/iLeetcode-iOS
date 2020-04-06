@@ -94,6 +94,7 @@
 		6DCD77092438D5D400CF3F46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD770B2438D5D400CF3F46 /* Localizable.strings */; };
 		6DCD77142439C94F00CF3F46 /* WKWebView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77132439C94F00CF3F46 /* WKWebView+Snapshot.swift */; };
 		6DCD77162439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */; };
+		6DCD7718243A1AC800CF3F46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */; };
 		B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */; };
 		C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */; };
 /* End PBXBuildFile section */
@@ -231,6 +232,7 @@
 		6DCD770F2438DCBA00CF3F46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DCD77132439C94F00CF3F46 /* WKWebView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Snapshot.swift"; sourceTree = "<group>"; };
 		6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPrintPageRenderer.swift; sourceTree = "<group>"; };
+		6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
 		843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				6DC7CFD3226C04E000F2CC10 /* iLeetcode.entitlements */,
 				6D4ABE702250937C0022AAFC /* iLeetcode-Bridging-Header.h */,
 				6D50FFE42245303800E114EE /* AppDelegate.swift */,
+				6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */,
 				6D4ABD37225088660022AAFC /* ViewController */,
 				6D4ABD5A225088D00022AAFC /* Model */,
 				6D4ABD51225088D00022AAFC /* View */,
@@ -787,6 +790,7 @@
 				6DC7CFD5226C1BB600F2CC10 /* IAppleServiceUtil.swift in Sources */,
 				6D79466722773A9E00887F2D /* TableHeaderView.swift in Sources */,
 				6D4ABD68225088D00022AAFC /* ITQuestionModel.swift in Sources */,
+				6DCD7718243A1AC800CF3F46 /* SceneDelegate.swift in Sources */,
 				6D053EB3226DF7ED006D55B6 /* IHTCUserDefaults.swift in Sources */,
 				6DCD77162439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift in Sources */,
 				6D4ABD4C225088660022AAFC /* ITBasePushTransitionVC.swift in Sources */,
@@ -1032,6 +1036,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020.04.05;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
@@ -1045,6 +1050,7 @@
 				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1058,6 +1064,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020.04.05;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
@@ -1071,6 +1078,7 @@
 				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

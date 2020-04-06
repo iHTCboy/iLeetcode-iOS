@@ -60,9 +60,9 @@ class ITLanguageViewController: ITBasePushTransitionVC {
             }
         }
         
-    let contentView = ITPageContentView(frame: contentFrame, childVcs: childVcs, parentVc: self)
-    contentView.delegate = self
-    return contentView
+        let contentView = ITPageContentView(frame: contentFrame, childVcs: childVcs, parentVc: self)
+        contentView.delegate = self
+        return contentView
     }()
     
     var isFirstLaunch = false
@@ -88,17 +88,19 @@ extension ITLanguageViewController {
             
             let vc = UIStoryboard.init(name: "AppLaunchScreen", bundle: nil);
             let launchView = vc.instantiateInitialViewController()!.view
-            let window =  UIWindow.init(frame: (view?.frame)!)
-            window.windowLevel = UIWindow.Level.alert
-            window.backgroundColor = UIColor.clear
-            window.addSubview(launchView!)
-            window.makeKeyAndVisible()
+//            let window =  UIWindow.init(frame: (view?.frame)!)
+//            window.windowLevel = UIWindow.Level.alert
+//            window.backgroundColor = UIColor.clear
+//            window.addSubview(launchView!)
+//            window.makeKeyAndVisible()
+            
+            UIViewController.keyWindowHTC()?.addSubview(launchView!)
             
             UIView.animate(withDuration: 0.25, delay: 0.8, options: .beginFromCurrentState, animations: {
                 launchView?.layer.transform = CATransform3DScale(CATransform3DIdentity, 2, 2, 1)
                 launchView?.alpha = 0.0
             }, completion: { (true) in
-                window.removeFromSuperview()
+                launchView?.removeFromSuperview()
             })
         }
     }

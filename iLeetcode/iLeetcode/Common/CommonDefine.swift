@@ -52,6 +52,35 @@ func HTCLocalized(_ key: String) -> String {
     return NSLocalizedString(key, tableName: nil, comment: "")
 }
 
+extension UIViewController {
+
+    /// The app's key window taking into consideration apps that support multiple scenes.
+    class func keyWindowHTC() -> UIWindow? {
+        var foundWindow: UIWindow? = nil
+        for window in UIApplication.shared.windows {
+            if (window.isKeyWindow) {
+                foundWindow = window;
+                break
+            }
+        }
+        
+        if  foundWindow == nil {
+            foundWindow = UIApplication.shared.keyWindow
+        }
+        
+        if  foundWindow == nil {
+            foundWindow = UIApplication.shared.windows.first
+        }
+        
+        // 先兼容iPhone设备
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            foundWindow = UIApplication.shared.keyWindow
+        }
+        
+        return foundWindow
+    }
+
+}
 
 enum UIUserInterfaceIdiom : Int
 {
@@ -74,7 +103,7 @@ struct DeviceType
     static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
     static let IS_IPHONE_6_7          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
     static let IS_IPHONE_6P_7P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-    static let IS_IPHONE_X_S         = UIDevice.current.userInterfaceIdiom == .phone && (Version.GREATER_iOS11 ? ((UIApplication.shared.keyWindow?.value(forKey: "safeAreaInsets") as! UIEdgeInsets).bottom != 0.0) : false)
+    static let IS_IPHONE_X_S         = UIDevice.current.userInterfaceIdiom == .phone && (Version.GREATER_iOS11 ? ((UIViewController.keyWindowHTC()?.value(forKey: "safeAreaInsets") as! UIEdgeInsets).bottom != 0.0) : false)
     static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
     static let IS_IPAD_PRO          = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1366.0
 }
