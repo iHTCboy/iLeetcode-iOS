@@ -175,8 +175,9 @@ extension ITQuestionDetailViewController {
         }
         alert.addAction(enProblemsAction)
         
+        // https://leetcode.com/problems/two-sum/solution/
         let enAction = UIAlertAction.init(title: HTCLocalized("Solution(English)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode.com/articles/" + self.questionModle!.link
+            let url = "https://leetcode.com/problems/" + self.questionModle!.link + "/solution/"
             self.showWebView(url: url)
         }
         alert.addAction(enAction)
@@ -187,8 +188,9 @@ extension ITQuestionDetailViewController {
         }
         alert.addAction(zhProblemsAction)
         
+        // https://leetcode-cn.com/problems/two-sum/solution/
         let zhAction = UIAlertAction.init(title: HTCLocalized("Solution(Chinese)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link + "/solution/"
             self.showWebView(url: url)
         }
         alert.addAction(zhAction)
