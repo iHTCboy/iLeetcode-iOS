@@ -44,7 +44,7 @@ class ITProgrammerVC: UIViewController {
         return tableView
     }()
     
-    fileprivate var titles = ["0": "\(HTCLocalized("Display Language")):设置题目显示的默认语言,\(HTCLocalized("Display Appearance")):暗黑or浅色",
+    fileprivate var titles = ["0": "\(HTCLocalized("Display Issue Language")):设置题目显示的默认语言,\(HTCLocalized("Display Appearance")):暗黑or浅色",
         
         "1": "\(HTCLocalized("In App Rating")):\(HTCLocalized("Welcome to iCoder app review!")),\(HTCLocalized("AppStore Evaluation")):\(HTCLocalized("Welcome to write a review"))!,\(HTCLocalized("Send to a friend")):\(HTCLocalized("Study together with friends around!"))",
         

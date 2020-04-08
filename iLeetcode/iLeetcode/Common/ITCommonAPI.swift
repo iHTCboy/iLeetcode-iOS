@@ -25,7 +25,7 @@ extension ITCommonAPI
     func checkAppUpdate( newHandler: checkAppUpdateHandler?) {
         
         var request = URLRequest(url: URL(string: "https://itunes.apple.com/lookup?id=" + kAppAppleId)!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         let session = URLSession.shared
         session.dataTask(with: request) {data, response, err in
             if let data = data {
@@ -88,13 +88,13 @@ extension ITCommonAPI
     func showNewVersion(version: NSString, resultDic: NSDictionary) {
         print(version)
         
-        let title = "发现新版本v" + (version as String)
+        let title = HTCLocalized("New version v") + (version as String)
         
         let alert = UIAlertController(title: title,
-                                      message: "赶快体验最新版本吧！是否前往AppStore更新？",
-                                      preferredStyle: UIAlertController.Style.alert)
+                                    message: HTCLocalized("Hurry up and experience the latest version! Go to AppStore to update?"),
+                                    preferredStyle: UIAlertController.Style.alert)
         
-        let okAction = UIAlertAction.init(title: "OK", style: .default) { (action: UIAlertAction) in
+        let okAction = UIAlertAction.init(title: HTCLocalized("OK"), style: .default) { (action: UIAlertAction) in
             UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/cn/app/yi-mei-yun/id" + kAppAppleId + "?l=zh&ls=1&mt=8")!)
         }
         alert.addAction(okAction)

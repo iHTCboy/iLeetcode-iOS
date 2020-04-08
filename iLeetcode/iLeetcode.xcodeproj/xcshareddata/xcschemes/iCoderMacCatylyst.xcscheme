@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6DCD0D91243B5AC20069EBA1"
-               BuildableName = "iCoderMacCatylyst.app"
+               BuildableName = "iCoder.app"
                BlueprintName = "iCoderMacCatylyst"
                ReferencedContainer = "container:iLeetcode.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6DCD0D91243B5AC20069EBA1"
-            BuildableName = "iCoderMacCatylyst.app"
+            BuildableName = "iCoder.app"
             BlueprintName = "iCoderMacCatylyst"
             ReferencedContainer = "container:iLeetcode.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6DCD0D91243B5AC20069EBA1"
-            BuildableName = "iCoderMacCatylyst.app"
+            BuildableName = "iCoder.app"
             BlueprintName = "iCoderMacCatylyst"
             ReferencedContainer = "container:iLeetcode.xcodeproj">
          </BuildableReference>

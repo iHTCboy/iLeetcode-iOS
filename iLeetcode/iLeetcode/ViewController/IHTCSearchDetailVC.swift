@@ -181,7 +181,7 @@ extension IHTCSearchDetailVC {
         alert.addAction(enProblemsAction)
         
         let enAction = UIAlertAction.init(title: HTCLocalized("Solution(English)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode.com/articles/" + self.questionModle!.link
+            let url = "https://leetcode.com/problems/" + self.questionModle!.link + "/solution/"
             self.showWebView(url: url)
         }
         alert.addAction(enAction)
@@ -193,7 +193,7 @@ extension IHTCSearchDetailVC {
         alert.addAction(zhProblemsAction)
         
         let zhAction = UIAlertAction.init(title: HTCLocalized("Solution(Chinese)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link + "/solution/"
             self.showWebView(url: url)
         }
         alert.addAction(zhAction)
