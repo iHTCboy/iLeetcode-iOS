@@ -88,10 +88,10 @@ extension ITCommonAPI
     func showNewVersion(version: NSString, resultDic: NSDictionary) {
         print(version)
         
-        let title = "发现新版本v" + (version as String)
+        let title = HTCLocalized("New version v") + (version as String)
         
         let alert = UIAlertController(title: title,
-                                      message: "赶快体验最新版本吧！是否前往AppStore更新？",
+                                      message: HTCLocalized("Hurry up and experience the latest version! Go to AppStore to update?"),
                                       preferredStyle: UIAlertController.Style.alert)
         
         let okAction = UIAlertAction.init(title: "OK", style: .default) { (action: UIAlertAction) in
