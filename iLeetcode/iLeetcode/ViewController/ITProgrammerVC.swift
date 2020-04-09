@@ -114,7 +114,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let titles = titleArray?[indexPath.row]
         let titleA = titles?.components(separatedBy: ":")
         cell!.textLabel?.text = titleA?[0]
-        cell?.detailTextLabel?.text = ((indexPath.section == 0 && indexPath.row == 0) ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? "中文" : "English") : titleA?[1])
+        cell?.detailTextLabel?.text = ((indexPath.section == 0 && indexPath.row == 0) ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? HTCLocalized("Subject(Chinese)") : HTCLocalized("Subject(English)")) : titleA?[1])
         
         if (indexPath.section == 0 && indexPath.row == 1) {
             cell?.detailTextLabel?.text = HTCLocalized(IHTCUserDefaults.shared.getAppAppearance().rawValue)
