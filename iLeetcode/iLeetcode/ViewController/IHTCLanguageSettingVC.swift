@@ -46,10 +46,31 @@ class IHTCLanguageSettingVC: UITableViewController {
     }
     
     @objc func resetLanguage(item: UIBarButtonItem) {
+        print(item)
+        if item.title == "OK" {
+            IHTCLocalizedManger.shared.setUserLanguage(language: "en")
+        } else {
+            IHTCLocalizedManger.shared.setUserLanguage(language: "zh-Hans")
+        }
+        
         ILeetCoderModel.shared.resetData()
         let vc = UIStoryboard.init(name: "Main", bundle: nil);
-        view.window?.rootViewController = vc.instantiateInitialViewController()!
+        let tabbarVC = vc.instantiateInitialViewController()!
+        view.window?.rootViewController = tabbarVC
+        
+        resetTabBarControllerTitle(tabbarVC)
     }
+    
+    func resetTabBarControllerTitle(_ vc: UIViewController) {
+        if let tabbarVC = vc as? UITabBarController {
+            guard let items = tabbarVC.tabBar.items else { return }
+            items[0].title = HTCLocalized("iCoder")
+            items[1].title = HTCLocalized("Tags")
+            items[2].title = HTCLocalized("Companies")
+            items[3].title = HTCLocalized("Me")
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

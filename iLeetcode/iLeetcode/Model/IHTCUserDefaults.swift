@@ -36,7 +36,7 @@ extension IHTCUserDefaults
         return  "en_US"
     }
     
-    func setUDlanguage(value: String) {
+    func setUDlanguage(value: String?) {
         setUDValue(value: value, forKey: "IHTCLanguageKey")
     }
 }

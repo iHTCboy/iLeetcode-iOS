@@ -7,7 +7,7 @@
 */
 
 
-"Display Issue Language" = "問題顯示語言";
+"Display Language" = "顯示語言";
 "Display Appearance" = "設置主題外觀";
 "In App Rating" = "應用內評分";
 "Welcome to iCoder app review!" = "歡迎給iCoder打評分！";
@@ -53,4 +53,7 @@
 "Share" = "分享";
 "New version v" = "發現新版本v";
 "Hurry up and experience the latest version! Go to AppStore to update?" = "趕快體驗最新版本吧！是否前往AppStore更新？";
-
+"iCoder" = "愛扣";
+"Tags" = "標籤";
+"Companies" = "企業";
+"Me" = "猿人";
