@@ -55,6 +55,9 @@ extension ITAboutAppVC
         
         self.logoImgView.image = UIImage.init(named: "App-share-Icon")
         self.logoImgView.layer.cornerRadius = 8
+#if targetEnvironment(macCatalyst)
+        self.logoImgView.layer.cornerRadius = logoImgView.frame.size.width / 3.5
+#endif
         self.logoImgView.layer.masksToBounds = true
         self.appNameLbl.text = kiTalker
         self.versionLbl.text = "v" + KAppVersion

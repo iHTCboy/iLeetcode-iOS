@@ -33,7 +33,12 @@ extension IHTCUserDefaults
         if let language = getUDValue(key: "IHTCLanguageKey") as? String {
             return language
         }
-        return  "en_US"
+        IHTCLocalizedManger.shared.flowSystemLanguage()
+        if IHTCLocalizedManger.shared.currentLanguage() == "en" {
+            return  "en_US"
+        } else {
+            return  "zh_CN"
+        }
     }
     
     func setUDlanguage(value: String?) {

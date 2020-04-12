@@ -10,7 +10,7 @@ import UIKit
 
 class IHTCLanguageSettingVC: UITableViewController {
 
-    let language = ["简体中文", "English"]
+    let language = [HTCLocalized("Follow System"), "English", "简体中文", "繁体中文"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,48 +29,31 @@ class IHTCLanguageSettingVC: UITableViewController {
     
     func updateItem() {
         var isShowZH = ""
-        switch IHTCUserDefaults.shared.getUDLanguage() {
-        case "zh_CN":
+        switch IHTCLocalizedManger.shared.currentLanguage() {
+        case "zh-Hans":
             isShowZH = "确定"
             break
-        case "en_US":
+        case "zh-Hant":
+            isShowZH = "確定"
+            break
+        default:
             isShowZH = "OK"
             break
-        default: break
         }
         
         // UIBarButtonItem
         let resetItem = UIBarButtonItem(title: isShowZH, style: .plain, target: self, action: #selector(resetLanguage))
         navigationItem.rightBarButtonItems = [resetItem]
-        
     }
     
     @objc func resetLanguage(item: UIBarButtonItem) {
-        print(item)
-        if item.title == "OK" {
-            IHTCLocalizedManger.shared.setUserLanguage(language: "en")
-        } else {
-            IHTCLocalizedManger.shared.setUserLanguage(language: "zh-Hans")
-        }
-        
         ILeetCoderModel.shared.resetData()
         let vc = UIStoryboard.init(name: "Main", bundle: nil);
         let tabbarVC = vc.instantiateInitialViewController()!
         view.window?.rootViewController = tabbarVC
         
-        resetTabBarControllerTitle(tabbarVC)
+        tabbarVC.resetTabBarControllerTitle(tabbarVC)
     }
-    
-    func resetTabBarControllerTitle(_ vc: UIViewController) {
-        if let tabbarVC = vc as? UITabBarController {
-            guard let items = tabbarVC.tabBar.items else { return }
-            items[0].title = HTCLocalized("iCoder")
-            items[1].title = HTCLocalized("Tags")
-            items[2].title = HTCLocalized("Companies")
-            items[3].title = HTCLocalized("Me")
-        }
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,23 +79,32 @@ class IHTCLanguageSettingVC: UITableViewController {
         }
         
         cell?.accessoryType = .none
-        switch IHTCUserDefaults.shared.getUDLanguage() {
-        case "zh_CN":
-            if indexPath.row == 0 {
-                cell?.accessoryType = .checkmark
-            }
-            break
-        case "en_US":
+        switch IHTCLocalizedManger.shared.currentLanguage() {
+//        case "":
+//            if indexPath.row == 0 {
+//                cell?.accessoryType = .checkmark
+//            }
+//            break
+        case "en":
             if indexPath.row == 1 {
                 cell?.accessoryType = .checkmark
             }
             break
-        default: break
-            
+        case "zh-Hans":
+            if indexPath.row == 2 {
+                cell?.accessoryType = .checkmark
+            }
+            break
+        case "zh-Hant":
+            if indexPath.row == 3 {
+                cell?.accessoryType = .checkmark
+            }
+            break
+        default:
+            break
         }
         
         cell?.textLabel?.text = language[indexPath.row]
-        // Configure the cell...
         
         return cell!
     }
@@ -122,10 +114,24 @@ class IHTCLanguageSettingVC: UITableViewController {
         
         switch indexPath.row {
         case 0:
-            IHTCUserDefaults.shared.setUDlanguage(value: "zh_CN")
+            IHTCLocalizedManger.shared.flowSystemLanguage()
+            if IHTCLocalizedManger.shared.currentLanguage() == "en" {
+                IHTCUserDefaults.shared.setUDlanguage(value: "en_US")
+            } else {
+                IHTCUserDefaults.shared.setUDlanguage(value: "zh_CN")
+            }
             break
         case 1:
             IHTCUserDefaults.shared.setUDlanguage(value: "en_US")
+            IHTCLocalizedManger.shared.setUserLanguage(language: "en")
+            break
+        case 2:
+            IHTCUserDefaults.shared.setUDlanguage(value: "zh_CN")
+            IHTCLocalizedManger.shared.setUserLanguage(language: "zh-Hans")
+            break
+        case 3:
+            IHTCUserDefaults.shared.setUDlanguage(value: "zh_CN")
+            IHTCLocalizedManger.shared.setUserLanguage(language: "zh-Hant")
             break
         default:break
             

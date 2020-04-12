@@ -95,7 +95,12 @@ extension ITCommonAPI
                                     preferredStyle: UIAlertController.Style.alert)
         
         let okAction = UIAlertAction.init(title: HTCLocalized("OK"), style: .default) { (action: UIAlertAction) in
-            UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/cn/app/yi-mei-yun/id" + kAppAppleId + "?l=zh&ls=1&mt=8")!)
+            let iURL = URL(string: "https://itunes.apple.com/cn/app/yi-mei-yun/id" + kAppAppleId + "?l=zh&ls=1&mt=8")!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(iURL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(iURL)
+            }
         }
         alert.addAction(okAction)
         

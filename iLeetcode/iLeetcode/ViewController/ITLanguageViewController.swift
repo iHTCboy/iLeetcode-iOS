@@ -18,6 +18,9 @@ class ITLanguageViewController: ITBasePushTransitionVC {
         let IHTCUD = IHTCUserDefaults.shared
         IHTCUD.setDefaultAppAppearance(style: IHTCUD.getAppAppearance())
         
+        // 设置 tabbar 语言
+        resetTabBarControllerTitle(tabBarController)
+        
         // 设置 UI 界面
         setUpUI()
     }

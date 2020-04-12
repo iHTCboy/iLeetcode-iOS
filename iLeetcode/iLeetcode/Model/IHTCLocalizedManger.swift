@@ -91,3 +91,17 @@ class IHTCLocalizedManger: NSObject {
         return NSLocalizedString(key, tableName: "", bundle: bundle!, value: "", comment: "")
     }
 }
+
+
+extension UIViewController
+{
+    func resetTabBarControllerTitle(_ vc: UIViewController?) {
+        if let tabbarVC = vc as? UITabBarController {
+            guard let items = tabbarVC.tabBar.items else { return }
+            items[0].title = HTCLocalized("iCoder")
+            items[1].title = HTCLocalized("Tags")
+            items[2].title = HTCLocalized("Companies")
+            items[3].title = HTCLocalized("Me")
+        }
+    }
+}
