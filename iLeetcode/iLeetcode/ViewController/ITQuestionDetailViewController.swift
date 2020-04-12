@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 import SafariServices
 //import SwiftyMarkdown
 
@@ -137,7 +138,11 @@ extension ITQuestionDetailViewController {
         
         // webview
         tableView.reloadData()
-        let webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + (UIApplication.shared.statusBarFrame.size.height)
+        var webHeight = selectedCell.frame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0) + (UIApplication.shared.statusBarFrame.size.height ?? 0)
+        #if targetEnvironment(macCatalyst)
+//        webHeight += UIViewController.keyWindowHTC()?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 0
+        webHeight += 22
+        #endif
         let webView = self.webView
         view.addSubview(webView)
         webView.uiDelegate = self
@@ -170,25 +175,27 @@ extension ITQuestionDetailViewController {
                                       preferredStyle: UIAlertController.Style.alert)
         
         let enProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(English)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode.com/problems/" + self.questionModle!.link
+            let url = "https://leetcode.com/problems/" + self.questionModle!.link + "/"
             self.showWebView(url: url)
         }
         alert.addAction(enProblemsAction)
         
+        // https://leetcode.com/problems/two-sum/solution/
         let enAction = UIAlertAction.init(title: HTCLocalized("Solution(English)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode.com/articles/" + self.questionModle!.link
+            let url = "https://leetcode.com/problems/" + self.questionModle!.link + "/solution/"
             self.showWebView(url: url)
         }
         alert.addAction(enAction)
         
         let zhProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(Chinese)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link + "/"
             self.showWebView(url: url)
         }
         alert.addAction(zhProblemsAction)
         
+        // https://leetcode-cn.com/problems/two-sum/solution/
         let zhAction = UIAlertAction.init(title: HTCLocalized("Solution(Chinese)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/articles/" + self.questionModle!.link
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link + "/solution/"
             self.showWebView(url: url)
         }
         alert.addAction(zhAction)
@@ -264,8 +271,14 @@ extension ITQuestionDetailViewController {
     }
     
     func showWebView(url: String) {
-        let vc = SFSafariViewController(url: URL(string: url
-            )!, entersReaderIfAvailable: true)
+        var vc: SFSafariViewController
+        if #available(iOS 13.0, *) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            vc = SFSafariViewController.init(url: URL(string: url)!, configuration: config)
+        } else {
+            vc = SFSafariViewController(url: URL(string: url)!, entersReaderIfAvailable: true)
+        }
         if #available(iOS 10.0, *) {
             vc.preferredBarTintColor = kColorAppOrange
             vc.preferredControlTintColor = UIColor.white
@@ -296,6 +309,9 @@ extension ITQuestionDetailViewController {
         cell.frequencyLbl.layer.masksToBounds = true
         cell.frequencyLbl.adjustsFontSizeToFitWidth = true
         cell.frequencyLbl.baselineAdjustment = .alignCenters
+        #if targetEnvironment(macCatalyst)
+           cell.questionLbl.font = UIFont.systemFont(ofSize: 20)
+        #endif
         
         let question = questionModle!
         cell.numLbl.text =  " #" + question.leetId + " "
@@ -304,20 +320,7 @@ extension ITQuestionDetailViewController {
         cell.frequencyLbl.text = " " + (question.frequency.count < 3 ? (question.frequency + ".0%") : question.frequency) + " "
         cell.langugeLbl.backgroundColor = kColorAppGray
         
-        if ILeetCoderModel.shared.defaultArray.contains(self.title!) {
-            if question.tagString.count > 0 {
-                cell.langugeLbl.isHidden = false
-            }
-            else {
-                cell.langugeLbl.isHidden = true
-            }
-            
-        }
-        
-        if ILeetCoderModel.shared.tagsArray.contains(self.title!) ||
-            ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
-            cell.langugeLbl.isHidden = question.tagString.count == 0 ? true : false
-        }
+        cell.langugeLbl.isHidden = question.tagString.count == 0 ? true : false
         
         if isShowZH {
             cell.tagLbl.text =  " " + (question.difficulty == "Easy" ? "容易" : (question.difficulty == "Medium" ? "中等" : "困难" )) + " "

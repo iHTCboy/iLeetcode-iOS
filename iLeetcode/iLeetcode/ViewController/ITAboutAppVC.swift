@@ -66,6 +66,12 @@ extension ITAboutAppVC
         formatter.dateFormat = "yyyy"
         let yearString = formatter.string(from: Date.init())
         self.copylightLbl.text = "Copyright © 2018-" + yearString + " iHTCboy"
+        
+        #if targetEnvironment(macCatalyst)
+            self.logoImgView.layer.cornerRadius = logoImgView.frame.size.width / 3.5
+            self.appNameLbl.text = kiTalker + " for macOS"
+            self.contentLbl.font = UIFont.systemFont(ofSize: 25)
+        #endif
     }
 }
 
