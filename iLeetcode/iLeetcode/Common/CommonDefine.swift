@@ -47,11 +47,6 @@ let kColorAppGray = UIColor(red:0.512, green:0.572, blue:0.630, alpha:1.000)
 let KAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 
 
-// 多语言
-func HTCLocalized(_ key: String) -> String {
-    return NSLocalizedString(key, tableName: nil, comment: "")
-}
-
 extension UIViewController {
 
     /// The app's key window taking into consideration apps that support multiple scenes.

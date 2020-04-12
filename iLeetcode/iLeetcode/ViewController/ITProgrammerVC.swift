@@ -114,10 +114,26 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let titles = titleArray?[indexPath.row]
         let titleA = titles?.components(separatedBy: ":")
         cell!.textLabel?.text = titleA?[0]
-        cell?.detailTextLabel?.text = ((indexPath.section == 0 && indexPath.row == 0) ? (IHTCUserDefaults.shared.getUDLanguage() == "zh_CN" ? "中文" : "English") : titleA?[1])
-        
-        if (indexPath.section == 0 && indexPath.row == 1) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            var currentLanguage = ""
+            switch IHTCLocalizedManger.shared.currentLanguage() {
+            case "zh-Hans":
+                currentLanguage = "简体中文"
+                break
+            case "zh-Hant":
+                currentLanguage = "繁体中文"
+                break
+            default:
+                currentLanguage = "English"
+                break
+            }
+            cell?.detailTextLabel?.text = currentLanguage
+        }
+        else if indexPath.section == 0 && indexPath.row == 1 {
             cell?.detailTextLabel?.text = HTCLocalized(IHTCUserDefaults.shared.getAppAppearance().rawValue)
+        }
+        else {
+            cell?.detailTextLabel?.text = titleA?[1]
         }
         
         return cell!

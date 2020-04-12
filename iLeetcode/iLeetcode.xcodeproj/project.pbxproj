@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		231F53AD372D96E7B96E6040 /* Pods_iLeetcodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */; };
+		6842A350B5CAE20E71A6EA58 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */; };
 		6D053EB1226DF78D006D55B6 /* IHTCLanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */; };
 		6D053EB3226DF7ED006D55B6 /* IHTCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */; };
+		6D0BF3BA2441E8E3009EA94B /* IHTCLocalizedManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */; };
+		6D0BF3BB2441E94D009EA94B /* IHTCLocalizedManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */; };
 		6D4ABD2C225087EF0022AAFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD2E225087EF0022AAFC /* Main.storyboard */; };
 		6D4ABD44225088660022AAFC /* ITAboutAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */; };
 		6D4ABD45225088660022AAFC /* ITProgrammerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */; };
@@ -90,12 +93,98 @@
 		6DC7CFE9226C90FE00F2CC10 /* IHTCSearchDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */; };
 		6DC7CFEA226C90FE00F2CC10 /* IHTCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */; };
 		6DC9407B2430C0C6009A9994 /* IHTCAppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */; };
+		6DCD0D30243B58830069EBA1 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */; platformFilter = ios; };
+		6DCD0D94243B5AC20069EBA1 /* ITProfessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD40225088660022AAFC /* ITProfessionViewController.swift */; };
+		6DCD0D95243B5AC20069EBA1 /* ITScalePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD70225088F00022AAFC /* ITScalePushTransition.swift */; };
+		6DCD0D96243B5AC20069EBA1 /* ITQuestionListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD54225088D00022AAFC /* ITQuestionListViewCell.swift */; };
+		6DCD0D97243B5AC20069EBA1 /* WKWebView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77132439C94F00CF3F46 /* WKWebView+Snapshot.swift */; };
+		6DCD0D98243B5AC20069EBA1 /* ITPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD58225088D00022AAFC /* ITPageContentView.swift */; };
+		6DCD0D99243B5AC20069EBA1 /* IAppleServiceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD4226C1BB600F2CC10 /* IAppleServiceUtil.swift */; };
+		6DCD0D9A243B5AC20069EBA1 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79466522773A9E00887F2D /* TableHeaderView.swift */; };
+		6DCD0D9B243B5AC20069EBA1 /* ITQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD5D225088D00022AAFC /* ITQuestionModel.swift */; };
+		6DCD0D9C243B5AC20069EBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */; };
+		6DCD0D9D243B5AC20069EBA1 /* IHTCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */; };
+		6DCD0D9E243B5AC20069EBA1 /* WebViewPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */; };
+		6DCD0D9F243B5AC20069EBA1 /* ITBasePushTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD41225088660022AAFC /* ITBasePushTransitionVC.swift */; };
+		6DCD0DA0243B5AC20069EBA1 /* UIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD9226C1E3200F2CC10 /* UIScrollView+Additions.swift */; };
+		6DCD0DA1243B5AC20069EBA1 /* ITCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3B225088660022AAFC /* ITCompanyViewController.swift */; };
+		6DCD0DA2243B5AC20069EBA1 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFDA226C1E3200F2CC10 /* UITableView+Additions.swift */; };
+		6DCD0DA3243B5AC20069EBA1 /* ITQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3F225088660022AAFC /* ITQuestionListViewController.swift */; };
+		6DCD0DA4243B5AC20069EBA1 /* IHTCLanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */; };
+		6DCD0DA5243B5AC20069EBA1 /* IHTCAppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */; };
+		6DCD0DA6243B5AC20069EBA1 /* ITBasePopTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3D225088660022AAFC /* ITBasePopTransitionVC.swift */; };
+		6DCD0DA7243B5AC20069EBA1 /* ILeetCoderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABE962250E08A0022AAFC /* ILeetCoderModel.swift */; };
+		6DCD0DA8243B5AC20069EBA1 /* ITLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD42225088660022AAFC /* ITLanguageViewController.swift */; };
+		6DCD0DA9243B5AC20069EBA1 /* ITAdvancelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79466122773A1E00887F2D /* ITAdvancelDetailViewController.swift */; };
+		6DCD0DAA243B5AC20069EBA1 /* ITAboutAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */; };
+		6DCD0DAB243B5AC20069EBA1 /* IHTCShareFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFDF226C1E4500F2CC10 /* IHTCShareFooterView.swift */; };
+		6DCD0DAC243B5AC20069EBA1 /* ITPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD57225088D00022AAFC /* ITPageTitleView.swift */; };
+		6DCD0DAD243B5AC20069EBA1 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD7226C1E3200F2CC10 /* UIImage+Additions.swift */; };
+		6DCD0DAE243B5AC20069EBA1 /* ITProgrammerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */; };
+		6DCD0DAF243B5AC20069EBA1 /* ITCommonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD6C225088E40022AAFC /* ITCommonAPI.swift */; };
+		6DCD0DB0243B5AC20069EBA1 /* ITQuestionDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD53225088D00022AAFC /* ITQuestionDetailViewCell.swift */; };
+		6DCD0DB1243B5AC20069EBA1 /* ITCopyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD55225088D00022AAFC /* ITCopyLabel.swift */; };
+		6DCD0DB2243B5AC20069EBA1 /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD6B225088E40022AAFC /* CommonDefine.swift */; };
+		6DCD0DB3243B5AC20069EBA1 /* TCDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABE982250F5B10022AAFC /* TCDataTool.swift */; };
+		6DCD0DB4243B5AC20069EBA1 /* IHTCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */; };
+		6DCD0DB5243B5AC20069EBA1 /* ITScalePopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD71225088F00022AAFC /* ITScalePopTransition.swift */; };
+		6DCD0DB6243B5AC20069EBA1 /* ITQuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3E225088660022AAFC /* ITQuestionDetailViewController.swift */; };
+		6DCD0DB7243B5AC20069EBA1 /* ITModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD5C225088D00022AAFC /* ITModel.swift */; };
+		6DCD0DB8243B5AC20069EBA1 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD8226C1E3200F2CC10 /* UIView+Additions.swift */; };
+		6DCD0DB9243B5AC20069EBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D50FFE42245303800E114EE /* AppDelegate.swift */; };
+		6DCD0DBA243B5AC20069EBA1 /* IHTCSearchDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */; };
+		6DCD0DBC243B5AC20069EBA1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE86225094440022AAFC /* CoreTelephony.framework */; };
+		6DCD0DBD243B5AC20069EBA1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE74225093BE0022AAFC /* CFNetwork.framework */; };
+		6DCD0DBE243B5AC20069EBA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE80225094020022AAFC /* CoreLocation.framework */; };
+		6DCD0DBF243B5AC20069EBA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE7E225093F20022AAFC /* CoreGraphics.framework */; };
+		6DCD0DC0243B5AC20069EBA1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE822250940D0022AAFC /* JavaScriptCore.framework */; };
+		6DCD0DC1243B5AC20069EBA1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE7C225093EA0022AAFC /* Security.framework */; };
+		6DCD0DC2243B5AC20069EBA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE78225093D40022AAFC /* StoreKit.framework */; };
+		6DCD0DC3243B5AC20069EBA1 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE76225093C80022AAFC /* SafariServices.framework */; };
+		6DCD0DC4243B5AC20069EBA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE84225094350022AAFC /* SystemConfiguration.framework */; };
+		6DCD0DC5243B5AC20069EBA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE88225094710022AAFC /* libz.tbd */; };
+		6DCD0DC6243B5AC20069EBA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ABE7A225093E30022AAFC /* libc++.tbd */; };
+		6DCD0DCA243B5AC20069EBA1 /* language_tabbar_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD88225088FD0022AAFC /* language_tabbar_normal@3x.png */; };
+		6DCD0DCB243B5AC20069EBA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D50FFED2245303900E114EE /* LaunchScreen.storyboard */; };
+		6DCD0DCC243B5AC20069EBA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D50FFEB2245303900E114EE /* Assets.xcassets */; };
+		6DCD0DCD243B5AC20069EBA1 /* App-TextLogo-Alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABE8A225099050022AAFC /* App-TextLogo-Alpha.png */; };
+		6DCD0DCE243B5AC20069EBA1 /* IHTCSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE5226C90FD00F2CC10 /* IHTCSearchViewController.xib */; };
+		6DCD0DCF243B5AC20069EBA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD77032438D39000CF3F46 /* InfoPlist.strings */; };
+		6DCD0DD0243B5AC20069EBA1 /* App-share-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABE9A225184070022AAFC /* App-share-Icon.png */; };
+		6DCD0DD1243B5AC20069EBA1 /* iLeetCoder.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFCF226C01D800F2CC10 /* iLeetCoder.css */; };
+		6DCD0DD2243B5AC20069EBA1 /* language_tabbar_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD76225088FD0022AAFC /* language_tabbar_selected@2x.png */; };
+		6DCD0DD3243B5AC20069EBA1 /* iLeetCoder-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 6D9F84CD23439AAD009057B5 /* iLeetCoder-dark.css */; };
+		6DCD0DD4243B5AC20069EBA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD770B2438D5D400CF3F46 /* Localizable.strings */; };
+		6DCD0DD5243B5AC20069EBA1 /* iLeetCoder.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFD0226C01D800F2CC10 /* iLeetCoder.html */; };
+		6DCD0DD6243B5AC20069EBA1 /* Tags_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD7C225088FD0022AAFC /* Tags_selected@3x.png */; };
+		6DCD0DD7243B5AC20069EBA1 /* company_tabbar_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD78225088FD0022AAFC /* company_tabbar_selected@2x.png */; };
+		6DCD0DD8243B5AC20069EBA1 /* iTalkerman_blue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD85225088FD0022AAFC /* iTalkerman_blue@3x.png */; };
+		6DCD0DD9243B5AC20069EBA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD2E225087EF0022AAFC /* Main.storyboard */; };
+		6DCD0DDA243B5AC20069EBA1 /* App-LaunchScreen-Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABE8C22509BD40022AAFC /* App-LaunchScreen-Image.png */; };
+		6DCD0DDB243B5AC20069EBA1 /* italkerman_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD7A225088FD0022AAFC /* italkerman_gray@2x.png */; };
+		6DCD0DDC243B5AC20069EBA1 /* ITQuestionDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD52225088D00022AAFC /* ITQuestionDetailViewCell.xib */; };
+		6DCD0DDD243B5AC20069EBA1 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D79466622773A9E00887F2D /* TableHeaderView.xib */; };
+		6DCD0DDE243B5AC20069EBA1 /* Tags_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD7F225088FD0022AAFC /* Tags_selected@2x.png */; };
+		6DCD0DDF243B5AC20069EBA1 /* iLeetCoder-qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE3226C255400F2CC10 /* iLeetCoder-qrcode.png */; };
+		6DCD0DE0243B5AC20069EBA1 /* iLeetCoder-Question.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABE912250E0390022AAFC /* iLeetCoder-Question.json */; };
+		6DCD0DE1243B5AC20069EBA1 /* IHTCShareFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE0226C1E4500F2CC10 /* IHTCShareFooterView.xib */; };
+		6DCD0DE2243B5AC20069EBA1 /* AppLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABE8E22509ED70022AAFC /* AppLaunchScreen.storyboard */; };
+		6DCD0DE3243B5AC20069EBA1 /* company_tabbar_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD84225088FD0022AAFC /* company_tabbar_normal@2x.png */; };
+		6DCD0DE4243B5AC20069EBA1 /* company_tabbar_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD79225088FD0022AAFC /* company_tabbar_selected@3x.png */; };
+		6DCD0DE5243B5AC20069EBA1 /* iTalkerman_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD86225088FD0022AAFC /* iTalkerman_blue@2x.png */; };
+		6DCD0DE6243B5AC20069EBA1 /* language_tabbar_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD7B225088FD0022AAFC /* language_tabbar_selected@3x.png */; };
+		6DCD0DE7243B5AC20069EBA1 /* iHTCboyApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D79466322773A7700887F2D /* iHTCboyApp.json */; };
+		6DCD0DE8243B5AC20069EBA1 /* ITAboutAppVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3C225088660022AAFC /* ITAboutAppVC.xib */; };
+		6DCD0DE9243B5AC20069EBA1 /* company_tabbar_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD87225088FD0022AAFC /* company_tabbar_normal@3x.png */; };
+		6DCD0DEA243B5AC20069EBA1 /* italkerman_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD77225088FD0022AAFC /* italkerman_gray@3x.png */; };
+		6DCD0DEB243B5AC20069EBA1 /* language_tabbar_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD82225088FD0022AAFC /* language_tabbar_normal@2x.png */; };
+		6DCD0DEC243B5AC20069EBA1 /* ITQuestionListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD59225088D00022AAFC /* ITQuestionListViewCell.xib */; };
 		6DCD77012438D39000CF3F46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD77032438D39000CF3F46 /* InfoPlist.strings */; };
 		6DCD77092438D5D400CF3F46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DCD770B2438D5D400CF3F46 /* Localizable.strings */; };
 		6DCD77142439C94F00CF3F46 /* WKWebView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77132439C94F00CF3F46 /* WKWebView+Snapshot.swift */; };
 		6DCD77162439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */; };
 		6DCD7718243A1AC800CF3F46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */; };
-		B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */; };
+		A890CF99A6BA3DA5A31DD9FF /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */; };
 		C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,7 +206,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14438D3425260594D5AA4917 /* Pods-iLeetcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.debug.xcconfig"; sourceTree = "<group>"; };
 		3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F0E8FAA20CC83DABEFB0E5 /* Pods-iLeetcodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcodeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +213,7 @@
 		5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLeetcodeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCLanguageSettingVC.swift; sourceTree = "<group>"; };
 		6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCUserDefaults.swift; sourceTree = "<group>"; };
+		6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCLocalizedManger.swift; sourceTree = "<group>"; };
 		6D4ABD2D225087EF0022AAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITAboutAppVC.swift; sourceTree = "<group>"; };
 		6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITProgrammerVC.swift; sourceTree = "<group>"; };
@@ -209,7 +298,6 @@
 		6D9F84CD23439AAD009057B5 /* iLeetCoder-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "iLeetCoder-dark.css"; sourceTree = "<group>"; };
 		6DC7CFCF226C01D800F2CC10 /* iLeetCoder.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iLeetCoder.css; sourceTree = "<group>"; };
 		6DC7CFD0226C01D800F2CC10 /* iLeetCoder.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iLeetCoder.html; sourceTree = "<group>"; };
-		6DC7CFD3226C04E000F2CC10 /* iLeetcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iLeetcode.entitlements; sourceTree = "<group>"; };
 		6DC7CFD4226C1BB600F2CC10 /* IAppleServiceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppleServiceUtil.swift; sourceTree = "<group>"; };
 		6DC7CFD7226C1E3200F2CC10 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		6DC7CFD8226C1E3200F2CC10 /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
@@ -222,6 +310,8 @@
 		6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCSearchDetailVC.swift; sourceTree = "<group>"; };
 		6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCSearchViewController.swift; sourceTree = "<group>"; };
 		6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCAppearanceVC.swift; sourceTree = "<group>"; };
+		6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iLeetcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DCD0DF0243B5AC20069EBA1 /* iCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCD77022438D39000CF3F46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DCD77042438D39700CF3F46 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6DCD77052438D39800CF3F46 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -234,8 +324,9 @@
 		6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPrintPageRenderer.swift; sourceTree = "<group>"; };
 		6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6DCD7757243B1F5400CF3F46 /* iCoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCoder.entitlements; sourceTree = "<group>"; };
-		72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
+		82D564BDC466EDF92277A020 /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
 		843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2BD263BE7839189FE3113B8 /* Pods-iLeetcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.debug.xcconfig"; sourceTree = "<group>"; };
 		E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,18 +335,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D4ABE89225094720022AAFC /* libz.tbd in Frameworks */,
 				6D4ABE87225094440022AAFC /* CoreTelephony.framework in Frameworks */,
-				6D4ABE85225094350022AAFC /* SystemConfiguration.framework in Frameworks */,
-				6D4ABE832250940D0022AAFC /* JavaScriptCore.framework in Frameworks */,
+				6D4ABE75225093BE0022AAFC /* CFNetwork.framework in Frameworks */,
 				6D4ABE81225094020022AAFC /* CoreLocation.framework in Frameworks */,
 				6D4ABE7F225093F20022AAFC /* CoreGraphics.framework in Frameworks */,
+				6D4ABE832250940D0022AAFC /* JavaScriptCore.framework in Frameworks */,
 				6D4ABE7D225093EA0022AAFC /* Security.framework in Frameworks */,
-				6D4ABE7B225093E30022AAFC /* libc++.tbd in Frameworks */,
 				6D4ABE79225093D40022AAFC /* StoreKit.framework in Frameworks */,
 				6D4ABE77225093C80022AAFC /* SafariServices.framework in Frameworks */,
-				6D4ABE75225093BE0022AAFC /* CFNetwork.framework in Frameworks */,
-				B4FCD3919C24192CF5B68556 /* Pods_iLeetcode.framework in Frameworks */,
+				6D4ABE85225094350022AAFC /* SystemConfiguration.framework in Frameworks */,
+				6D4ABE89225094720022AAFC /* libz.tbd in Frameworks */,
+				6D4ABE7B225093E30022AAFC /* libc++.tbd in Frameworks */,
+				6DCD0D30243B58830069EBA1 /* Pods_iLeetcode.framework in Frameworks */,
+				6842A350B5CAE20E71A6EA58 /* Pods_iLeetcode.framework in Frameworks */,
+				A890CF99A6BA3DA5A31DD9FF /* Pods_iLeetcode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,18 +368,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DCD0DBB243B5AC20069EBA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DCD0DBC243B5AC20069EBA1 /* CoreTelephony.framework in Frameworks */,
+				6DCD0DBD243B5AC20069EBA1 /* CFNetwork.framework in Frameworks */,
+				6DCD0DBE243B5AC20069EBA1 /* CoreLocation.framework in Frameworks */,
+				6DCD0DBF243B5AC20069EBA1 /* CoreGraphics.framework in Frameworks */,
+				6DCD0DC0243B5AC20069EBA1 /* JavaScriptCore.framework in Frameworks */,
+				6DCD0DC1243B5AC20069EBA1 /* Security.framework in Frameworks */,
+				6DCD0DC2243B5AC20069EBA1 /* StoreKit.framework in Frameworks */,
+				6DCD0DC3243B5AC20069EBA1 /* SafariServices.framework in Frameworks */,
+				6DCD0DC4243B5AC20069EBA1 /* SystemConfiguration.framework in Frameworks */,
+				6DCD0DC5243B5AC20069EBA1 /* libz.tbd in Frameworks */,
+				6DCD0DC6243B5AC20069EBA1 /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		34F841CE65B541AA011D07B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				14438D3425260594D5AA4917 /* Pods-iLeetcode.debug.xcconfig */,
-				72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */,
 				E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */,
 				5A2C32754F8905ECDFAFD8B9 /* Pods-iLeetcodeTests.release.xcconfig */,
 				843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */,
 				41F0E8FAA20CC83DABEFB0E5 /* Pods-iLeetcodeUITests.release.xcconfig */,
+				B2BD263BE7839189FE3113B8 /* Pods-iLeetcode.debug.xcconfig */,
+				82D564BDC466EDF92277A020 /* Pods-iLeetcode.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -294,6 +405,7 @@
 		40FB813A3668FD1405E47F63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */,
 				6D4ABE88225094710022AAFC /* libz.tbd */,
 				6D4ABE86225094440022AAFC /* CoreTelephony.framework */,
 				6D4ABE84225094350022AAFC /* SystemConfiguration.framework */,
@@ -376,6 +488,7 @@
 				6D4ABD5C225088D00022AAFC /* ITModel.swift */,
 				6D4ABD5D225088D00022AAFC /* ITQuestionModel.swift */,
 				6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */,
+				6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,6 +595,7 @@
 				6D50FFE12245303800E114EE /* iCoder.app */,
 				6D50FFF52245303900E114EE /* iLeetcodeTests.xctest */,
 				6D5000002245303900E114EE /* iLeetcodeUITests.xctest */,
+				6DCD0DF0243B5AC20069EBA1 /* iCoder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -490,7 +604,6 @@
 			isa = PBXGroup;
 			children = (
 				6DCD7757243B1F5400CF3F46 /* iCoder.entitlements */,
-				6DC7CFD3226C04E000F2CC10 /* iLeetcode.entitlements */,
 				6D4ABE702250937C0022AAFC /* iLeetcode-Bridging-Header.h */,
 				6D50FFE42245303800E114EE /* AppDelegate.swift */,
 				6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */,
@@ -538,9 +651,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D50FFE02245303800E114EE /* iLeetcode */ = {
+		6D50FFE02245303800E114EE /* iCoder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D5000092245303900E114EE /* Build configuration list for PBXNativeTarget "iLeetcode" */;
+			buildConfigurationList = 6D5000092245303900E114EE /* Build configuration list for PBXNativeTarget "iCoder" */;
 			buildPhases = (
 				FFA17A1D5454B91BDFE9442C /* [CP] Check Pods Manifest.lock */,
 				6D50FFDD2245303800E114EE /* Sources */,
@@ -551,7 +664,7 @@
 			);
 			dependencies = (
 			);
-			name = iLeetcode;
+			name = iCoder;
 			productName = iLeetcode;
 			productReference = 6D50FFE12245303800E114EE /* iCoder.app */;
 			productType = "com.apple.product-type.application";
@@ -593,6 +706,23 @@
 			productName = iLeetcodeUITests;
 			productReference = 6D5000002245303900E114EE /* iLeetcodeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6DCD0D91243B5AC20069EBA1 /* iCoderMacCatylyst */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DCD0DED243B5AC20069EBA1 /* Build configuration list for PBXNativeTarget "iCoderMacCatylyst" */;
+			buildPhases = (
+				6DCD0D93243B5AC20069EBA1 /* Sources */,
+				6DCD0DBB243B5AC20069EBA1 /* Frameworks */,
+				6DCD0DC9243B5AC20069EBA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCoderMacCatylyst;
+			productName = iLeetcode;
+			productReference = 6DCD0DF0243B5AC20069EBA1 /* iCoder.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -644,7 +774,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D50FFE02245303800E114EE /* iLeetcode */,
+				6D50FFE02245303800E114EE /* iCoder */,
+				6DCD0D91243B5AC20069EBA1 /* iCoderMacCatylyst */,
 				6D50FFF42245303900E114EE /* iLeetcodeTests */,
 				6D50FFFF2245303900E114EE /* iLeetcodeUITests */,
 			);
@@ -705,6 +836,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DCD0DC9243B5AC20069EBA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DCD0DCA243B5AC20069EBA1 /* language_tabbar_normal@3x.png in Resources */,
+				6DCD0DCB243B5AC20069EBA1 /* LaunchScreen.storyboard in Resources */,
+				6DCD0DCC243B5AC20069EBA1 /* Assets.xcassets in Resources */,
+				6DCD0DCD243B5AC20069EBA1 /* App-TextLogo-Alpha.png in Resources */,
+				6DCD0DCE243B5AC20069EBA1 /* IHTCSearchViewController.xib in Resources */,
+				6DCD0DCF243B5AC20069EBA1 /* InfoPlist.strings in Resources */,
+				6DCD0DD0243B5AC20069EBA1 /* App-share-Icon.png in Resources */,
+				6DCD0DD1243B5AC20069EBA1 /* iLeetCoder.css in Resources */,
+				6DCD0DD2243B5AC20069EBA1 /* language_tabbar_selected@2x.png in Resources */,
+				6DCD0DD3243B5AC20069EBA1 /* iLeetCoder-dark.css in Resources */,
+				6DCD0DD4243B5AC20069EBA1 /* Localizable.strings in Resources */,
+				6DCD0DD5243B5AC20069EBA1 /* iLeetCoder.html in Resources */,
+				6DCD0DD6243B5AC20069EBA1 /* Tags_selected@3x.png in Resources */,
+				6DCD0DD7243B5AC20069EBA1 /* company_tabbar_selected@2x.png in Resources */,
+				6DCD0DD8243B5AC20069EBA1 /* iTalkerman_blue@3x.png in Resources */,
+				6DCD0DD9243B5AC20069EBA1 /* Main.storyboard in Resources */,
+				6DCD0DDA243B5AC20069EBA1 /* App-LaunchScreen-Image.png in Resources */,
+				6DCD0DDB243B5AC20069EBA1 /* italkerman_gray@2x.png in Resources */,
+				6DCD0DDC243B5AC20069EBA1 /* ITQuestionDetailViewCell.xib in Resources */,
+				6DCD0DDD243B5AC20069EBA1 /* TableHeaderView.xib in Resources */,
+				6DCD0DDE243B5AC20069EBA1 /* Tags_selected@2x.png in Resources */,
+				6DCD0DDF243B5AC20069EBA1 /* iLeetCoder-qrcode.png in Resources */,
+				6DCD0DE0243B5AC20069EBA1 /* iLeetCoder-Question.json in Resources */,
+				6DCD0DE1243B5AC20069EBA1 /* IHTCShareFooterView.xib in Resources */,
+				6DCD0DE2243B5AC20069EBA1 /* AppLaunchScreen.storyboard in Resources */,
+				6DCD0DE3243B5AC20069EBA1 /* company_tabbar_normal@2x.png in Resources */,
+				6DCD0DE4243B5AC20069EBA1 /* company_tabbar_selected@3x.png in Resources */,
+				6DCD0DE5243B5AC20069EBA1 /* iTalkerman_blue@2x.png in Resources */,
+				6DCD0DE6243B5AC20069EBA1 /* language_tabbar_selected@3x.png in Resources */,
+				6DCD0DE7243B5AC20069EBA1 /* iHTCboyApp.json in Resources */,
+				6DCD0DE8243B5AC20069EBA1 /* ITAboutAppVC.xib in Resources */,
+				6DCD0DE9243B5AC20069EBA1 /* company_tabbar_normal@3x.png in Resources */,
+				6DCD0DEA243B5AC20069EBA1 /* italkerman_gray@3x.png in Resources */,
+				6DCD0DEB243B5AC20069EBA1 /* language_tabbar_normal@2x.png in Resources */,
+				6DCD0DEC243B5AC20069EBA1 /* ITQuestionListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +970,7 @@
 				6DCD77162439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift in Sources */,
 				6D4ABD4C225088660022AAFC /* ITBasePushTransitionVC.swift in Sources */,
 				6DC7CFDD226C1E3200F2CC10 /* UIScrollView+Additions.swift in Sources */,
+				6D0BF3BA2441E8E3009EA94B /* IHTCLocalizedManger.swift in Sources */,
 				6D4ABD46225088660022AAFC /* ITCompanyViewController.swift in Sources */,
 				6DC7CFDE226C1E3200F2CC10 /* UITableView+Additions.swift in Sources */,
 				6D4ABD4A225088660022AAFC /* ITQuestionListViewController.swift in Sources */,
@@ -842,17 +1016,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DCD0D93243B5AC20069EBA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DCD0D94243B5AC20069EBA1 /* ITProfessionViewController.swift in Sources */,
+				6DCD0D95243B5AC20069EBA1 /* ITScalePushTransition.swift in Sources */,
+				6DCD0D96243B5AC20069EBA1 /* ITQuestionListViewCell.swift in Sources */,
+				6DCD0D97243B5AC20069EBA1 /* WKWebView+Snapshot.swift in Sources */,
+				6DCD0D98243B5AC20069EBA1 /* ITPageContentView.swift in Sources */,
+				6DCD0D99243B5AC20069EBA1 /* IAppleServiceUtil.swift in Sources */,
+				6DCD0D9A243B5AC20069EBA1 /* TableHeaderView.swift in Sources */,
+				6DCD0D9B243B5AC20069EBA1 /* ITQuestionModel.swift in Sources */,
+				6DCD0D9C243B5AC20069EBA1 /* SceneDelegate.swift in Sources */,
+				6DCD0D9D243B5AC20069EBA1 /* IHTCUserDefaults.swift in Sources */,
+				6DCD0D9E243B5AC20069EBA1 /* WebViewPrintPageRenderer.swift in Sources */,
+				6DCD0D9F243B5AC20069EBA1 /* ITBasePushTransitionVC.swift in Sources */,
+				6DCD0DA0243B5AC20069EBA1 /* UIScrollView+Additions.swift in Sources */,
+				6D0BF3BB2441E94D009EA94B /* IHTCLocalizedManger.swift in Sources */,
+				6DCD0DA1243B5AC20069EBA1 /* ITCompanyViewController.swift in Sources */,
+				6DCD0DA2243B5AC20069EBA1 /* UITableView+Additions.swift in Sources */,
+				6DCD0DA3243B5AC20069EBA1 /* ITQuestionListViewController.swift in Sources */,
+				6DCD0DA4243B5AC20069EBA1 /* IHTCLanguageSettingVC.swift in Sources */,
+				6DCD0DA5243B5AC20069EBA1 /* IHTCAppearanceVC.swift in Sources */,
+				6DCD0DA6243B5AC20069EBA1 /* ITBasePopTransitionVC.swift in Sources */,
+				6DCD0DA7243B5AC20069EBA1 /* ILeetCoderModel.swift in Sources */,
+				6DCD0DA8243B5AC20069EBA1 /* ITLanguageViewController.swift in Sources */,
+				6DCD0DA9243B5AC20069EBA1 /* ITAdvancelDetailViewController.swift in Sources */,
+				6DCD0DAA243B5AC20069EBA1 /* ITAboutAppVC.swift in Sources */,
+				6DCD0DAB243B5AC20069EBA1 /* IHTCShareFooterView.swift in Sources */,
+				6DCD0DAC243B5AC20069EBA1 /* ITPageTitleView.swift in Sources */,
+				6DCD0DAD243B5AC20069EBA1 /* UIImage+Additions.swift in Sources */,
+				6DCD0DAE243B5AC20069EBA1 /* ITProgrammerVC.swift in Sources */,
+				6DCD0DAF243B5AC20069EBA1 /* ITCommonAPI.swift in Sources */,
+				6DCD0DB0243B5AC20069EBA1 /* ITQuestionDetailViewCell.swift in Sources */,
+				6DCD0DB1243B5AC20069EBA1 /* ITCopyLabel.swift in Sources */,
+				6DCD0DB2243B5AC20069EBA1 /* CommonDefine.swift in Sources */,
+				6DCD0DB3243B5AC20069EBA1 /* TCDataTool.swift in Sources */,
+				6DCD0DB4243B5AC20069EBA1 /* IHTCSearchViewController.swift in Sources */,
+				6DCD0DB5243B5AC20069EBA1 /* ITScalePopTransition.swift in Sources */,
+				6DCD0DB6243B5AC20069EBA1 /* ITQuestionDetailViewController.swift in Sources */,
+				6DCD0DB7243B5AC20069EBA1 /* ITModel.swift in Sources */,
+				6DCD0DB8243B5AC20069EBA1 /* UIView+Additions.swift in Sources */,
+				6DCD0DB9243B5AC20069EBA1 /* AppDelegate.swift in Sources */,
+				6DCD0DBA243B5AC20069EBA1 /* IHTCSearchDetailVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		6D5000022245303900E114EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D50FFE02245303800E114EE /* iLeetcode */;
+			target = 6D50FFE02245303800E114EE /* iCoder */;
 			targetProxy = 6D5000012245303900E114EE /* PBXContainerItemProxy */;
 		};
 		6D50FFF72245303900E114EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D50FFE02245303800E114EE /* iLeetcode */;
+			target = 6D50FFE02245303800E114EE /* iCoder */;
 			targetProxy = 6D50FFF62245303900E114EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1034,11 +1255,12 @@
 		};
 		6D50000A2245303900E114EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14438D3425260594D5AA4917 /* Pods-iLeetcode.debug.xcconfig */;
+			baseConfigurationReference = B2BD263BE7839189FE3113B8 /* Pods-iLeetcode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020.04.08;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
@@ -1052,7 +1274,7 @@
 				MARKETING_VERSION = 4.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1062,11 +1284,12 @@
 		};
 		6D50000B2245303900E114EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72080D2D7C4D327D7452D6DC /* Pods-iLeetcode.release.xcconfig */;
+			baseConfigurationReference = 82D564BDC466EDF92277A020 /* Pods-iLeetcode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020.04.08;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
@@ -1080,7 +1303,7 @@
 				MARKETING_VERSION = 4.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iLeetcode/iLeetcode-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1173,10 +1396,65 @@
 			};
 			name = Release;
 		};
+		6DCD0DEE243B5AC20069EBA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2020.04.11;
+				DEVELOPMENT_TEAM = 28PV6G96R7;
+				INFOPLIST_FILE = "$(SRCROOT)/iLeetcode/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 5.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
+				PRODUCT_NAME = iCoder;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6DCD0DEF243B5AC20069EBA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2020.04.11;
+				DEVELOPMENT_TEAM = 28PV6G96R7;
+				INFOPLIST_FILE = "$(SRCROOT)/iLeetcode/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 5.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
+				PRODUCT_NAME = iCoder;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D5000092245303900E114EE /* Build configuration list for PBXNativeTarget "iLeetcode" */ = {
+		6D5000092245303900E114EE /* Build configuration list for PBXNativeTarget "iCoder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D50000A2245303900E114EE /* Debug */,
@@ -1208,6 +1486,15 @@
 			buildConfigurations = (
 				6D5000072245303900E114EE /* Debug */,
 				6D5000082245303900E114EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DCD0DED243B5AC20069EBA1 /* Build configuration list for PBXNativeTarget "iCoderMacCatylyst" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DCD0DEE243B5AC20069EBA1 /* Debug */,
+				6DCD0DEF243B5AC20069EBA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,7 +10,7 @@ import UIKit
 
 class ITQuestionDetailViewCell: UITableViewCell {
 
-    @IBOutlet weak var webView: WKWebView!
+//    @IBOutlet weak var webView: WKWebView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

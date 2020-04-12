@@ -13,8 +13,14 @@ import SafariServices
 class IAppleServiceUtil: NSObject {
     class func openWebView(url: String, tintColor: UIColor, vc: UIViewController) {
         if #available(iOS 9.0, *) {
-            let sf = SFSafariViewController(url: URL(string: url
-                )!, entersReaderIfAvailable: true)
+            var sf: SFSafariViewController
+            if #available(iOS 13.0, *) {
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = true
+                sf = SFSafariViewController.init(url: URL(string: url)!, configuration: config)
+            } else {
+                sf = SFSafariViewController(url: URL(string: url)!, entersReaderIfAvailable: true)
+            }
             if #available(iOS 10.0, *) {
                 sf.preferredBarTintColor = tintColor
                 sf.preferredControlTintColor = UIColor.white
@@ -60,7 +66,11 @@ class IAppleServiceUtil: NSObject {
     class func openAppstore(url: String, isAssessment: Bool) {
         let iURL = URL.init(string: url + (isAssessment ? "&action=write-review": ""))!
         if UIApplication.shared.canOpenURL(iURL) {
-            UIApplication.shared.openURL(iURL)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(iURL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(iURL)
+            }
         }
     }
     

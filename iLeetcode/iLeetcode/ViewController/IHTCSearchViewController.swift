@@ -75,12 +75,14 @@ extension IHTCSearchViewController {
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ITQuestionListViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ITQuestionListViewCell")
         
+#if !targetEnvironment(macCatalyst)
         // 判断系统版本，必须iOS 9及以上，同时检测是否支持触摸力度识别
         if #available(iOS 9.0, *), traitCollection.forceTouchCapability == .available {
             // 注册预览代理，self监听，tableview执行Peek
             registerForPreviewing(with: self, sourceView: tableView)
         }
-        
+#endif
+
     }
     
     func searchWordList(words: String) {
@@ -284,9 +286,10 @@ extension IHTCSearchViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         // 获取indexPath和cell
         guard let indexPath = tableView.indexPathForRow(at: location), let cell = tableView.cellForRow(at: indexPath) else { return nil }
+#if !targetEnvironment(macCatalyst)
         // 设置Peek视图突出显示的frame
         previewingContext.sourceRect = cell.frame
-        
+#endif
         let question = self.searchArray[indexPath.row]
         let questionVC = IHTCSearchDetailVC()
         questionVC.title = question.language

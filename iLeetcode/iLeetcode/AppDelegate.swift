@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupBaseUI()
         
-        ITCommonAPI.shared.checkAppUpdate(newHandler: nil)
+//        ITCommonAPI.shared.checkAppUpdate(newHandler: nil)
         
         return true
     }
@@ -88,7 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func startBaiduMobStat() {
-        
+
+#if !targetEnvironment(macCatalyst)
         let statTracker = BaiduMobStat.default()
 #if DEBUG
         print("Debug modle")
@@ -102,7 +103,7 @@ extension AppDelegate {
         formatter.locale = Locale.current
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let currentDate = formatter.string(from: Date())
-        
+
         // 自定义事件
         statTracker.logEvent("usermodelName", eventLabel: UIDevice.init().modelName)
         statTracker.logEvent("systemVersion", eventLabel: UIDevice.current.systemVersion)
@@ -110,6 +111,7 @@ extension AppDelegate {
         statTracker.logEvent("DateAndDeviceName", eventLabel: currentDate + " " + UIDevice.current.name)
         statTracker.logEvent("Devices", eventLabel:UIDevice.current.name)
         statTracker.logEvent("AppName", eventLabel:( Bundle.main.infoDictionary?["CFBundleName"] as! String))
+#endif
 #endif
     }
     
@@ -123,4 +125,3 @@ extension AppDelegate {
     }
     
 }
-

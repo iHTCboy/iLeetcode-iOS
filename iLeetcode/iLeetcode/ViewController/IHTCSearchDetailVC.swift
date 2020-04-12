@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 import SafariServices
 
 
@@ -263,8 +264,14 @@ extension IHTCSearchDetailVC {
     }
     
     func showWebView(url: String) {
-        let vc = SFSafariViewController(url: URL(string: url
-            )!, entersReaderIfAvailable: true)
+        var vc: SFSafariViewController
+        if #available(iOS 13.0, *) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            vc = SFSafariViewController.init(url: URL(string: url)!, configuration: config)
+        } else {
+            vc = SFSafariViewController(url: URL(string: url)!, entersReaderIfAvailable: true)
+        }
         if #available(iOS 10.0, *) {
             vc.preferredBarTintColor = kColorAppOrange
             vc.preferredControlTintColor = UIColor.white
@@ -304,20 +311,7 @@ extension IHTCSearchDetailVC {
         cell.frequencyLbl.text = " " + (question.frequency.count < 3 ? (question.frequency + ".0%") : question.frequency) + " "
         cell.langugeLbl.backgroundColor = kColorAppGray
         
-        if ILeetCoderModel.shared.defaultArray.contains(self.title!) {
-            if question.tagString.count > 0 {
-                cell.langugeLbl.isHidden = false
-            }
-            else {
-                cell.langugeLbl.isHidden = true
-            }
-            
-        }
-        
-        if ILeetCoderModel.shared.tagsArray.contains(self.title!) ||
-            ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
-            cell.langugeLbl.isHidden = question.tagString.count == 0 ? true : false
-        }
+       cell.langugeLbl.isHidden = question.tagString.count == 0 ? true : false
         
         if isShowZH {
             cell.tagLbl.text =  " " + (question.difficulty == "Easy" ? "容易" : (question.difficulty == "Medium" ? "中等" : "困难" )) + " "
