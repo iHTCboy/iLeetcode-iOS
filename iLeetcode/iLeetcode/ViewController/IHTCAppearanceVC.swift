@@ -53,6 +53,9 @@ class IHTCAppearanceVC: UITableViewController {
             if #available(iOS 13.0, *) {
                 cell?.backgroundColor = .secondarySystemBackground
             }
+            #if targetEnvironment(macCatalyst)
+                cell?.textLabel?.font = UIFont.systemFont(ofSize: 18)
+            #endif
         }
         
         cell?.accessoryType = .none

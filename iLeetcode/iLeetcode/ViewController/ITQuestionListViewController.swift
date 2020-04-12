@@ -157,6 +157,10 @@ extension ITQuestionListViewController : UITableViewDelegate, UITableViewDataSou
         cell.frequencyLbl.adjustsFontSizeToFitWidth = true
         cell.frequencyLbl.baselineAdjustment = .alignCenters
         
+        #if targetEnvironment(macCatalyst)
+        cell.questionLbl.font = UIFont.systemFont(ofSize: 20)
+        #endif
+        
         let question = self.listModel.result[indexPath.row]
         cell.numLbl.text =  " #" + question.leetId + " "
         let difZh = (question.difficulty == "Easy" ? "容易" : (question.difficulty == "Medium" ? "中等" : "困难" ))

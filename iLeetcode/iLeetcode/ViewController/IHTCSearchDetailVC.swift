@@ -175,7 +175,7 @@ extension IHTCSearchDetailVC {
                                       preferredStyle: UIAlertController.Style.alert)
         
         let enProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(English)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode.com/problems/" + self.questionModle!.link
+            let url = "https://leetcode.com/problems/" + self.questionModle!.link + "/"
             self.showWebView(url: url)
         }
         alert.addAction(enProblemsAction)
@@ -188,7 +188,7 @@ extension IHTCSearchDetailVC {
         alert.addAction(enAction)
         
         let zhProblemsAction = UIAlertAction.init(title: HTCLocalized("Subject(Chinese)"), style: .default) { (action: UIAlertAction) in
-            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link
+            let url = "https://leetcode-cn.com/problems/" + self.questionModle!.link + "/"
             self.showWebView(url: url)
         }
         alert.addAction(zhProblemsAction)
@@ -303,6 +303,9 @@ extension IHTCSearchDetailVC {
         cell.frequencyLbl.layer.masksToBounds = true
         cell.frequencyLbl.adjustsFontSizeToFitWidth = true
         cell.frequencyLbl.baselineAdjustment = .alignCenters
+        #if targetEnvironment(macCatalyst)
+           cell.questionLbl.font = UIFont.systemFont(ofSize: 20)
+        #endif
         
         let question = questionModle!
         cell.numLbl.text =  " #" + question.leetId + " "

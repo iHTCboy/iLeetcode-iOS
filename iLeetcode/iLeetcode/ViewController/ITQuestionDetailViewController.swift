@@ -309,6 +309,9 @@ extension ITQuestionDetailViewController {
         cell.frequencyLbl.layer.masksToBounds = true
         cell.frequencyLbl.adjustsFontSizeToFitWidth = true
         cell.frequencyLbl.baselineAdjustment = .alignCenters
+        #if targetEnvironment(macCatalyst)
+           cell.questionLbl.font = UIFont.systemFont(ofSize: 20)
+        #endif
         
         let question = questionModle!
         cell.numLbl.text =  " #" + question.leetId + " "

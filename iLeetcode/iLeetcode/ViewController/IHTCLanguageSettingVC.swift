@@ -76,6 +76,9 @@ class IHTCLanguageSettingVC: UITableViewController {
         var cell = tableView.dequeueReusableCell(withIdentifier: "IELanguageTableViewCell")
         if (cell  == nil) {
             cell = UITableViewCell.init(style: .value1, reuseIdentifier: "IELanguageTableViewCell")
+            #if targetEnvironment(macCatalyst)
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 20)
+            #endif
         }
         
         cell?.accessoryType = .none

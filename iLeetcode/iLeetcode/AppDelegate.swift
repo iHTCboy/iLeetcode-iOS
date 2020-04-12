@@ -122,6 +122,12 @@ extension AppDelegate {
         ui.barStyle = .black
 //        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
 //        UIApplication.shared.setStatusBarHidden(false, with: .none)
+        
+        #if targetEnvironment(macCatalyst)
+        let tabbar = UITabBarItem.appearance()
+        let font = UIFont.systemFont(ofSize: 18)
+        tabbar.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        #endif
     }
     
 }

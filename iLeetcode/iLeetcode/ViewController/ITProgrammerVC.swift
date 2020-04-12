@@ -107,6 +107,10 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
             cell?.textLabel?.font = UIFont.systemFont(ofSize: DeviceType.IS_IPAD ? 20:16.5)
             cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: DeviceType.IS_IPAD ? 16:12.5)
             cell?.detailTextLabel?.sizeToFit()
+            #if targetEnvironment(macCatalyst)
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 20)
+            cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+            #endif
         }
         
         let string = self.titles["\(indexPath.section)"]
