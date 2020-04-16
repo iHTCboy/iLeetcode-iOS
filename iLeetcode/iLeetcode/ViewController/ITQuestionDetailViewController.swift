@@ -162,7 +162,10 @@ extension ITQuestionDetailViewController {
         // UIBarButtonItem
         let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedPageView))
         let language = UIBarButtonItem(title: isShowZH ? "En" : "中", style: .plain, target: self, action: #selector(switchLanguage))
-        let font = UIBarButtonItem(title: "a", style: .plain, target: self, action: #selector(fontSize))
+        var font = UIBarButtonItem()
+        #if !targetEnvironment(macCatalyst)
+            font = UIBarButtonItem(title: "a", style: .plain, target: self, action: #selector(fontSize))
+        #endif
         let fixedSpace = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         fixedSpace.width = 15
         navigationItem.rightBarButtonItems = [shareItem, infoItem, fixedSpace, language, fixedSpace, font]

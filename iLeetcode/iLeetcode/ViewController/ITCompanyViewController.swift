@@ -71,10 +71,15 @@ class ITCompanyViewController: ITBasePushTransitionVC
 // MARK:- 设置 UI
 extension ITCompanyViewController {
     fileprivate func setUpUI() {
-#if !targetEnvironment(macCatalyst)
+        
+        if #available(iOS 13.0, *) {
+            view?.backgroundColor = .secondarySystemBackground
+        }
+        
+        #if !targetEnvironment(macCatalyst)
         // 0. 不允许系统调整 scrollview 内边距
         automaticallyAdjustsScrollViewInsets = false
-#endif
+        #endif
         // 1. 添加 titleview
         view.addSubview(pageTitleView)
         

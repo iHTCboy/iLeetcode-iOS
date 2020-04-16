@@ -54,7 +54,7 @@ class IHTCAppearanceVC: UITableViewController {
                 cell?.backgroundColor = .secondarySystemBackground
             }
             #if targetEnvironment(macCatalyst)
-                cell?.textLabel?.font = UIFont.systemFont(ofSize: 18)
+                cell?.textLabel?.font = UIFont.systemFont(ofSize: 20)
             #endif
         }
         

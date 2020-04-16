@@ -82,6 +82,10 @@ class ITLanguageViewController: ITBasePushTransitionVC {
 // MARK:- 设置 UI
 extension ITLanguageViewController {
     fileprivate func setUpUI() {
+        if #available(iOS 13.0, *) {
+            view?.backgroundColor = .secondarySystemBackground
+        }
+        
         #if !targetEnvironment(macCatalyst)
         // 0. 不允许系统调整 scrollview 内边距
         automaticallyAdjustsScrollViewInsets = false
