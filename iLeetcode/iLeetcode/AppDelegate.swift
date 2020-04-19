@@ -29,10 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         
         if shortcutItem.type.contains("iLeetCoder://search") {
-            let vc = IHTCSearchViewController()
-            let navi = UINavigationController.init(rootViewController: vc)
-            navi.navigationBar.isHidden = true
-            UIViewController.keyWindowHTC()?.rootViewController!.present(navi, animated: true, completion: nil)
+            AppDelegate.showSearchVC()
         }
         
         if shortcutItem.type.contains("iLeetCoder://star") {
@@ -58,6 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    open class func showSearchVC() {
+        let vc = IHTCSearchViewController()
+        let navi = UINavigationController.init(rootViewController: vc)
+        navi.navigationBar.isHidden = true
+        UIViewController.keyWindowHTC()?.rootViewController!.present(navi, animated: true, completion: nil)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -136,9 +140,101 @@ extension AppDelegate {
 // MARK: macOS method
 #if targetEnvironment(macCatalyst)
 extension AppDelegate {
+    
+    override func buildMenu(with builder: UIMenuBuilder) {
+          guard builder.system == .main else {
+              return
+          }
 
+          builder.remove(menu: .edit)
+          builder.remove(menu: .format)
+          builder.remove(menu: .toolbar)
+    }
+    
     @IBAction func showHelp(_ sender: Any) {
         IAppleServiceUtil.openWebView(url: kGithubURL, tintColor: kColorAppOrange, vc: (UIViewController.keyWindowHTC()?.rootViewController)!)
     }
+    
 }
 #endif
+
+
+// ref: https://www.avanderlee.com/swift/uikeycommand-keyboard-shortcuts/
+// MARK: - Keyboard Shortcuts
+extension UITabBarController {
+
+    /// Adds keyboard shortcuts for the tabs.
+    /// - Shift + Tab Index for the simulator
+    open override var keyCommands: [UIKeyCommand]? {
+        let tabCommand = tabBar.items?.enumerated().map { (index, item) -> UIKeyCommand in
+            let keyCommand = UIKeyCommand.init(input: "\(index + 1)", modifierFlags: .command, action: #selector(selectTab))
+            keyCommand.discoverabilityTitle = item.title ?? "Tab \(index + 1)"
+            return keyCommand
+        }
+
+        #if !targetEnvironment(macCatalyst)
+        let searchKeyCommand = UIKeyCommand.init(input: "F", modifierFlags: [.command], action: #selector(searchCommand))
+        searchKeyCommand.discoverabilityTitle = HTCLocalized("Search")
+        return tabCommand! + [searchKeyCommand]
+        #else
+        return tabCommand! //+ [searchKeyCommand]
+        #endif
+    }
+
+    @objc private func selectTab(sender: UIKeyCommand) {
+        UITabBarController.lastSender = sender
+        guard let input = sender.input, let newIndex = Int(input), newIndex >= 1 && newIndex <= (tabBar.items?.count ?? 0) else { return }
+        selectedIndex = newIndex - 1
+    }
+
+    @objc private func searchCommand(sender: UIKeyCommand) {
+        AppDelegate.showSearchVC()
+    }
+
+
+    open override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
+
+    /// fix bug：临时修复快捷键点击后，action循环调用问题
+    static var lastSender: UIKeyCommand?
+
+    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if let sd = sender as? UIKeyCommand {
+            return UITabBarController.lastSender != sd
+        }
+        
+        return super.canPerformAction(action, withSender: sender)
+    }
+
+    @IBAction func showSearch(_ sender: Any) {
+        AppDelegate.showSearchVC()
+    }
+}
+
+
+
+// MARK: - Keyboard Shortcuts
+extension UINavigationController {
+
+    /*
+     Adds keyboard shortcuts to navigate back in a navigation controller.
+     - Shift + left arrow on the simulator
+     */
+    override public var keyCommands: [UIKeyCommand]? {
+        guard viewControllers.count > 1 else { return [] }
+        let backKeyCommand = UIKeyCommand.init(input: UIKeyCommand.inputEscape, modifierFlags: [], action: #selector(backCommand))
+        backKeyCommand.discoverabilityTitle = HTCLocalized("Back")
+        
+        return [backKeyCommand]
+    }
+
+    @objc private func backCommand() {
+        popViewController(animated: true)
+    }
+    
+    open override var canBecomeFirstResponder: Bool {
+        return true
+    }
+}

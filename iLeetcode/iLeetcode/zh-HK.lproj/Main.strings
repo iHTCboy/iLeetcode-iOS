@@ -22,3 +22,6 @@
 
 /* Class = "UINavigationItem"; title = "iCoder"; ObjectID = "v8D-Zh-aQr"; */
 "v8D-Zh-aQr.title" = "iCoder";
+
+/* <command title="Search" input="f" id="OFS-d9-xix"> */
+"OFS-d9-xix.title" = "搜索";

@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -153,6 +153,26 @@
         <scene sceneID="E0Y-31-m6y">
             <objects>
                 <menu isSystemItem="YES" title="Main Menu" identifier="com.apple.menu.root" id="q6W-ji-6Ii" sceneMemberID="viewController">
+                    <children>
+                        <menu isSystemItem="YES" title="File" identifier="com.apple.menu.file" id="6Sv-kV-bQf">
+                            <children>
+                                <command title="Search" input="f" id="OFS-d9-xix">
+                                    <keyModifierFlags key="modifierFlags" command="YES"/>
+                                    <connections>
+                                        <action selector="showSearch:" destination="bUf-E9-6Vz" id="0Ol-Pb-pu9"/>
+                                    </connections>
+                                </command>
+                            </children>
+                            <systemMenuChildDeletions>
+                                <menuDeletion anchor="com.apple.menu.print"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                        <menu isSystemItem="YES" title="View" identifier="com.apple.menu.view" id="KiP-0y-Ffd">
+                            <systemMenuChildDeletions>
+                                <menuDeletion anchor="com.apple.menu.toolbar"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                    </children>
                     <systemMenuChildDeletions>
                         <menuDeletion anchor="com.apple.menu.edit"/>
                         <menuDeletion anchor="com.apple.menu.format"/>
@@ -160,7 +180,7 @@
                 </menu>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUf-E9-6Vz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1283" y="-913"/>
+            <point key="canvasLocation" x="-1272" y="-929"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LDy-7v-RO9">

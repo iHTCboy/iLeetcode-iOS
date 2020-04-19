@@ -51,6 +51,7 @@ class IHTCSearchDetailVC: UIViewController {
     var questionsArray: Array<ITQuestionModel> = []
     var currentIndex: Int = 0
     var isShowZH : Bool = false
+    var languageItem : UIBarButtonItem?
     
     lazy var tableView: UITableView = {
         var tableView = UITableView.init(frame: CGRect.zero, style: .plain)
@@ -162,6 +163,7 @@ extension IHTCSearchDetailVC {
         // UIBarButtonItem
         let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedPageView))
         let language = UIBarButtonItem(title: isShowZH ? "En" : "中", style: .plain, target: self, action: #selector(switchLanguage))
+        languageItem = language
         var font = UIBarButtonItem()
         #if !targetEnvironment(macCatalyst)
             font = UIBarButtonItem(title: "a", style: .plain, target: self, action: #selector(fontSize))
@@ -344,6 +346,7 @@ extension IHTCSearchDetailVC {
         
         let previousIndex = currentIndex - 1
         if previousIndex < 0 {
+            #if !targetEnvironment(macCatalyst)
             let alert = UIAlertController.init(title: HTCLocalized("Tips"), message: HTCLocalized("No more previous questions"), preferredStyle: .alert)
             let cancelAction = UIAlertAction.init(title: HTCLocalized("OK"), style: .destructive) { (action: UIAlertAction) in
                 
@@ -352,6 +355,7 @@ extension IHTCSearchDetailVC {
             view.window!.rootViewController!.presentedViewController!.present(alert, animated: true, completion: {
                 //print("UIAlertController present");
             })
+            #endif
             return
         }
         
@@ -366,6 +370,7 @@ extension IHTCSearchDetailVC {
         
         let previousIndex = currentIndex + 1
         if previousIndex >= questionsArray.count {
+            #if !targetEnvironment(macCatalyst)
             let alert = UIAlertController.init(title: HTCLocalized("Tips"), message: HTCLocalized("No more next questions"), preferredStyle: .alert)
             let cancelAction = UIAlertAction.init(title: HTCLocalized("OK"), style: .destructive) { (action: UIAlertAction) in
                 
@@ -374,6 +379,7 @@ extension IHTCSearchDetailVC {
             view.window!.rootViewController!.presentedViewController!.present(alert, animated: true, completion: {
                 //print("UIAlertController present");
             })
+            #endif
             return
         }
         
@@ -471,4 +477,39 @@ extension IHTCSearchDetailVC: WKNavigationDelegate, WKUIDelegate {
 //    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 //
 //    }
+}
+
+extension IHTCSearchDetailVC {
+    override public var keyCommands: [UIKeyCommand]? {
+        let leftKeyCommand = UIKeyCommand.init(input: UIKeyCommand.inputLeftArrow, modifierFlags: [], action: #selector(leftCommand))
+        leftKeyCommand.discoverabilityTitle = HTCLocalized("Previous Question")
+        let rightKeyCommand = UIKeyCommand.init(input: UIKeyCommand.inputRightArrow, modifierFlags: [], action: #selector(rightCommand))
+        rightKeyCommand.discoverabilityTitle = HTCLocalized("Next Question")
+        let langugeKeyCommand = UIKeyCommand.init(input: "T", modifierFlags: [.command], action: #selector(langugeCommand))
+        langugeKeyCommand.discoverabilityTitle = HTCLocalized("Display Language")
+//        let infoKeyCommand = UIKeyCommand.init(input: "I", modifierFlags: [.command], action: #selector(InfoCommand))
+//        infoKeyCommand.discoverabilityTitle = HTCLocalized("Tips")
+        
+        return [leftKeyCommand, rightKeyCommand, langugeKeyCommand] //, infoKeyCommand]
+    }
+
+    @objc private func leftCommand(sender: UIKeyCommand) {
+        showPreviousQuestion()
+    }
+    
+    @objc private func rightCommand(sender: UIKeyCommand) {
+        showNexQuestion()
+    }
+    
+    @objc private func langugeCommand(sender: UIKeyCommand) {
+        switchLanguage(item: languageItem!)
+    }
+    
+//    @objc private func InfoCommand(sender: UIKeyCommand) {
+//        showAnswer(item: infoItem)
+//    }
+    
+    open override var canBecomeFirstResponder: Bool {
+        return true
+    }
 }

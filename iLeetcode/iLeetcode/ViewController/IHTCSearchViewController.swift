@@ -310,3 +310,27 @@ extension IHTCSearchViewController: UIViewControllerPreviewingDelegate {
         return questionVC
     }
 }
+
+
+
+extension IHTCSearchViewController {
+    override public var keyCommands: [UIKeyCommand]? {
+        let backKeyCommand = UIKeyCommand.init(input: UIKeyCommand.inputEscape, modifierFlags: [], action: #selector(backCommand))
+        backKeyCommand.discoverabilityTitle = HTCLocalized("Close")
+        let wordKeyCommand = UIKeyCommand.init(input: "T", modifierFlags: [.command], action: #selector(wordCommand))
+        wordKeyCommand.discoverabilityTitle = HTCLocalized("Filter")
+        return [backKeyCommand, wordKeyCommand]
+    }
+
+    @objc private func backCommand() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func wordCommand() {
+        clickedOptionItem(optionItem)
+    }
+    
+    open override var canBecomeFirstResponder: Bool {
+        return true
+    }
+}
