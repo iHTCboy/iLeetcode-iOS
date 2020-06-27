@@ -48,7 +48,7 @@ class IHTCLanguageSettingVC: UITableViewController {
     
     @objc func resetLanguage(item: UIBarButtonItem) {
         ILeetCoderModel.shared.resetData()
-        let vc = UIStoryboard.init(name: "Main", bundle: nil);
+        let vc = UIStoryboard.init(name: "Main", bundle: nil)
         let tabbarVC = vc.instantiateInitialViewController()!
         view.window?.rootViewController = tabbarVC
         

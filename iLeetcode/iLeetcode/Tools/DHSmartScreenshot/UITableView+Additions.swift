@@ -21,7 +21,7 @@ extension UITableView {
         
         self.setContentOffset(currTableViewOffset, animated: false)
         
-        return cellScreenshot;
+        return cellScreenshot
     }
     
     var screenshotOfHeaderView : UIImage? {
@@ -31,7 +31,7 @@ extension UITableView {
             let headerScreenshot = self.screenshotForCroppingRect(croppingRect: headerRect)
             self.setContentOffset(originalOffset, animated: false)
             
-            return headerScreenshot;
+            return headerScreenshot
         }
         return nil
     }
@@ -43,7 +43,7 @@ extension UITableView {
             let footerScreenshot = self.screenshotForCroppingRect(croppingRect: footerRect)
             self.setContentOffset(originalOffset, animated: false)
             
-            return footerScreenshot;
+            return footerScreenshot
         }
         return nil
     }
@@ -56,7 +56,7 @@ extension UITableView {
         let headerScreenshot = self.screenshotForCroppingRect(croppingRect: headerRect)
         self.setContentOffset(originalOffset, animated: false)
         
-        return headerScreenshot;
+        return headerScreenshot
     }
     
     func screenshotOfFooterViewAtSection(section:Int) -> UIImage? {
@@ -67,7 +67,7 @@ extension UITableView {
         let footerScreenshot = self.screenshotForCroppingRect(croppingRect: footerRect)
         self.setContentOffset(originalOffset, animated: false)
         
-        return footerScreenshot;
+        return footerScreenshot
     }
     
     
@@ -162,7 +162,7 @@ extension UITableView {
         if sectionScreenshot == nil {
             sectionScreenshot = self.blankScreenshotOfHeaderAtSection(section: section)
         }
-        return sectionScreenshot;
+        return sectionScreenshot
     }
     
     func screenshotOfFooterViewAtSection(section:Int, excludedFooterSections:NSSet?) -> UIImage? {
@@ -174,7 +174,7 @@ extension UITableView {
         if sectionScreenshot == nil {
             sectionScreenshot = self.blankScreenshotOfFooterAtSection(section: section)
         }
-        return sectionScreenshot;
+        return sectionScreenshot
     }
     
     func screenshotOfCellAtIndexPath(indexPath:NSIndexPath, includedIndexPaths:NSSet?) -> UIImage? {
@@ -193,7 +193,7 @@ extension UITableView {
         if sectionScreenshot == nil {
             sectionScreenshot = self.blankScreenshotOfHeaderAtSection(section: section)
         }
-        return sectionScreenshot;
+        return sectionScreenshot
     }
     
     func screenshotOfFooterViewAtSection(section:Int, includedFooterSections:NSSet?)
@@ -205,7 +205,7 @@ extension UITableView {
             if sectionScreenshot == nil {
                 sectionScreenshot = self.blankScreenshotOfFooterAtSection(section: section)
             }
-            return sectionScreenshot;
+            return sectionScreenshot
     }
     
     func blankScreenshotOfHeaderAtSection(section:Int) -> UIImage? {
@@ -241,7 +241,7 @@ extension UITableView {
                 allRowsIndexPaths.append(indexPath)
             }
         }
-        return allRowsIndexPaths;
+        return allRowsIndexPaths
     }
     
 }

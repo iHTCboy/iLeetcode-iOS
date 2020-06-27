@@ -58,7 +58,7 @@ class IAppleServiceUtil: NSObject {
         } else {
             //if iPad
             // Change Rect to position Popover
-            let popup = UIPopoverController.init(contentViewController: activityController);
+            let popup = UIPopoverController.init(contentViewController: activityController)
             popup.present(from: CGRect.init(x: vc.view.frame.width-44, y: 64, width: 0, height: 0), in: vc.view, permittedArrowDirections: .any, animated: true)
         }
     }
@@ -114,11 +114,11 @@ class ImageHandle: NSObject {
             //超过设置的最大宽度 先判断那个边最长
             if(oldImg_WID > oldImg_HEI){
                 //宽度大于高度
-                oldImg_HEI = (MaxCompressibility * oldImg_HEI)/oldImg_WID;
-                oldImg_WID = MaxCompressibility;
+                oldImg_HEI = (MaxCompressibility * oldImg_HEI)/oldImg_WID
+                oldImg_WID = MaxCompressibility
             }else{
-                oldImg_WID = (MaxCompressibility * oldImg_WID)/oldImg_HEI;
-                oldImg_HEI = MaxCompressibility;
+                oldImg_WID = (MaxCompressibility * oldImg_WID)/oldImg_HEI
+                oldImg_HEI = MaxCompressibility
             }
         }
         
@@ -135,10 +135,10 @@ class ImageHandle: NSObject {
     
     // 压缩一张图片 自定义最大宽高
     class func imageWithImage(image: UIImage, newSize: CGSize) -> UIImage {
-        UIGraphicsBeginImageContext(newSize);
+        UIGraphicsBeginImageContext(newSize)
         image.draw(in: CGRect.init(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         return newImage ?? UIImage()
     }
     
@@ -148,7 +148,15 @@ class ImageHandle: NSObject {
         size.height += headerImage.size.height
         size.height += footerImage.size.height
         
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        
+        #if targetEnvironment(macCatalyst)
+        if #available(iOS 13.0, *) {
+            let context = UIGraphicsGetCurrentContext()
+            context?.setFillColor(UIColor.systemGroupedBackground.cgColor)
+            context?.fill(CGRect.init(origin: CGPoint.zero, size: size))
+         }
+        #endif
         
         //Draw header
         headerImage.draw(in: CGRect.init(x: 0, y: 0, width: headerImage.size.width, height: headerImage.size.height))
@@ -159,8 +167,8 @@ class ImageHandle: NSObject {
         //Draw masterfootImage
         footerImage.draw(in: CGRect.init(x: 0, y: headerImage.size.height + masterImage.size.height, width: footerImage.size.width, height: footerImage.size.height))
         
-        let resultImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
         return resultImage
     }
@@ -173,10 +181,10 @@ extension UIViewController {
         var vc = self
         
         while ((vc.presentedViewController) != nil) {
-            vc = vc.presentedViewController!;
+            vc = vc.presentedViewController!
         }
         
-        return vc;
+        return vc
     }
     
     func currentRootViewController() -> UIViewController {
@@ -188,9 +196,9 @@ extension UIViewController {
         var vc = view.window!.rootViewController ?? self
         
         while ((vc.presentedViewController) != nil) {
-            vc = vc.presentedViewController!;
+            vc = vc.presentedViewController!
         }
         
-        return vc;
+        return vc
     }
 }

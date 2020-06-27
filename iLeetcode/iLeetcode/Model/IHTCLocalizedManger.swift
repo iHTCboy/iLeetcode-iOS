@@ -66,16 +66,16 @@ class IHTCLocalizedManger: NSObject {
             language = "zh-Hant"
         }
 //        else if language.hasPrefix("pt") {
-//            language = "pt";//葡萄牙语
+//            language = "pt"//葡萄牙语
 //        }
 //        else if language.hasPrefix("es") {
-//            language = "es";//西班牙语
+//            language = "es"//西班牙语
 //        }
 //        else if language.hasPrefix("th") {
-//            language = "th";//泰语
+//            language = "th"//泰语
 //        }
 //        else if language.hasPrefix("hi") {
-//            language = "hi";//印地语
+//            language = "hi"//印地语
 //        }
         else {
             language = "en"

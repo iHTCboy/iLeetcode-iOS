@@ -31,7 +31,7 @@ class ITModel: NSObject {
         success = 1
         total = array.count
         for dic in array {
-            let questionModel = ITQuestionModel.init(dictionary: dic);
+            let questionModel = ITQuestionModel.init(dictionary: dic)
             questionModel.language = language
             result.append(questionModel)
         }

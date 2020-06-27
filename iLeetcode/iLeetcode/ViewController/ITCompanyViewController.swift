@@ -112,3 +112,23 @@ extension ITCompanyViewController: ITPageContentViewDelegate {
         self.selectTitleIndex = targetIndex
     }
 }
+
+
+extension ITCompanyViewController {
+    override public var keyCommands: [UIKeyCommand]? {
+        let reloadKeyCommand = UIKeyCommand.init(input: "R", modifierFlags: [.command], action: #selector(refresh))
+        reloadKeyCommand.discoverabilityTitle = HTCLocalized("Refresh")
+        return [reloadKeyCommand]
+    }
+    
+    @objc private func refresh() {
+        if selectTitleIndex < children.count {
+            let vc: ITQuestionListViewController = children[selectTitleIndex] as! ITQuestionListViewController
+            vc.randomRefresh(sender: vc.refreshControl)
+        }
+    }
+    
+    open override var canBecomeFirstResponder: Bool {
+        return true
+    }
+}

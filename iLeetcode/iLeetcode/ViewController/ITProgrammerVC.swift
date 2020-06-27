@@ -36,7 +36,7 @@ class ITProgrammerVC: UIViewController {
     lazy var tableView: UITableView = {
         var tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 20, right: 0)
-        tableView.sectionFooterHeight = 0.1;
+        tableView.sectionFooterHeight = 0.1
         tableView.estimatedRowHeight = 55
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
@@ -146,8 +146,8 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let section = indexPath.section;
-        let row = indexPath.row;
+        let section = indexPath.section
+        let row = indexPath.row
         
         switch section {
         case 0:

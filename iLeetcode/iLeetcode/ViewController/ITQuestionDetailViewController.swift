@@ -58,8 +58,8 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.estimatedRowHeight = 80
         tableView.estimatedSectionHeaderHeight = 80
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ITQuestionListViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ITQuestionListViewCell")
         tableView.register(UINib.init(nibName: "ITQuestionDetailViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ITQuestionDetailViewCell")
         return tableView
@@ -71,10 +71,10 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
         var webView = WKWebView.init(frame: CGRect.zero, configuration: configuration)
-        webView.allowsBackForwardNavigationGestures = true;
+        webView.allowsBackForwardNavigationGestures = true
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.scrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-        webView.isOpaque = false;
+        webView.isOpaque = false
         if #available(iOS 13.0, *) {
             webView.backgroundColor = .systemBackground
         } else {
@@ -210,7 +210,7 @@ extension ITQuestionDetailViewController {
         }
         alert.addAction(cancelAction)
         view.window!.rootViewController!.present(alert, animated: true, completion: {
-            //print("UIAlertController present");
+            //print("UIAlertController present")
         })
     }
     
@@ -337,11 +337,11 @@ extension ITQuestionDetailViewController {
             cell.questionLbl.text = question.title
         }
         
-        let previousTap = UITapGestureRecognizer.init(target: self, action: #selector(showPreviousQuestion));
+        let previousTap = UITapGestureRecognizer.init(target: self, action: #selector(showPreviousQuestion))
         previousTap.numberOfTapsRequired = 2
         cell.PreviousQuestionView.addGestureRecognizer(previousTap)
         
-        let nextTap = UITapGestureRecognizer.init(target: self, action: #selector(showNexQuestion));
+        let nextTap = UITapGestureRecognizer.init(target: self, action: #selector(showNexQuestion))
         nextTap.numberOfTapsRequired = 2
         cell.NextQuestionView.addGestureRecognizer(nextTap)
         
@@ -359,7 +359,7 @@ extension ITQuestionDetailViewController {
             }
             alert.addAction(cancelAction)
             view.window!.rootViewController!.present(alert, animated: true, completion: {
-                //print("UIAlertController present");
+                //print("UIAlertController present")
             })
             #endif
             return
@@ -382,7 +382,7 @@ extension ITQuestionDetailViewController {
             }
             alert.addAction(cancelAction)
             view.window!.rootViewController!.present(alert, animated: true, completion: {
-                //print("UIAlertController present");
+                //print("UIAlertController present")
             })
             #endif
             return
@@ -398,7 +398,7 @@ extension ITQuestionDetailViewController {
     fileprivate func reloadWebView() {
         var contents = ""
         if isShowZH {
-            contents = questionModle!.questionDescriptionZh.count > 0 ? questionModle!.questionDescriptionZh : questionModle!.questionDescription;
+            contents = questionModle!.questionDescriptionZh.count > 0 ? questionModle!.questionDescriptionZh : questionModle!.questionDescription
         }
         else {
             contents =  questionModle!.questionDescription

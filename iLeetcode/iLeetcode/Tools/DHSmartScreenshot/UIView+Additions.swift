@@ -7,11 +7,11 @@ import UIKit
 extension UIView {
     @objc func screenshotForCroppingRect(croppingRect:CGRect) -> UIImage? {
         
-        UIGraphicsBeginImageContextWithOptions(croppingRect.size, false, UIScreen.main.scale);
+        UIGraphicsBeginImageContextWithOptions(croppingRect.size, false, UIScreen.main.scale)
         
         let context = UIGraphicsGetCurrentContext()
         if context == nil {
-            return nil;
+            return nil
         }
         
         context!.translateBy(x: -croppingRect.origin.x, y: -croppingRect.origin.y)

@@ -127,7 +127,7 @@ extension ILeetCoderModel
                     // json is a dictionary
                     var dfDict = Dictionary<String, NSMutableArray>()
                     for df in self.defaultArray {
-                        dfDict[df] = NSMutableArray.init();
+                        dfDict[df] = NSMutableArray.init()
                     }
                     
                     var tagDict = Dictionary<String, NSMutableArray>()
@@ -164,7 +164,7 @@ extension ILeetCoderModel
                                         tagArray.add(question)
                                     }
                                     else {
-                                        let newTagArray = NSMutableArray.init();
+                                        let newTagArray = NSMutableArray.init()
                                         newTagArray.add(question)
                                         tagDict[tg!] = newTagArray
                                     }
@@ -183,7 +183,7 @@ extension ILeetCoderModel
                                         cpArray.add(question)
                                     }
                                     else {
-                                        let newCpArray = NSMutableArray.init();
+                                        let newCpArray = NSMutableArray.init()
                                         newCpArray.add(question)
                                         enterDict[company] = newCpArray
                                     }
@@ -214,7 +214,7 @@ extension ILeetCoderModel
                     
                     // ids
                     for idKey in idsDict.keys {
-                        let questionModel = ITQuestionModel.init(dictionary: idsDict[idKey]!);
+                        let questionModel = ITQuestionModel.init(dictionary: idsDict[idKey]!)
                         leetIdsDict[idKey] = questionModel
                     }
                     

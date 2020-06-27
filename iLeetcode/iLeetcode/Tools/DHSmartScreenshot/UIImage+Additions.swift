@@ -24,7 +24,7 @@ extension UIImage {
         UIGraphicsBeginImageContextWithOptions(croppingRect.size, false, UIScreen.main.scale)
         self.draw(in: CGRect.init(origin: CGPoint.zero, size: self.size))
         let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext();
+        UIGraphicsEndImageContext()
         
         return result
     }
@@ -54,7 +54,7 @@ extension UIImage {
         
         for img in imagesArray {
             img.draw(at: CGPoint(x: 0, y: imageOffsetFactor))
-            imageOffsetFactor += img.size.height;
+            imageOffsetFactor += img.size.height
         }
         unifiedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

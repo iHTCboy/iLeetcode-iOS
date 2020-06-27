@@ -97,7 +97,7 @@ extension AppDelegate {
         let statTracker = BaiduMobStat.default()
 #if DEBUG
         print("Debug modle")
-        //statTracker.enableDebugOn = true;
+        //statTracker.enableDebugOn = true
         statTracker.channelId = "Debug"
 #else
         statTracker.shortAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "None"

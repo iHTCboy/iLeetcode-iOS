@@ -54,23 +54,27 @@ extension UIViewController {
         var foundWindow: UIWindow? = nil
         for window in UIApplication.shared.windows {
             if (window.isKeyWindow) {
-                foundWindow = window;
+                foundWindow = window
                 break
             }
         }
         
+        #if !targetEnvironment(macCatalyst)
         if  foundWindow == nil {
             foundWindow = UIApplication.shared.keyWindow
         }
+        #endif
         
         if  foundWindow == nil {
             foundWindow = UIApplication.shared.windows.first
         }
         
+        #if !targetEnvironment(macCatalyst)
         // 先兼容iPhone设备
         if UIDevice.current.userInterfaceIdiom == .phone {
             foundWindow = UIApplication.shared.keyWindow
         }
+        #endif
         
         return foundWindow
     }

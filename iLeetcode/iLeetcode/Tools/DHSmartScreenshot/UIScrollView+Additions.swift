@@ -14,29 +14,29 @@ extension UIScrollView {
     
     var screenshotImage : UIImage? {
         let image: UIImage?
-        UIGraphicsBeginImageContextWithOptions(self.contentSize, false, 0.0);
+        UIGraphicsBeginImageContextWithOptions(self.contentSize, false, 0.0)
         
         //先保存原始的格式
-        let savedContentOffset = self.contentOffset;
-        let savedFrame = self.frame;
+        let savedContentOffset = self.contentOffset
+        let savedFrame = self.frame
         //移设置为零
-        self.contentOffset = CGPoint.zero;
+        self.contentOffset = CGPoint.zero
         //设置大小
         self.frame = CGRect.init(x: 0, y: 0, width: self.contentSize.width, height: self.contentSize.height)
             
         self.layer.render(in: UIGraphicsGetCurrentContext()!)
-        image = UIGraphicsGetImageFromCurrentImageContext();
+        image = UIGraphicsGetImageFromCurrentImageContext()
         
     
-        self.contentOffset = savedContentOffset;
-        self.frame = savedFrame;
+        self.contentOffset = savedContentOffset
+        self.frame = savedFrame
         
-        UIGraphicsEndImageContext();
+        UIGraphicsEndImageContext()
         
         if (image != nil) {
-            return image;
+            return image
         }
-        return nil;
+        return nil
     }
     
     // rfe: https://juejin.im/post/5b9d145ae51d450e7579d1e5

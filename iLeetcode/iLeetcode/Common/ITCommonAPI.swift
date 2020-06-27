@@ -62,7 +62,7 @@ extension ITCommonAPI
                                 newHandler?(true, serverVersion as String, nil)
                                 break
                             }else if Int(serverArray[i])! < Int(localArray[i])! {
-                                break;
+                                break
                             }
                             
                         }
@@ -110,9 +110,9 @@ extension ITCommonAPI
         alert.addAction(cancelAction)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            let vc = UIViewController.keyWindowHTC()?.rootViewController;
+            let vc = UIViewController.keyWindowHTC()?.rootViewController
             vc?.present(alert, animated: true, completion: {
-                //print("UIAlertController present");
+                //print("UIAlertController present")
             })
         }
     }
