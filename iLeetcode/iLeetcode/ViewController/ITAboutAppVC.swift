@@ -47,7 +47,7 @@ extension ITAboutAppVC
             self.view.backgroundColor = UIColor.secondarySystemGroupedBackground
         }
         
-        self.title = "\(HTCLocalized("About")) \(kiTalker)"
+        self.title = "\(HTCLocalized("About")) \(kAppName)"
         
         guard (self.logoImgView != nil) else {
             return
@@ -56,7 +56,7 @@ extension ITAboutAppVC
         self.logoImgView.image = UIImage.init(named: "App-share-Icon")
         self.logoImgView.layer.cornerRadius = 8
         self.logoImgView.layer.masksToBounds = true
-        self.appNameLbl.text = kiTalker
+        self.appNameLbl.text = kAppName
         self.versionLbl.text = "v" + KAppVersion
         if #available(iOS 13.0, *) {
             self.versionLbl.textColor = UIColor.secondaryLabel
@@ -69,7 +69,7 @@ extension ITAboutAppVC
         
         #if targetEnvironment(macCatalyst)
             self.logoImgView.layer.cornerRadius = logoImgView.frame.size.width / 3.5
-            self.appNameLbl.text = kiTalker + " for macOS"
+            self.appNameLbl.text = kAppName + " for macOS"
             self.contentLbl.font = UIFont.systemFont(ofSize: 25)
         #endif
     }

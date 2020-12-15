@@ -48,7 +48,7 @@ class ITProgrammerVC: UIViewController {
         
         "1": "\(HTCLocalized("In App Rating")):\(HTCLocalized("Welcome to iCoder app review!")),\(HTCLocalized("AppStore Evaluation")):\(HTCLocalized("Welcome to write a review"))!,\(HTCLocalized("Send to a friend")):\(HTCLocalized("Study together with friends around!"))",
         
-        "2":"\(HTCLocalized("Feedback")):\(HTCLocalized("Welcome to AppStore for requests or bugs")),\(HTCLocalized("E-mail Contact")):\(HTCLocalized("If you have questions please email")),\(HTCLocalized("Privacy Policy")):\(HTCLocalized("User Services Agreement")),\(HTCLocalized("Open Source")):\(HTCLocalized("It is now open source code")),\(HTCLocalized("Attention More")):\(HTCLocalized("Welcome to the author's blog")),\(HTCLocalized("Learn More")):\(HTCLocalized("More Developer Content recommendation")),\(HTCLocalized("About Application")):\(kiTalker)"] as [String : String]
+        "2":"\(HTCLocalized("Feedback")):\(HTCLocalized("Welcome to AppStore for requests or bugs")),\(HTCLocalized("E-mail Contact")):\(HTCLocalized("If you have questions please email")),\(HTCLocalized("Privacy Policy")):\(HTCLocalized("User Services Agreement")),\(HTCLocalized("Open Source")):\(HTCLocalized("It is now open source code")),\(HTCLocalized("Attention More")):\(HTCLocalized("Welcome to the author's blog")),\(HTCLocalized("Learn More")):\(HTCLocalized("More Developer Content recommendation")),\(HTCLocalized("About Application")):\(kAppName)"] as [String : String]
 
 }
 
@@ -183,9 +183,9 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
                 IAppleServiceUtil.openAppstore(url: kAppDownloadURl, isAssessment: true)
             }
             if row == 1 {
-                let message = HTCLocalized("Welcome to the mail. Write down your questions.") + "\n\n\n\n" + kMarginLine + "\n \(HTCLocalized("The current "))\(kiTalker)\(HTCLocalized(" version"))：" + KAppVersion + "， \(HTCLocalized("System version"))：" + String(Version.SYS_VERSION_FLOAT) + "， \(HTCLocalized("Device Information"))：" + UIDevice.init().modelName
-                
-                ITCommonAPI.shared.sendEmail(recipients: [kEmail], messae: message, vc: self)
+                let message = HTCLocalized("Welcome to the mail. Write down your questions.") + "\n\n\n\n" + kMarginLine + "\n \(HTCLocalized("The current "))\(kAppName)\(HTCLocalized(" version"))：" + KAppVersion + "， \(HTCLocalized("System version"))：" + String(Version.SYS_VERSION_FLOAT) + "， \(HTCLocalized("Device Information"))：" + UIDevice.init().modelName
+                let subject = "\(kAppName) Feedback"
+                ITCommonAPI.shared.sendEmail(recipients: [kEmail], subject: subject,  messae: message, vc: self)
             }
             if row == 2 {
                 IAppleServiceUtil.openWebView(url: kLicenseURL, tintColor: kColorAppOrange, vc: self)
