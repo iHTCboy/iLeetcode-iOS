@@ -31,6 +31,7 @@ class ITPageTitleView: UIView {
     
     fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.scrollsToTop = false
         scrollView.bounces = true

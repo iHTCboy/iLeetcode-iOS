@@ -17,7 +17,7 @@ let kReviewAction = "&action=write-review"
 let kGithubURL = "https://github.com/iHTCboy/iLeetcode-iOS"
 let kLicenseURL = "https://raw.githubusercontent.com/iHTCboy/iLeetcode-iOS/master/LICENSE"
 let kiHTCboyURL = "https://ihtcboy.com"
-let kEmail = "iHTCTeam@gmail.com"
+let kEmail = "iHTCdevelop@gmail.com"
 let kAppShare = "Hello, \(kAppName)! 这是一款为IT工程师们提供算法知识充电的应用，IT算法和数据结构知识，求职面试必备的好工具哦！" + "iOS下载链接：" + kAppDownloadURl
 let kAppAbout = "About App"
 let kShareTitle = "长按识别二维码下载"
