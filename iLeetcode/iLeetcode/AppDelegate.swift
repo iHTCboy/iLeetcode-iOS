@@ -120,12 +120,32 @@ extension AppDelegate {
     }
     
     func setupBaseUI() {
-        let ui = UINavigationBar.appearance()
-        ui.tintColor = UIColor.white
-        ui.barTintColor = UIColor.orange
-        ui.barStyle = .black
-//        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
-//        UIApplication.shared.setStatusBarHidden(false, with: .none)
+        let appearance = UINavigationBar.appearance()
+        appearance.tintColor = UIColor.white
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.barTintColor = UIColor.orange
+        appearance.barStyle = .black
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.backgroundColor = UIColor.orange
+            appearance.standardAppearance = navBarAppearance
+            appearance.scrollEdgeAppearance = navBarAppearance
+        }
+        
+        
+        if #available(iOS 13.0, *) {
+            let tabBar = UITabBar.appearance()
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.backgroundEffect = .init(style: .systemMaterial)
+            tabBar.standardAppearance = tabBarAppearance
+            if #available(iOS 15.0, *) {
+                tabBar.scrollEdgeAppearance = tabBarAppearance
+            }
+        }
         
         #if targetEnvironment(macCatalyst)
         let tabbar = UITabBarItem.appearance()

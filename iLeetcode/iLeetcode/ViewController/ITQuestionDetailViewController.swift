@@ -54,6 +54,9 @@ class ITQuestionDetailViewController: ITBasePopTransitionVC {
         if #available(iOS 13.0, *) {
             tableView.backgroundColor = .secondarySystemGroupedBackground
         }
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0.0
+        }
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.estimatedRowHeight = 80
