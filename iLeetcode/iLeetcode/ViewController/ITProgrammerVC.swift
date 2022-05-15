@@ -44,7 +44,7 @@ class ITProgrammerVC: UIViewController {
         return tableView
     }()
     
-    fileprivate var titles = ["0": "\(HTCLocalized("Display Language")):设置题目显示的默认语言,\(HTCLocalized("Display Appearance")):暗黑or浅色",
+    fileprivate var titles = ["0": "\(HTCLocalized("Favorites")):\(HTCLocalized("Favorite topics")),\(HTCLocalized("Display Language")):设置语言,\(HTCLocalized("Display Appearance")):暗黑or浅色",
         
         "1": "\(HTCLocalized("In App Rating")):\(HTCLocalized("Welcome to iCoder app review!")),\(HTCLocalized("AppStore Evaluation")):\(HTCLocalized("Welcome to write a review"))!,\(HTCLocalized("Send to a friend")):\(HTCLocalized("Study together with friends around!"))",
         
@@ -118,7 +118,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         let titles = titleArray?[indexPath.row]
         let titleA = titles?.components(separatedBy: ":")
         cell!.textLabel?.text = titleA?[0]
-        if indexPath.section == 0 && indexPath.row == 0 {
+        if indexPath.section == 0 && indexPath.row == 1 {
             var currentLanguage = ""
             switch IHTCLocalizedManger.shared.currentLanguage() {
             case "zh-Hans":
@@ -133,7 +133,7 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
             }
             cell?.detailTextLabel?.text = currentLanguage
         }
-        else if indexPath.section == 0 && indexPath.row == 1 {
+        else if indexPath.section == 0 && indexPath.row == 2 {
             cell?.detailTextLabel?.text = HTCLocalized(IHTCUserDefaults.shared.getAppAppearance().rawValue)
         }
         else {
@@ -152,11 +152,18 @@ extension ITProgrammerVC : UITableViewDelegate, UITableViewDataSource
         switch section {
         case 0:
             if row == 0 {
-                let vc = IHTCLanguageSettingVC()
+                let vc = ITQuestionListViewController()
+                vc.title = HTCLocalized("Favorites")
+                vc.tabBarHeight = 0
                 vc.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(vc, animated: true)
             }
             if row == 1 {
+                let vc = IHTCLanguageSettingVC()
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            }
+            if row == 2 {
                 let vc = IHTCAppearanceVC()
                 vc.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(vc, animated: true)

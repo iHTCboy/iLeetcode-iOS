@@ -91,6 +91,20 @@ class IHTCSearchDetailVC: UIViewController {
         return item
     }()
     
+    lazy var favoritesBtn :UIButton = {
+        let infoBtn = UIButton.init(type: .custom)
+        infoBtn.setImage(UIImage.init(named: "favorites_normal"), for: .normal)
+        infoBtn.setImage(UIImage.init(named: "favorites_selected"), for: .selected)
+        infoBtn.addTarget(self, action: #selector(showWordFavorites), for: .touchUpInside)
+        infoBtn.isSelected = IHTCUserDefaults.shared.isFavoritesItem(item: questionModle!.leetId)
+        return infoBtn
+    }()
+    
+    lazy var favoritesItem :UIBarButtonItem = {
+        let item = UIBarButtonItem.init(customView: favoritesBtn)
+        return item
+    }()
+    
     @available(iOS 9.0, *)
     lazy var previewActions: [UIPreviewActionItem] = {
         let a = UIPreviewAction(title: HTCLocalized("Problem-solving"), style: .default, handler: { (action, vc) in
@@ -170,8 +184,18 @@ extension IHTCSearchDetailVC {
         #endif
         let fixedSpace = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         fixedSpace.width = 15
-        navigationItem.rightBarButtonItems = [shareItem, infoItem, fixedSpace, language, fixedSpace, font]
-        
+        navigationItem.rightBarButtonItems = [shareItem, infoItem, fixedSpace, favoritesItem, fixedSpace, language, fixedSpace, font, fixedSpace]
+
+    }
+    
+    @objc func showWordFavorites(item: UIButton) {
+        let leetId = questionModle!.leetId
+        item.isSelected = !item.isSelected
+        if item.isSelected {
+            IHTCUserDefaults.shared.setFavoritesItem(item: leetId)
+        } else {
+            IHTCUserDefaults.shared.deleteFavoritesItem(item: leetId)
+        }
     }
     
     @objc func showAnswer(item: Any) {
@@ -359,11 +383,7 @@ extension IHTCSearchDetailVC {
             return
         }
         
-        currentIndex = previousIndex
-        let question = questionsArray[previousIndex]
-        questionModle = question
-        self.tableView.reloadData()
-        reloadWebView()
+        showQuestionModle(previousIndex)
     }
     
     @objc func showNexQuestion() {
@@ -383,11 +403,16 @@ extension IHTCSearchDetailVC {
             return
         }
         
+        showQuestionModle(previousIndex)
+    }
+    
+    fileprivate func showQuestionModle(_ previousIndex: Int) {
         currentIndex = previousIndex
         let question = questionsArray[previousIndex]
         questionModle = question
         self.tableView.reloadData()
         reloadWebView()
+        favoritesBtn.isSelected = IHTCUserDefaults.shared.isFavoritesItem(item: questionModle!.leetId)
     }
     
     fileprivate func reloadWebView() {

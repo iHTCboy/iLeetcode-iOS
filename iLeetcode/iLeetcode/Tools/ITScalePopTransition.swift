@@ -17,7 +17,7 @@ class ITScalePopTransition: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! ITQuestionDetailViewController
         let prentVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! ITBasePushTransitionVC
-        let toVC = prentVC.children[prentVC.selectTitleIndex] as! ITQuestionListViewController
+        let toVC = prentVC.children.count > 0 ? (prentVC.children[prentVC.selectTitleIndex] as! ITQuestionListViewController) : (prentVC as! ITQuestionListViewController)
         let container = transitionContext.containerView
         
         func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

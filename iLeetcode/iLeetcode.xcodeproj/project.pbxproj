@@ -3,16 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		231F53AD372D96E7B96E6040 /* Pods_iLeetcodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */; };
-		6842A350B5CAE20E71A6EA58 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */; };
 		6D053EB1226DF78D006D55B6 /* IHTCLanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */; };
 		6D053EB3226DF7ED006D55B6 /* IHTCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */; };
 		6D0BF3BA2441E8E3009EA94B /* IHTCLocalizedManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */; };
 		6D0BF3BB2441E94D009EA94B /* IHTCLocalizedManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */; };
+		6D469D702606495E006E9BCC /* favorites_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6C2606495E006E9BCC /* favorites_selected@2x.png */; };
+		6D469D712606495E006E9BCC /* favorites_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6C2606495E006E9BCC /* favorites_selected@2x.png */; };
+		6D469D722606495E006E9BCC /* favorites_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6D2606495E006E9BCC /* favorites_selected@3x.png */; };
+		6D469D732606495E006E9BCC /* favorites_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6D2606495E006E9BCC /* favorites_selected@3x.png */; };
+		6D469D742606495E006E9BCC /* favorites_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6E2606495E006E9BCC /* favorites_normal@3x.png */; };
+		6D469D752606495E006E9BCC /* favorites_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6E2606495E006E9BCC /* favorites_normal@3x.png */; };
+		6D469D762606495E006E9BCC /* favorites_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6F2606495E006E9BCC /* favorites_normal@2x.png */; };
+		6D469D772606495E006E9BCC /* favorites_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D469D6F2606495E006E9BCC /* favorites_normal@2x.png */; };
 		6D4ABD2C225087EF0022AAFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4ABD2E225087EF0022AAFC /* Main.storyboard */; };
 		6D4ABD44225088660022AAFC /* ITAboutAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */; };
 		6D4ABD45225088660022AAFC /* ITProgrammerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */; };
@@ -93,7 +100,6 @@
 		6DC7CFE9226C90FE00F2CC10 /* IHTCSearchDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */; };
 		6DC7CFEA226C90FE00F2CC10 /* IHTCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */; };
 		6DC9407B2430C0C6009A9994 /* IHTCAppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */; };
-		6DCD0D30243B58830069EBA1 /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */; platformFilter = ios; };
 		6DCD0D94243B5AC20069EBA1 /* ITProfessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD40225088660022AAFC /* ITProfessionViewController.swift */; };
 		6DCD0D95243B5AC20069EBA1 /* ITScalePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD70225088F00022AAFC /* ITScalePushTransition.swift */; };
 		6DCD0D96243B5AC20069EBA1 /* ITQuestionListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4ABD54225088D00022AAFC /* ITQuestionListViewCell.swift */; };
@@ -184,7 +190,7 @@
 		6DCD77142439C94F00CF3F46 /* WKWebView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77132439C94F00CF3F46 /* WKWebView+Snapshot.swift */; };
 		6DCD77162439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */; };
 		6DCD7718243A1AC800CF3F46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */; };
-		A890CF99A6BA3DA5A31DD9FF /* Pods_iLeetcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */; };
+		7BD2B4FE0248EB68999644ED /* Pods_iCoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAAB242FDB1B06D5D652AB8 /* Pods_iCoder.framework */; };
 		C9A7763915B703F24E800053 /* Pods_iLeetcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +221,10 @@
 		6D053EB0226DF78D006D55B6 /* IHTCLanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCLanguageSettingVC.swift; sourceTree = "<group>"; };
 		6D053EB2226DF7ED006D55B6 /* IHTCUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCUserDefaults.swift; sourceTree = "<group>"; };
 		6D0BF3B92441E8E3009EA94B /* IHTCLocalizedManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHTCLocalizedManger.swift; sourceTree = "<group>"; };
+		6D469D6C2606495E006E9BCC /* favorites_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_selected@2x.png"; sourceTree = "<group>"; };
+		6D469D6D2606495E006E9BCC /* favorites_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_selected@3x.png"; sourceTree = "<group>"; };
+		6D469D6E2606495E006E9BCC /* favorites_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_normal@3x.png"; sourceTree = "<group>"; };
+		6D469D6F2606495E006E9BCC /* favorites_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_normal@2x.png"; sourceTree = "<group>"; };
 		6D4ABD2D225087EF0022AAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D4ABD39225088660022AAFC /* ITAboutAppVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITAboutAppVC.swift; sourceTree = "<group>"; };
 		6D4ABD3A225088660022AAFC /* ITProgrammerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITProgrammerVC.swift; sourceTree = "<group>"; };
@@ -310,7 +320,6 @@
 		6DC7CFE6226C90FD00F2CC10 /* IHTCSearchDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCSearchDetailVC.swift; sourceTree = "<group>"; };
 		6DC7CFE7226C90FE00F2CC10 /* IHTCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCSearchViewController.swift; sourceTree = "<group>"; };
 		6DC9407A2430C0C5009A9994 /* IHTCAppearanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IHTCAppearanceVC.swift; sourceTree = "<group>"; };
-		6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iLeetcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCD0DF0243B5AC20069EBA1 /* iCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCD77022438D39000CF3F46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DCD77042438D39700CF3F46 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -324,8 +333,11 @@
 		6DCD77152439CA4A00CF3F46 /* WebViewPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPrintPageRenderer.swift; sourceTree = "<group>"; };
 		6DCD7717243A1AC800CF3F46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6DCD7757243B1F5400CF3F46 /* iCoder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCoder.entitlements; sourceTree = "<group>"; };
+		7CAAB242FDB1B06D5D652AB8 /* Pods_iCoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D564BDC466EDF92277A020 /* Pods-iLeetcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.release.xcconfig"; sourceTree = "<group>"; };
 		843D8E763D4BE96EDE151B51 /* Pods-iLeetcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeUITests/Pods-iLeetcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8ABBB3C08EAB8B8C101DFB52 /* Pods-iCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCoder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCoder/Pods-iCoder.debug.xcconfig"; sourceTree = "<group>"; };
+		AF1DE86DAF3B47CA7B2CC959 /* Pods-iCoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCoder.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCoder/Pods-iCoder.release.xcconfig"; sourceTree = "<group>"; };
 		B2BD263BE7839189FE3113B8 /* Pods-iLeetcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcode/Pods-iLeetcode.debug.xcconfig"; sourceTree = "<group>"; };
 		E7D2BB09E6F5CE858BACDA3E /* Pods-iLeetcodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLeetcodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLeetcodeTests/Pods-iLeetcodeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -346,9 +358,7 @@
 				6D4ABE85225094350022AAFC /* SystemConfiguration.framework in Frameworks */,
 				6D4ABE89225094720022AAFC /* libz.tbd in Frameworks */,
 				6D4ABE7B225093E30022AAFC /* libc++.tbd in Frameworks */,
-				6DCD0D30243B58830069EBA1 /* Pods_iLeetcode.framework in Frameworks */,
-				6842A350B5CAE20E71A6EA58 /* Pods_iLeetcode.framework in Frameworks */,
-				A890CF99A6BA3DA5A31DD9FF /* Pods_iLeetcode.framework in Frameworks */,
+				7BD2B4FE0248EB68999644ED /* Pods_iCoder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +408,8 @@
 				41F0E8FAA20CC83DABEFB0E5 /* Pods-iLeetcodeUITests.release.xcconfig */,
 				B2BD263BE7839189FE3113B8 /* Pods-iLeetcode.debug.xcconfig */,
 				82D564BDC466EDF92277A020 /* Pods-iLeetcode.release.xcconfig */,
+				8ABBB3C08EAB8B8C101DFB52 /* Pods-iCoder.debug.xcconfig */,
+				AF1DE86DAF3B47CA7B2CC959 /* Pods-iCoder.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -405,7 +417,6 @@
 		40FB813A3668FD1405E47F63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DCD0D2F243B58830069EBA1 /* Pods_iLeetcode.framework */,
 				6D4ABE88225094710022AAFC /* libz.tbd */,
 				6D4ABE86225094440022AAFC /* CoreTelephony.framework */,
 				6D4ABE84225094350022AAFC /* SystemConfiguration.framework */,
@@ -420,6 +431,7 @@
 				3A3A71F07229DD3CDC27E860 /* Pods_iLeetcode.framework */,
 				5F11E7A4DE09854B0FBA6A99 /* Pods_iLeetcodeTests.framework */,
 				51E7ABBB7248C09B35E6E411 /* Pods_iLeetcodeUITests.framework */,
+				7CAAB242FDB1B06D5D652AB8 /* Pods_iCoder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -527,6 +539,10 @@
 		6D4ABD75225088FD0022AAFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6D469D6F2606495E006E9BCC /* favorites_normal@2x.png */,
+				6D469D6E2606495E006E9BCC /* favorites_normal@3x.png */,
+				6D469D6C2606495E006E9BCC /* favorites_selected@2x.png */,
+				6D469D6D2606495E006E9BCC /* favorites_selected@3x.png */,
 				6DC7CFE3226C255400F2CC10 /* iLeetCoder-qrcode.png */,
 				6D4ABE9A225184070022AAFC /* App-share-Icon.png */,
 				6D4ABE8C22509BD40022AAFC /* App-LaunchScreen-Image.png */,
@@ -787,12 +803,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D469D762606495E006E9BCC /* favorites_normal@2x.png in Resources */,
 				6D4ABE05225088FE0022AAFC /* language_tabbar_normal@3x.png in Resources */,
 				6D50FFEF2245303900E114EE /* LaunchScreen.storyboard in Resources */,
 				6D50FFEC2245303900E114EE /* Assets.xcassets in Resources */,
 				6D4ABE8B225099050022AAFC /* App-TextLogo-Alpha.png in Resources */,
 				6DC7CFE8226C90FE00F2CC10 /* IHTCSearchViewController.xib in Resources */,
 				6DCD77012438D39000CF3F46 /* InfoPlist.strings in Resources */,
+				6D469D742606495E006E9BCC /* favorites_normal@3x.png in Resources */,
 				6D4ABE9B225184080022AAFC /* App-share-Icon.png in Resources */,
 				6DC7CFD1226C01D900F2CC10 /* iLeetCoder.css in Resources */,
 				6D4ABDF3225088FE0022AAFC /* language_tabbar_selected@2x.png in Resources */,
@@ -812,6 +830,7 @@
 				6D4ABE922250E03A0022AAFC /* iLeetCoder-Question.json in Resources */,
 				6DC7CFE2226C1E4500F2CC10 /* IHTCShareFooterView.xib in Resources */,
 				6D4ABE9022509ED70022AAFC /* AppLaunchScreen.storyboard in Resources */,
+				6D469D702606495E006E9BCC /* favorites_selected@2x.png in Resources */,
 				6D4ABE01225088FE0022AAFC /* company_tabbar_normal@2x.png in Resources */,
 				6D4ABDF6225088FE0022AAFC /* company_tabbar_selected@3x.png in Resources */,
 				6D4ABE03225088FE0022AAFC /* iTalkerman_blue@2x.png in Resources */,
@@ -821,6 +840,7 @@
 				6D4ABE04225088FE0022AAFC /* company_tabbar_normal@3x.png in Resources */,
 				6D4ABDF4225088FE0022AAFC /* italkerman_gray@3x.png in Resources */,
 				6D4ABDFF225088FE0022AAFC /* language_tabbar_normal@2x.png in Resources */,
+				6D469D722606495E006E9BCC /* favorites_selected@3x.png in Resources */,
 				6D4ABD65225088D00022AAFC /* ITQuestionListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,12 +863,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D469D772606495E006E9BCC /* favorites_normal@2x.png in Resources */,
 				6DCD0DCA243B5AC20069EBA1 /* language_tabbar_normal@3x.png in Resources */,
 				6DCD0DCB243B5AC20069EBA1 /* LaunchScreen.storyboard in Resources */,
 				6DCD0DCC243B5AC20069EBA1 /* Assets.xcassets in Resources */,
 				6DCD0DCD243B5AC20069EBA1 /* App-TextLogo-Alpha.png in Resources */,
 				6DCD0DCE243B5AC20069EBA1 /* IHTCSearchViewController.xib in Resources */,
 				6DCD0DCF243B5AC20069EBA1 /* InfoPlist.strings in Resources */,
+				6D469D752606495E006E9BCC /* favorites_normal@3x.png in Resources */,
 				6DCD0DD0243B5AC20069EBA1 /* App-share-Icon.png in Resources */,
 				6DCD0DD1243B5AC20069EBA1 /* iLeetCoder.css in Resources */,
 				6DCD0DD2243B5AC20069EBA1 /* language_tabbar_selected@2x.png in Resources */,
@@ -868,6 +890,7 @@
 				6DCD0DE0243B5AC20069EBA1 /* iLeetCoder-Question.json in Resources */,
 				6DCD0DE1243B5AC20069EBA1 /* IHTCShareFooterView.xib in Resources */,
 				6DCD0DE2243B5AC20069EBA1 /* AppLaunchScreen.storyboard in Resources */,
+				6D469D712606495E006E9BCC /* favorites_selected@2x.png in Resources */,
 				6DCD0DE3243B5AC20069EBA1 /* company_tabbar_normal@2x.png in Resources */,
 				6DCD0DE4243B5AC20069EBA1 /* company_tabbar_selected@3x.png in Resources */,
 				6DCD0DE5243B5AC20069EBA1 /* iTalkerman_blue@2x.png in Resources */,
@@ -877,6 +900,7 @@
 				6DCD0DE9243B5AC20069EBA1 /* company_tabbar_normal@3x.png in Resources */,
 				6DCD0DEA243B5AC20069EBA1 /* italkerman_gray@3x.png in Resources */,
 				6DCD0DEB243B5AC20069EBA1 /* language_tabbar_normal@2x.png in Resources */,
+				6D469D732606495E006E9BCC /* favorites_selected@3x.png in Resources */,
 				6DCD0DEC243B5AC20069EBA1 /* ITQuestionListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,7 +967,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iLeetcode-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iCoder-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1255,14 +1279,14 @@
 		};
 		6D50000A2245303900E114EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2BD263BE7839189FE3113B8 /* Pods-iLeetcode.debug.xcconfig */;
+			baseConfigurationReference = 8ABBB3C08EAB8B8C101DFB52 /* Pods-iCoder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2021.03.14;
+				CURRENT_PROJECT_VERSION = 2022.05.15;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1271,7 +1295,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 5.6.0;
+				MARKETING_VERSION = 6.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
 				SUPPORTS_MACCATALYST = YES;
@@ -1284,14 +1308,14 @@
 		};
 		6D50000B2245303900E114EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82D564BDC466EDF92277A020 /* Pods-iLeetcode.release.xcconfig */;
+			baseConfigurationReference = AF1DE86DAF3B47CA7B2CC959 /* Pods-iCoder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iLeetcode/iCoder.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2021.03.14;
+				CURRENT_PROJECT_VERSION = 2022.05.15;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = iLeetcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1300,7 +1324,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 5.6.0;
+				MARKETING_VERSION = 6.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iHTCboy.iLeetCoder;
 				PRODUCT_NAME = iCoder;
 				SUPPORTS_MACCATALYST = YES;

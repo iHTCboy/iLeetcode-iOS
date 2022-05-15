@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ITQuestionListViewController: UIViewController {
+class ITQuestionListViewController: ITBasePushTransitionVC {
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -50,6 +50,7 @@ class ITQuestionListViewController: UIViewController {
     let refreshControl = UIRefreshControl.init()
     var selectedCell: ITQuestionListViewCell!
     var isShowZH : Bool = false
+    var tabBarHeight = 58
     
     // MARK:- 懒加载
     lazy var tableView: UITableView = {
@@ -79,6 +80,19 @@ class ITQuestionListViewController: UIViewController {
         } else if ILeetCoderModel.shared.enterpriseArray.contains(self.title!) {
             return ILeetCoderModel.shared.enterpriseData()[self.title!]!
             
+        } else if HTCLocalized("Favorites").elementsEqual(self.title!) {
+            let favorites = IHTCUserDefaults.shared.getFavoritesItems()
+            let model = ITModel()
+            guard !favorites.isEmpty else {
+                return model
+            }
+            let isShowZH = IHTCUserDefaults.shared.getUDLanguage() == "zh_CN"
+            let id = isShowZH ? "全部" : "All"
+            let models = ILeetCoderModel.shared.defaultData()[id]!
+            let list = models.result.filter { favorites.contains($0.leetId) }
+            model.total = list.count
+            model.result = list
+            return model
         } else {
             print("no featch title")
             return ITModel()
@@ -100,7 +114,6 @@ extension ITQuestionListViewController {
         let constraintViews = [
             "tableView": tableView
         ]
-        let tabBarHeight = 58
         let vFormat = "V:|-0-[tableView]-\(tabBarHeight)-|"
         let hFormat = "H:|-0-[tableView]-0-|"
         let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: vFormat, options: [], metrics: [:], views: constraintViews)
